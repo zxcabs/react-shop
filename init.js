@@ -1,18 +1,46 @@
 let express = require('express');
 let mongoose = require('mongoose');
 let bodyParser = require('body-parser');
+let cookie = require('cookie-parser');
+let methodOverride = require('method-override');
+let session = require('express-session');
+let flash = require('connect-flash');
+let passport = require('passport');
+let localStrategy = require('passport-local').Strategy;
+let bcrypt   = require('bcrypt-nodejs');
+
 mongoose.connect('mongodb://localhost/test');
 let utils = require('util');
 
 let app = express();
-
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookie('some secret secret'));
+app.use(methodOverride(function(req, res) {
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    // look in urlencoded POST bodies and delete it
+    var method = req.body._method
+    delete req.body._method
+    return method;
+  }
+}));
+app.use(session({
+    cookie: {
+        maxAge: 12312313123212
+    },
+    secret: 'adsdasdsad',
+    saveUninitialized: true,
+    resave: true
+}));
+app.use(flash());
 
 class BaseSchema extends mongoose.Schema {
     constructor(...args) {
         super(...args);
 
-        this.statics.acl = function() {
+        this.statics.acl = function(method, User, id, callback) {
+            if (callback) {
+                callback(true);
+            }
             return true;
         };
 
@@ -29,6 +57,7 @@ let AttributeSchema = new BaseSchema({
 });
 
 let CategorySchema = new BaseSchema({
+    parent: BaseSchema.Types.ObjectId,
     name: String
 });
 
@@ -39,11 +68,47 @@ let ProductSchema = new BaseSchema({
     categories: [{type: BaseSchema.Types.ObjectId, ref: 'Category'}]
 });
 
+let crypt = (string) => bcrypt.hashSync(string, bcrypt.genSaltSync(8), null)
+let UserSchema = new BaseSchema({
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true,
+        set: crypt
+    },
+    role: String,
+    name: {
+        first: String,
+        middle: String,
+        last: String
+    }
+});
+
+UserSchema.method('is', function(role) {
+    return this.role === role;
+});
+
+UserSchema.statics.acl(method, User, id, callback) {
+    let res = User.id === id || User.is('admin');
+    if (method === 'POST') {
+        res = User.is('guest') || User.is('admin');
+    }
+    if (callback) {
+        callback(res);
+    }
+    return res;
+};
+
+let roles = ['user', 'guest', 'admin'];
+
 let CategoryModel = mongoose.model('Category', CategorySchema);
 let AttributeModel = mongoose.model('Attribute', AttributeSchema);
 let ProductModel = mongoose.model('Product', ProductSchema);
-
-let models = {CategoryModel, AttributeModel, ProductModel};
+let UserModel = mongoose.model('User', UserSchema);
 
 function getModel(name) {
     try {
@@ -76,7 +141,7 @@ function loadModels(method, modelName, modelId, objectToSave, query, User) {
             return reject(new Error(404));
         }
 
-        if (!Model.acl(User)) {
+        if (!Model.acl(method, User, modelId)) {
             return reject(new Error(403));
         }
 
