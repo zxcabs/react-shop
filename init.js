@@ -1,48 +1,16 @@
-let express = require('express');
-let mongoose = require('mongoose');
-let bodyParser = require('body-parser');
-let cookie = require('cookie-parser');
-let methodOverride = require('method-override');
-let session = require('express-session');
-let flash = require('connect-flash');
-let passport = require('passport');
-let localStrategy = require('passport-local').Strategy;
-let bcrypt   = require('bcrypt-nodejs');
 
-mongoose.connect('mongodb://localhost/test');
-let utils = require('util');
 
-let app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookie('some secret secret'));
-app.use(methodOverride(function(req, res) {
-  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
-    // look in urlencoded POST bodies and delete it
-    var method = req.body._method
-    delete req.body._method
-    return method;
-  }
-}));
-app.use(session({
-    cookie: {
-        maxAge: 12312313123212
-    },
-    secret: 'adsdasdsad',
-    saveUninitialized: true,
-    resave: true
-}));
-app.use(flash());
 
 class BaseSchema extends mongoose.Schema {
     constructor(...args) {
         super(...args);
 
-        this.statics.acl = function(method, User, id, callback) {
+        this.method('acl', function(method, User, callback) {
             if (callback) {
                 callback(true);
             }
             return true;
-        };
+        });
 
         this.statics.getPageSize = function() {
             return 20;
@@ -92,8 +60,8 @@ UserSchema.method('is', function(role) {
     return this.role === role;
 });
 
-UserSchema.statics.acl(method, User, id, callback) {
-    let res = User.id === id || User.is('admin');
+UserSchema.method('acl', function(method, User, callback) {
+    let res = User.id === Item.id || User.is('admin');
     if (method === 'POST') {
         res = User.is('guest') || User.is('admin');
     }
@@ -101,7 +69,7 @@ UserSchema.statics.acl(method, User, id, callback) {
         callback(res);
     }
     return res;
-};
+});
 
 let roles = ['user', 'guest', 'admin'];
 
@@ -141,15 +109,16 @@ function loadModels(method, modelName, modelId, objectToSave, query, User) {
             return reject(new Error(404));
         }
 
-        if (!Model.acl(method, User, modelId)) {
-            return reject(new Error(403));
-        }
-
         if (method === 'POST') {
             if (modelId) {
                 return reject(new Error(403));
             }
             objectToSave[modelName] = new Model();
+            if (!objectToSave[modelName].acl(method, User)) {
+                objectToSave[modelName] = null;
+                delete objectToSave[modelName];
+                return reject(new Error(403));
+            }
             return resolve();
         } else if (method === 'PUT' && !modelId) {
             return reject(new Error(403));
@@ -169,61 +138,16 @@ function loadModels(method, modelName, modelId, objectToSave, query, User) {
             });
         }
 
-        return Model.findById(modelId, modelId).exec().then((model) => {
+        return Model.findById(modelId).exec().then((model) => {
             objectToSave[modelName] = model;
+            if (!objectToSave[modelName].acl(method, User)) {
+                objectToSave[modelName] = null;
+                delete objectToSave[modelName];
+                return reject(new Error(403));
+            }
             return resolve();
         }).onReject((error) => {
             return reject(error);
         });
     });
 }
-
-app.param('model', function(req, res, next) {
-    if (!req.models) {
-        req.models = {};
-    }
-    let User = null;
-    loadModels(req.method, req.params.model, req.params.modelId, req.models, req.query, User)
-    .then(() => next()).catch((error) => {
-        console.log(error);
-        res.status(404 || 403 || 500).end();
-    });
-});
-
-app.param('relModel', function(req, res, next) {
-    loadModels(req.method, req.params.relModel, req.params.relModelId, req.models, req.query)
-    .then(() => next()).catch((error) => {
-        console.log(error);
-        res.status(404 || 403 || 500).end();
-    });
-});
-
-function createOrUpdate(req, res) {
-    let model = req.models[req.params.relModel || req.params.model];
-    for (let key in req.body) {
-        if (!req.body.hasOwnProperty(key)) {continue;}
-
-        model[key] = req.body[key];
-    }
-    model.save(() => {
-        res.send(model);
-    });
-}
-
-function read(req, res) {
-    res.send([req.params, req.models]);
-}
-
-function _delete(req, res) {
-    let model = req.models[req.params.relModel || req.params.model];
-    model.remove(() => res.status(200).send());
-}
-
-app.route('/api/data/:model/:modelId?/:relModel?/:relModelId?')
-   .get(read)
-   .post(createOrUpdate)
-   .put(createOrUpdate)
-   .delete(_delete);
-
-
-app.listen(8080);
