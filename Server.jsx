@@ -9,6 +9,8 @@ Promise.prototype.then = function() {
     return then.apply(this, arguments);
 }
 
+import DataEndPoint from './DataEndPoint.jsx';
+import AdminBackend from './admin/AdminBackend.jsx';
 import Models from './Models.jsx';
 
 let express = require('express');
@@ -22,74 +24,75 @@ let passport = require('passport');
 let LocalStrategy = require('passport-local').Strategy;
 let bcrypt   = require('bcrypt-nodejs');
 
-let defaultMiddlewares = [() => {
-    return bodyParser.urlencoded({extended: true});
-}, () => {
-    return cookie('some secret secret');
-}, () => {
-    return session({
+let defaultMiddlewares = [
+    bodyParser.urlencoded({extended: true}),
+    cookie('some secret secret'),
+    session({
         cookie: {
             maxAge: 12312313123212
         },
         secret: 'adsdasdsad',
         saveUninitialized: true,
         resave: true
-    });
-}, () => {
-    return flash();
-}];
-
-function loadModels(method, modelName, modelId, objectToSave, query, User) {
-    return new Promise((resolve, reject) => {
-        let Model = this.model(modelName);
-        if (!Model) {
-            return reject(new Error(404));
-        }
-
-        if (method === 'POST') {
-            if (modelId) {
-                return reject(new Error(403));
-            }
-            objectToSave[modelName] = new Model();
-            if (!objectToSave[modelName].acl(method, User)) {
-                objectToSave[modelName] = null;
-                delete objectToSave[modelName];
-                return reject(new Error(403));
-            }
-            return resolve();
-        } else if (method === 'PUT' && !modelId) {
-            return reject(new Error(403));
-        }
-
-        if (!modelId) {
-            return Model.find(query).then((models) => {
-                let preparedName = modelName;
-                preparedName += 'Collection';
-                objectToSave[preparedName] = models || [];
-                return resolve();
-            }).catch((error) => {
-                return reject(error);
-            });
-        }
-
-        return Model.findById(modelId, query).then((model) => {
-            objectToSave[modelName] = model;
-            if (!objectToSave[modelName].acl(method, User)) {
-                objectToSave[modelName] = null;
-                delete objectToSave[modelName];
-                return reject(new Error(403));
-            }
-            return resolve();
-        }).catch((error) => {
-            return reject(error);
-        });
-    });
-}
+    }),
+    flash(),
+    function(req, res, next) {
+        req.user = null;
+        next();
+    }
+];
 
 export default class Server {
     constructor() {
         mongoose.connect('mongodb://localhost/test');
         Object.keys(Models).forEach((name) => this.model(name, Models[name]));
+    }
+
+    loadModel(method, modelName, modelId, objectToSave, query, User) {
+        return new Promise((resolve, reject) => {
+            let Model = this.model(modelName);
+            if (!Model) {
+                return reject(new Error(404));
+            }
+
+            if (method === 'POST') {
+                if (modelId) {
+                    return reject(new Error(403));
+                }
+                objectToSave[modelName] = new Model();
+                if (!objectToSave[modelName].acl(method, User)) {
+                    objectToSave[modelName] = null;
+                    delete objectToSave[modelName];
+                    return reject(new Error(403));
+                }
+                return resolve();
+            } else if (method === 'PUT' && !modelId) {
+                return reject(new Error(403));
+            }
+
+            if (!modelId) {
+                return Model.find(query).then((models) => {
+                    let preparedName = modelName;
+                    preparedName += 'Collection';
+                    objectToSave[preparedName] = models || [];
+                    return resolve();
+                }).catch((error) => {
+                    return reject(error);
+                });
+            }
+
+            return Model.findById(modelId, query).then((model) => {
+                objectToSave[modelName] = model;
+                if (!objectToSave[modelName].acl(method, User)) {
+                    objectToSave[modelName] = null;
+                    delete objectToSave[modelName];
+                    return reject(new Error(403));
+                }
+                return resolve();
+            }).catch((error) => {
+                return reject(error);
+            });
+        });
     }
 
     isModelSuitable(Model) {
@@ -121,60 +124,21 @@ export default class Server {
         return Model;
     }
 
-    _create(req, res) {
-        let model = req.models[req.params.relModel || req.params.model];
-        for (let key in req.body) {
-            if (!req.body.hasOwnProperty(key)) {continue;}
-            model.set(key, req.body[key]);
-        }
-        model.save(req.query).then(() => {
-            res.send({
-                models: req.models
-            });
-        }).catch((err) => res.send(500));
+    mount(route, Class) {
+        let router = express.Router(route);
+        this.defaultMiddlewares(router);
+        new Class(router, this);
+        this.use(route, router);
+        return this;
     }
 
-    _read(req, res) {
-        res.status(200).send({
-            models: req.models
-        });
+    mountDataEndPoints() {
+        this.mount('/api/data', DataEndPoint);
+        return this;
     }
 
-    _update(...args) {
-        this._create(...args);
-    }
-
-    _delete(req, res) {
-        let model = req.models[req.params.relModel || req.params.model];
-        model.remove(() => res.status(200).send());
-    }
-
-    initDataEndpoints() {
-        this.express().param('model', (req, res, next) => {
-            if (!req.models) {
-                req.models = {};
-            }
-            let User = null;
-            loadModels.call(this, req.method, req.params.model, req.params.modelId, req.models, req.query, User)
-            .then(() => next()).catch((error) => {
-                console.log(error);
-                res.status(404 || 403 || 500).end();
-            });
-        });
-        this.express().param('relModel', (req, res, next) => {
-            let User = null;
-            loadModels.call(this, req.method, req.params.relModel, req.params.relModelId, req.models, req.query, User)
-            .then(() => next()).catch((error) => {
-                console.log(error);
-                res.status(404 || 403 || 500).end();
-            });
-        });
-
-        let route = this.route('/api/data/:model/:modelId?/:relModel?/:relModelId?');
-        route.post((...args) => this._create(...args));
-        route.get((...args) => this._read(...args));
-        route.put((...args) => this._update(...args));
-        route.delete((...args) => this._delete(...args));
+    mountAdmin() {
+        this.mount('/admin', AdminBackend);
         return this;
     }
 
@@ -182,8 +146,12 @@ export default class Server {
         return this.express().route(route);
     }
 
-    use(middleware) {
-        this.express().use(middleware);
+    use(url, middleware) {
+        if (!middleware) {
+            middleware = url;
+            url = '*';
+        }
+        this.express().use(url, middleware);
         return this;
     }
 
@@ -195,14 +163,20 @@ export default class Server {
         return this._express;
     }
 
+    defaultMiddlewares(router) {
+        defaultMiddlewares.forEach((middleware) => router.use(middleware));
+        return router;
+    }
+
     init() {
-        defaultMiddlewares.forEach((middleware) => this.use(middleware()));
-        this.initDataEndpoints();
+        this.defaultMiddlewares(this);
+        this.mountDataEndPoints();
+        this.mountAdmin();
+        this.express().use(express.static('./dist'));
         return this;
     }
 
     run() {
-        this.init();
-        this.express().listen(8080);
+        this.init().express().listen(8080);
     }
 }

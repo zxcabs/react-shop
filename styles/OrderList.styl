@@ -1,0 +1,70 @@
+.OrderList
+    width: 540px
+    border-right: 1px solid #e5e5e5
+    height: 100%
+    overflow: auto
+    &__heading
+        display: block
+        margin: 0
+        background: #f7f7f7
+        padding: 12px 20px
+        border-bottom: 1px solid #e5e5e5
+    &__list
+        list-style: none
+        margin: 0
+        width: 100%
+        padding-bottom: 10px
+        background-color: #eee
+        border-radius: 0 0 5px 5px
+        min-height: 500px
+        &__item
+            background-color: #fff
+            padding: 17px 20px 17px 25px
+            border-bottom: 1px solid #ccc
+            position: relative
+            padding-left: 95px
+            &__image
+                position: absolute
+                left: 21px
+                top: 12px
+                width: 50px
+                height: 50px
+                border: 1px solid #aaa
+                border-radius: 3px
+                background-color: #f6f6f6
+                overflow: hidden
+                &::-webkit-scrollbar
+                    height: 1ex
+                    width: 1ex
+                    background-color: #fff
+                &__itself
+                    width: 50px
+                    height: 50px
+            &__headline
+                display: inline-block
+                font-size: 20px
+                line-height: 27px
+                margin-bottom: 2px
+                max-width: 450px
+                overflow: hidden
+                white-space: nowrap
+                text-overflow: ellipsis
+                &__info
+                    display: block
+                    font-size: 11px
+                    color: #555
+                    line-height: 12px
+                    &__label
+                        position: absolute
+                        right: 27px
+                        top: 33px
+                        white-space: nowrap
+                        padding: 1px 3px 2px
+                        font-size: 9.75px
+                        font-weight: bold
+                        color: #ffffff
+                        text-transform: uppercase
+                        background-color: #999999
+                        border-radius: 3px
+                        &--active
+                            background-color: #468847

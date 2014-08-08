@@ -2,8 +2,6 @@
 
 var gulp = require('gulp');
 var gutil = require('gulp-util');
-var livereload = require('gulp-livereload');
-var connect = require('connect');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var stylus = require('gulp-stylus');
@@ -15,33 +13,15 @@ var reactify = require('reactify');
 var source = require('vinyl-source-stream');
 
 
-/** Config variables */
-var serverPort = 8888;
-var lrPort = 35731;
-
-
 /** File paths */
 var dist = 'dist';
 
 var jsxFiles = 'frontend/**/*.jsx';
 
-var vendorFiles = [
-    'bower_components/react/react-with-addons.js',
-    'node_modules/es6ify/node_modules/traceur/bin/traceur-runtime.js',
-];
-var vendorBuild = dist + '/vendor';
-var requireFiles = './node_modules/react/react.js';
-
-
-gulp.task('vendor', function () {
-    return gulp.src(vendorFiles).
-        pipe(gulp.dest(vendorBuild));
-});
-
 function compileScripts(watch) {
     gutil.log('Starting browserify');
 
-    var entryFile = './frontend/editor.jsx';
+    var entryFile = './frontend/index.jsx';
     es6ify.traceurOverrides = {experimental: true};
 
     var bundler;
@@ -69,7 +49,7 @@ function compileScripts(watch) {
     return rebundle();
 }
 
-var stylSelector = 'frontend/**/*.styl';
+var stylSelector = 'styles/**/*.styl';
 gulp.task('build-css', function() {
     return gulp.src(stylSelector)
         .pipe(stylus())
@@ -80,6 +60,12 @@ gulp.task('build-css', function() {
         .pipe(concat('app.css'))
         .pipe(gulp.dest('dist/css'))
 });
+
+
+// gulp.task('server', function (next) {
+//     var server = connect();
+//     server.use(connect.static(dist)).listen(serverPort, next);
+// });
 
 
 function initWatch(files, task) {
@@ -96,12 +82,14 @@ function initWatch(files, task) {
 /**
  * Run default task
  */
-gulp.task('default', ['vendor', 'build-css', 'server'], function () {
+gulp.task('default', ['build-css'], function () {
     function initWatch(files, task) {
         gulp.start(task);
         gulp.watch(files, [task]);
     }
 
-    compileScripts(true);
+    //compileScripts(true);
+
+//    gulp.watch([dist + '/**/*'], reloadPage);
     gulp.watch([stylSelector], ['build-css']);
 });

@@ -1,0 +1,583 @@
+.AutocompleteForm {
+  display: block;
+  width: 230px;
+  position: relative;
+}
+.AutocompleteForm__key-value {
+  overflow: hidden;
+}
+.AutocompleteForm__key-value__input {
+  width: 90px;
+}
+.AutocompleteForm__key-value__value {
+  width: 110px;
+  float: left;
+}
+.AutocompleteForm__key-value__save-button {
+  width: 110px;
+  float: left;
+}
+.AutocompleteForm__key-value__btn {
+  margin-top: 18px;
+}
+.AutocompleteForm__autocomplete {
+  position: absolute;
+  width: 220px;
+  top: 66px;
+  background: #fff;
+  display: none;
+}
+.AutocompleteForm__autocomplete--active {
+  display: block;
+}
+.AutocompleteForm__autocomplete__item {
+  border: 1px solid #e5e5e5;
+  padding: 4px;
+  width: 210px;
+  cursor: pointer;
+}
+.AutocompleteForm__autocomplete__item:hover {
+  color: #08c;
+}
+
+.content:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.content__list {
+  margin-left: 240px;
+  overflow: auto;
+  float: left;
+  width: 541px;
+  border-left: 1px solid #e5e5e5;
+}
+.content__current-operation {
+  overflow: auto;
+  float: left;
+  width: 500px;
+}
+
+.CreateCategory {
+  width: 558px;
+  float: left;
+  border-right: 1px solid #e5e5e5;
+}
+.CreateCategory__parent-box {
+  margin: 0;
+}
+.CreateCategory__parent-box__heading {
+  display: block;
+  margin: 0;
+  background: #fafafa;
+  padding: 12px 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.CreateCategoryForm__form {
+  padding: 20px;
+}
+.CreateCategoryForm__footer {
+  margin: 0;
+  background: #fafafa;
+  padding: 20px;
+  border: 1px solid #e5e5e5;
+  border-right: none;
+  border-left: none;
+}
+
+.CreateOrderForm__form {
+  padding: 20px;
+}
+.CreateOrderForm__footer {
+  padding: 20px;
+  background: #fafafa;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.CreateProduct {
+  width: 558px;
+  float: left;
+  border-right: 1px solid #e5e5e5;
+}
+.CreateProduct__parent-box {
+  margin: 0;
+}
+.CreateProduct__parent-box__heading {
+  display: block;
+  margin: 0;
+  background: #fafafa;
+  padding: 12px 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.DashboardItem {
+  background-color: #fff;
+  padding: 17px 20px 17px 25px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  padding-left: 75px;
+  min-height: 74px;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+.DashboardItem__image:not(:empty) {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  background-color: #f6f6f6;
+  overflow: hidden;
+}
+.DashboardItem__image:not(:empty)__pic {
+  width: 50px;
+  height: 50px;
+}
+.DashboardItem__headline {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 27px;
+  margin-bottom: 2px;
+  max-width: 450px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.DashboardItem__headline__info {
+  display: block;
+  font-size: 11px;
+  color: #555;
+  line-height: 12px;
+}
+.DashboardItem__headline__info__label {
+  position: absolute;
+  right: 27px;
+  top: 33px;
+  white-space: nowrap;
+  padding: 1px 3px 2px;
+  font-size: 9.75px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+.DashboardItem__headline__info__label--active {
+  background-color: #468847;
+}
+.DashboardItem__headline__info__label--inactive {
+  background-color: #860807;
+}
+.DashboardItem__headline__info__label--semi {
+  background-color: #999;
+}
+
+.DashboardList {
+  width: 540px;
+  border-right: 1px solid #e5e5e5;
+  height: 100%;
+  overflow: auto;
+}
+.DashboardList__heading {
+  display: block;
+  margin: 0;
+  background: #f7f7f7;
+  padding: 12px 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.DashboardList__list {
+  list-style: none;
+  margin: 0;
+  width: 100%;
+  padding-bottom: 10px;
+  background-color: #eee;
+  border-radius: 0 0 5px 5px;
+  min-height: 500px;
+}
+
+.EditCategoryForm__form {
+  display: block;
+  padding: 20px;
+}
+.EditCategoryForm__form__radio-label {
+  display: inline-block;
+}
+.EditCategoryForm__footer {
+  margin: 0;
+  background: #fafafa;
+  padding: 20px;
+  border: 1px solid #e5e5e5;
+  border-right: none;
+  border-left: none;
+}
+.EditCategoryForm__controls__list {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  list-style: none;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+.EditCategoryForm__controls__list__item {
+  float: left;
+  line-height: 18px;
+}
+.EditCategoryForm__controls__list__item__link {
+  display: block;
+  border: 1px solid #e5e5e5;
+  margin: 1px 10px 1px 0;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  color: #08c;
+  background-color: #fff;
+  line-height: 1;
+}
+.EditCategoryForm__controls__list__item__link:hover {
+  color: #fff;
+  background-color: #08c;
+  border: 1px solid #08c;
+}
+.EditCategoryForm__controls__list__item__link--active {
+  color: #fff;
+  background-color: #08c;
+  border: 1px solid #08c;
+}
+.EditCategoryForm__controls:after {
+  display: block;
+  clear: both;
+}
+
+.EditProductForm {
+  display: block;
+  overflow: auto;
+}
+.EditProductForm__label {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.EditProductForm__label__description {
+  display: block;
+  width: 140px;
+  font-size: 12px;
+}
+.EditProductForm__row {
+  overflow: hidden;
+}
+.EditProductForm__row:before {
+  display: block;
+  content: "";
+}
+.EditProductForm__row__left {
+  float: left;
+}
+.EditProductForm__row__right {
+  float: left;
+  margin-left: 20px;
+}
+.EditProductForm__controls__list {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  list-style: none;
+  margin: 20px 0 0 0;
+  padding: 0 0 0 20px;
+}
+.EditProductForm__controls__list__item {
+  float: left;
+  line-height: 18px;
+}
+.EditProductForm__controls__list__item__link {
+  display: block;
+  border: 1px solid #e5e5e5;
+  margin: 1px 10px 1px 0;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  color: #08c;
+  background-color: #fff;
+  line-height: 1;
+}
+.EditProductForm__controls__list__item__link:hover {
+  color: #fff;
+  background-color: #08c;
+  border: 1px solid #08c;
+}
+.EditProductForm__controls__list__item__link--active {
+  color: #fff;
+  background-color: #08c;
+  border: 1px solid #08c;
+}
+.EditProductForm__controls:after {
+  display: block;
+  clear: both;
+}
+.EditProductForm__tab {
+  display: none;
+}
+.EditProductForm__tab--active {
+  display: block;
+}
+.EditProductForm__image-input {
+  position: relative;
+  vertical-align: middle;
+  overflow: hidden;
+  width: 190px;
+  height: 190px;
+  border: 2px dashed #bbb;
+  border-radius: 3px;
+  background-color: #fafafa;
+  text-decoration: none;
+  opacity: 0.6;
+  -webkit-transition: opacity 0.2s;
+          transition: opacity 0.2s;
+  margin: 0 0 20px 0;
+}
+.EditProductForm__image-input:hover {
+  opacity: 1;
+}
+.EditProductForm__image-input__note {
+  display: block;
+  position: absolute;
+  padding: 0 20px;
+  top: 70px;
+  text-align: center;
+}
+.EditProductForm__image-input__hidden-input {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  width: 188px;
+  height: 188px;
+  margin: 0;
+}
+.EditProductForm__footer {
+  margin: 0;
+  background: #fafafa;
+  padding: 20px;
+  border: 1px solid #e5e5e5;
+  border-right: none;
+  border-left: none;
+}
+
+.menu {
+  background: #252a3a;
+  width: 240px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.menu__nav {
+  display: block;
+}
+.menu__nav__list {
+  list-style: none;
+  padding: 0;
+}
+.menu__nav__list__item:hover {
+  background: #373c5a;
+}
+.menu__nav__list__item__link {
+  display: block;
+  color: #999;
+  text-decoration: none;
+  padding: 10px 10px 10px 20px;
+}
+.menu__nav__list__item__link:hover {
+  color: #fff;
+}
+
+html,
+body {
+  font-family: 'Helvetica Neue';
+  font-weight: 200;
+}
+label,
+input,
+button,
+select,
+textarea {
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  outline: none;
+}
+input,
+select {
+  display: inline-block;
+  width: 210px;
+  height: 18px;
+  padding: 4px;
+  margin-bottom: 9px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input:focus {
+  border: 1px solid #08c;
+}
+input[type=radio] {
+  width: 25px;
+  margin: 0;
+}
+textarea {
+  border: 1px solid #e5e5e5;
+}
+textarea:focus {
+  border: 1px solid #08c;
+}
+select {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  background-color: #fff;
+  line-height: 28px;
+  height: 18px;
+}
+a {
+  text-decoration: none;
+  color: #08c;
+  font-size: 20px;
+  line-height: 27px;
+}
+a:hover {
+  opacity: 0.7;
+}
+label {
+  display: block;
+  margin: 10px 0;
+}
+ul {
+  padding: 0;
+}
+.btn {
+  display: inline-block;
+  padding: 4px 10px 4px;
+  margin-right: 10px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #666;
+  text-align: center;
+  background-color: #fafafa;
+  background-image: -webkit-linear-gradient(#fff, #fff 25%, #e6e6e6);
+  background-image: linear-gradient(#fff, #fff 25%, #e6e6e6);
+  background-repeat: no-repeat;
+  border: 1px solid #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.05);
+  cursor: pointer;
+  -webkit-transition: background-position 0.1s linear;
+          transition: background-position 0.1s linear;
+}
+.btn__primary {
+  background-color: #006dcc;
+  background-image: -webkit-linear-gradient(top, #08c, #04c);
+  background-image: linear-gradient(top, #08c, #04c);
+  background-repeat: repeat-x;
+  border-color: #04c #04c #002a80;
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+  color: #fff;
+}
+.btn__primary:hover {
+  background-image: none;
+  background-color: #04c;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  color: #fff;
+}
+
+.OrderList {
+  width: 540px;
+  border-right: 1px solid #e5e5e5;
+  height: 100%;
+  overflow: auto;
+}
+.OrderList__heading {
+  display: block;
+  margin: 0;
+  background: #f7f7f7;
+  padding: 12px 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.OrderList__list {
+  list-style: none;
+  margin: 0;
+  width: 100%;
+  padding-bottom: 10px;
+  background-color: #eee;
+  border-radius: 0 0 5px 5px;
+  min-height: 500px;
+}
+.OrderList__list__item {
+  background-color: #fff;
+  padding: 17px 20px 17px 25px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  padding-left: 95px;
+}
+.OrderList__list__item__image {
+  position: absolute;
+  left: 21px;
+  top: 12px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  background-color: #f6f6f6;
+  overflow: hidden;
+}
+.OrderList__list__item__image::-webkit-scrollbar {
+  height: 1ex;
+  width: 1ex;
+  background-color: #fff;
+}
+.OrderList__list__item__image__itself {
+  width: 50px;
+  height: 50px;
+}
+.OrderList__list__item__headline {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 27px;
+  margin-bottom: 2px;
+  max-width: 450px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.OrderList__list__item__headline__info {
+  display: block;
+  font-size: 11px;
+  color: #555;
+  line-height: 12px;
+}
+.OrderList__list__item__headline__info__label {
+  position: absolute;
+  right: 27px;
+  top: 33px;
+  white-space: nowrap;
+  padding: 1px 3px 2px;
+  font-size: 9.75px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #999;
+  border-radius: 3px;
+}
+.OrderList__list__item__headline__info__label--active {
+  background-color: #468847;
+}
+
+.Tab label {
+  text-transform: capitalize;
+}
+
+.TabController__form {
+  padding: 20px;
+}

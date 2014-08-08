@@ -1,0 +1,31 @@
+.AutocompleteForm
+    display: block
+    width: 230px
+    position: relative
+    &__key-value
+        overflow: hidden
+        &__input
+            width: 90px
+        &__value
+            width: 110px
+            float: left
+        &__save-button
+            width: 110px
+            float: left
+        &__btn
+            margin-top: 18px
+    &__autocomplete
+        position: absolute
+        width: 220px
+        top: 66px
+        background: #fff
+        display: none
+        &--active
+            display: block
+        &__item
+            border: 1px solid #e5e5e5
+            padding: 4px
+            width: 210px
+            cursor: pointer
+            &:hover
+                color: #08c
