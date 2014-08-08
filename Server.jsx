@@ -9,8 +9,6 @@ Promise.prototype.then = function() {
     return then.apply(this, arguments);
 }
 
-
-
 import Models from './Models.jsx';
 
 let express = require('express');
@@ -129,7 +127,7 @@ export default class Server {
             if (!req.body.hasOwnProperty(key)) {continue;}
             model.set(key, req.body[key]);
         }
-        model.save().then(() => {
+        model.save(req.query).then(() => {
             res.send({
                 models: req.models
             });

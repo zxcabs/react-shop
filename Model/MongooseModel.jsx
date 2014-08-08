@@ -63,10 +63,21 @@ export default class MongooseModel extends BaseModel {
         return this.constructor.getMongo();
     }
 
+    static populate(query, populate) {
+        populate.split(',').forEach((populate) => {
+            query.populate(populate);
+        });
+        return query;
+    }
+
     static findOnServer(params) {
         return new Promise((resolve, reject) => {
             let mongoose = this.getMongo();
-            let promise = mongoose.model(this.name).find(...this.prepareParams(params)).exec();
+            let query = mongoose.model(this.name).find(...this.prepareParams(params));
+            if (params.refs) {
+                query = this.populate(query, params.refs);
+            }
+            let promise = query.exec();
             promise.then((models) => {
                 resolve(models.map((model) => {
                     let newModel = new this(model.toObject({minimize: false}));
@@ -85,7 +96,11 @@ export default class MongooseModel extends BaseModel {
             let mongoose = this.getMongo();
             let model = mongoose.model(this.name);
             let fields = this.prepareParams[1] || null;
-            let promise = model.findById(id, fields).exec();
+            let query = model.findById(id, fields);
+            if (params.populate) {
+                query = this.populate(query, params.refs);
+            }
+            let promise = query.exec();
             promise.then((model) => {
                 let newModel = new this(model.toObject({minimize: false}));
                 newModel._mongoModel = model;
@@ -105,7 +120,7 @@ export default class MongooseModel extends BaseModel {
         return super(path, value);
     }
 
-    saveOnServer() {
+    saveOnServer(params) {
         if (!this._mongoModel) {
             let mongoose = this.getMongo();
             let Model = mongoose.model(this.name);
@@ -117,7 +132,20 @@ export default class MongooseModel extends BaseModel {
                     return reject(err);
                 }
 
-                resolve();
+                let saved = (error, res) => {
+                    this._fields = this._mongoModel.toObject();
+                    if (error) {
+                        return reject(error);
+                    }
+
+                    resolve();
+                };
+                if (params.refs) {
+                    params.refs.split(',').forEach((ref) => this._mongoModel.populate(ref));
+                    this._mongoModel.populate(saved);
+                } else {
+                    saved(err, res);
+                }
             });
         });
     }

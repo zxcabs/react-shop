@@ -156,12 +156,12 @@ export default class BaseModel {
         return !!this._changed;
     }
 
-    save() {
+    save(params) {
         let promise;
         if (typeof window === 'undefined') {
-            promise = this.saveOnServer();
+            promise = this.saveOnServer(params);
         } else {
-            promise = this.saveOnClient();
+            promise = this.saveOnClient(params);
         }
         if (this.isNew()) {
             promise.then(() => this.notNew());

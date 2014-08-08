@@ -5,7 +5,7 @@ export default class Category extends MongooseModel {
         return {
             name: String,
             parent: {
-                type: this.getMongo().Schema.Types.ObjectId,
+                type: this.getMongo().Schema.ObjectId,
                 ref: 'Category'
             }
         };
