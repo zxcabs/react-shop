@@ -5,15 +5,19 @@ import Menu from './Menu.jsx'
 import DashboardList from './DashboardList.jsx'
 import CreateProduct from './CreateProduct.jsx'
 
-let dashboard = {
-    collection: 'Category',
-    listScheme: {
-        bottomLine: 'parent.name'
+let dashboards = {
+    Category: {
+        listScheme: {
+            bottomLine: 'parent.name'
+        }
     }
 };
 
 export default React.createClass({
     render() {
+        let dashboardName = this.props.params.dashboard;
+        let dashboard = dashboards[this.props.params.dashboard];
+
         return (
             <html>
                 <head>
@@ -34,7 +38,11 @@ export default React.createClass({
                     </div>
                     <div className="content">
                         <div className="content__list">
-                            <DashboardList dashboard={dashboard} models={this.props.models} />
+                            <DashboardList
+                                dashboard={dashboard}
+                                dashboardName={dashboardName}
+                                collection={this.props.models[`${dashboardName}Collection`]}
+                            />
                         </div>
                         <div className="content__current-operation">
                         </div>

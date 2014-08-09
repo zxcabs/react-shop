@@ -4,7 +4,7 @@ import DashboardItem from './DashboardItem.jsx';
 
 export default React.createClass({
     renderItems() {
-        return this.props.models.CategoryCollection.map((item) => {
+        return this.props.collection.map((item) => {
             return (<DashboardItem
                         dashboard={this.props.dashboard}
                         key={item.get('_id')}
@@ -19,9 +19,9 @@ export default React.createClass({
                 <h1 className="DashboardList__heading">
                     Список
                 </h1>
-                <ul className="DashboardList__list">
+                <div className="DashboardList__list">
                     {this.renderItems()}
-                </ul>
+                </div>
             </div>
         );
     },

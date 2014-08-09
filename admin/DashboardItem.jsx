@@ -14,7 +14,7 @@ export default React.createClass({
         });
 
         return (
-            <li className="DashboardItem">
+            <a href={item.get('_id')} className="DashboardItem">
                 <span className="DashboardItem__image">
                 {item.get('main_pic')
                     ? (<img className="DashboardItem__image__pic" src={item.get('main_pic')} />)
@@ -22,9 +22,9 @@ export default React.createClass({
                 }
                 </span>
                 <div className="DashboardItem__headline">
-                    <a href={item.get('_id')} className="DashboardItem__headline__link">
+                    <span className="DashboardItem__headline__link">
                         {item.get('name')}
-                    </a>
+                    </span>
                 </div>
                 <small className="DashboardItem__headline__info">
                     {listScheme.bottomLine ? (item.get(listScheme.bottomLine) || '') : ''}
@@ -32,7 +32,7 @@ export default React.createClass({
                         {item.get('status')}
                     </span>
                 </small>
-            </li>
+            </a>
         );
     }
 });

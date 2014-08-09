@@ -121,6 +121,8 @@
   min-height: 74px;
   -moz-box-sizing: border-box;
        box-sizing: border-box;
+  display: block;
+  text-decoration: none;
 }
 .DashboardItem__image:not(:empty) {
   position: absolute;
