@@ -44,7 +44,8 @@ export default class AdminFrontend {
 
     init() {
         return new Promise((resolve, reject) => {
-            let promises = [this.loadModel(this.params.dashboard, null, this.query)];
+            let promises = [];
+            promises.push(this.loadModel(this.params.dashboard, null, this.query));
             if (this.params.id) {
                 promises.push(this.loadModel(this.params.dashboard, this.params.id, this.query));
             }
