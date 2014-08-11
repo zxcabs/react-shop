@@ -6,33 +6,27 @@ import EditProductForm from './EditProductForm.jsx'
 import CreateCategory from './CreateCategory.jsx'
 import CreateOrder from './CreateOrder.jsx'
 
-import JustInput from './JustInput.jsx'
-
-let Views = {
-    name: JustInput
-};
-
-let ViewsEnabledForNew = {
-    name: true
-}
-
 export default React.createClass({
     getPlainObject() {
         return this.props.model.toObject();
     },
 
+    getViewForAttr(name) {
+        let View = this.props.dashboard.fields[name];
+        if (!View) {
+            throw new Error(`There is no view for required field ${attr.__name}`);
+        }
+        return View;
+    },
+
     renderNew() {
         let res = {};
         let hashMap = this.getPlainObject();
-        let schema = this.props.model.getSchemaPlainObj();
-        for (let key in ViewsEnabledForNew) {
-            if (!ViewsEnabledForNew.hasOwnProperty(key)) {continue;}
-            if (!(key in schema)) {continue;}
-            if (!Views[key]) {continue;}
-            let View = Views[key];
-            res[key] = (<View key={key} value={hashMap[key]} />);
-        }
-        return res;
+        let required = this.props.model.getSchema().toIterator().filter((attr) => attr.required);
+        return required.map((attr) => {
+            let View = this.getViewForAttr(attr.__name);
+            return (<View key={attr.__name} value={hashMap[attr.__name] || attr.default || ''} />);
+        });
     },
 
     renderUpdate() {
@@ -54,6 +48,15 @@ export default React.createClass({
                         {this.props.model.isNew()
                             ? null : (<input type="hidden" name="_method" value="PUT" />)}
                         {this.props.model.isNew() ? this.renderNew() : this.renderUpdate()}
+
+                        <div className="product-form__footer">
+                            <button className="btn btn__primary" type="submit">
+                                Сохранить
+                            </button>
+                            <button className="btn" type="cancel">
+                                Отменить
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>

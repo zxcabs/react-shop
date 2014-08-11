@@ -1,27 +1,29 @@
 import MongooseModel from './MongooseModel.jsx';
+import Schema from './Schema.jsx';
 
 export default class Product extends MongooseModel {
-    static generateSchema() {
-        return {
-            name: String,
-            attributes: [{
-                type: this.getMongoSchema().ObjectId,
-                ref: 'Attribute'
-            }],
-            mainCategory: {
-                type: this.getMongoSchema().ObjectId,
-                ref: 'Category'
-            },
-            categories: [{
-                type: this.getMongoSchema().ObjectId,
-                ref: 'Category'
-            }],
-            status: {
-                type: String,
-                default: 'active'
-            }
-        };
+
+}
+
+class ProductSchema extends Schema {
+    constructor(...args) {
+        super(...args);
+
+        this.add('name', {
+            type: String,
+            required: true
+        }).add('attributes', [{
+            type: Schema.ObjectId,
+            ref: 'Attribute'
+        }]).add('mainCategory', {
+            type: Schema.ObjectId,
+            ref: 'Category'
+        }).add('categories', [{
+            type: Schema.ObjectId,
+            ref: 'Category'
+        }]);
     }
 }
 
+Product.Schema = ProductSchema;
 Product.name = 'Product';

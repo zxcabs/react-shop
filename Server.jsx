@@ -12,6 +12,8 @@ Promise.prototype.then = function() {
 import DataEndPoint from './DataEndPoint.jsx';
 import AdminBackend from './admin/AdminBackend.jsx';
 import Models from './Models.jsx';
+import Schema from './Model/Schema.jsx';
+import BaseModel from './Model/BaseModel.jsx';
 
 let express = require('express');
 let mongoose = require('mongoose');
@@ -52,7 +54,8 @@ let defaultMiddlewares = [
 export default class Server {
     constructor() {
         mongoose.connect('mongodb://localhost/test');
-        Object.keys(Models).forEach((name) => this.model(name, Models[name]));
+        Schema.server = this;
+        BaseModel.server = this;
     }
 
     loadModel(method, modelName, modelId, objectToSave, query, User) {
@@ -125,7 +128,7 @@ export default class Server {
             throw new Error(`Model ${name} is not suitable for shop application`);
         }
 
-        Model.setServer(this);
+        Model.init();
 
         this._models[name] = Model;
         return Model;
@@ -176,6 +179,7 @@ export default class Server {
     }
 
     init() {
+        Object.keys(Models).forEach((name) => this.model(name, Models[name]));
         this.defaultMiddlewares(this);
         this.mountDataEndPoints();
         this.mountAdmin();

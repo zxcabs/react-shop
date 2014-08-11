@@ -8,23 +8,32 @@ export default class BaseModel {
 
     setFields(fields) {
         this._fields = fields || {};
+        this._initialFields = fields;
+    }
+
+    dropChanges() {
+        this._fields = Object.create(this._initialFields);
     }
 
     toJSON() {
         return this._fields;
     }
 
-    static setServer(server) {
+    static set server(server) {
         this._server = server;
         return this;
     }
 
-    static getServer() {
+    static get server() {
         return this._server;
     }
 
-    getServer() {
-        return this.constructor.getServer();
+    static init() {
+        return this;
+    }
+
+    get server() {
+        return this.constructor.server;
     }
 
     static find(params) {
@@ -163,6 +172,7 @@ export default class BaseModel {
         } else {
             promise = this.saveOnClient(params);
         }
+        promise.then(() => this._initialFields = Object.create(this._fields));
         if (this.isNew()) {
             promise.then(() => this.notNew());
         }
