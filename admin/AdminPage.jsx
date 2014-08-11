@@ -5,6 +5,8 @@ import Menu from './Menu.jsx'
 import DashboardList from './DashboardList.jsx'
 import DashboardCreateItem from './DashboardCreateItem.jsx'
 import JustInput from './JustInput.jsx'
+import JustSelect from './JustSelect.jsx'
+import MarkdownTextarea from './MarkdownTextarea.jsx'
 
 let dashboards = {
     Category: {
@@ -12,16 +14,39 @@ let dashboards = {
             bottomLine: 'parent.name'
         },
         fields: {
-            name: JustInput
-        }
+            name: JustInput,
+            description: MarkdownTextarea,
+            parent: JustInput,
+            status: JustSelect
+        },
+        layout: [{
+            name: 'main',
+            fields: ['name', 'description', 'parent', 'status']
+        }]
     },
     Product: {
         listScheme: {
-            bottomLine: ''
+            bottomLine: 'price'
         },
         fields: {
-            name: JustInput
-        }
+            name: JustInput,
+            price: JustInput,
+            mainCategory: JustInput,
+            status: JustSelect
+        },
+        layout: [{
+            name: 'main',
+            fields: ['name', 'price', 'mainCategory', 'status']
+        }, {
+            name: 'images',
+            fields: []
+        }, {
+            name: 'categories',
+            fields: ['mainCategory', 'categories']
+        }, {
+            name: 'availability',
+            fields: ['status']
+        }]
     }
 };
 

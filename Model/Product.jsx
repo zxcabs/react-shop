@@ -6,11 +6,12 @@ export default class Product extends MongooseModel {
 }
 
 class ProductSchema extends Schema {
-    constructor(...args) {
-        super(...args);
-
+    addFields() {
         this.add('name', {
             type: String,
+            required: true
+        }).add('price', {
+            type: Number,
             required: true
         }).add('attributes', [{
             type: Schema.ObjectId,
@@ -21,7 +22,10 @@ class ProductSchema extends Schema {
         }).add('categories', [{
             type: Schema.ObjectId,
             ref: 'Category'
-        }]);
+        }]).add('description', {
+            type: String,
+            default: ''
+        });
     }
 }
 

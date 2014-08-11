@@ -8,9 +8,7 @@ export default class User extends MongooseModel {
 }
 
 class UserSchema extends Schema {
-    constructor(...args) {
-        super(...args);
-
+    addFields() {
         this.add('email', {
             type: String,
             required: true,

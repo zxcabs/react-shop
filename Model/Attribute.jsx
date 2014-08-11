@@ -6,8 +6,7 @@ export default class Attribute extends MongooseModel {
 }
 
 class AttributeSchema extends Schema {
-    constructor(...args) {
-        super(...args);
+    addFields() {
         this.add('name', {
             type: String,
             required: true

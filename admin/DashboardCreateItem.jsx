@@ -14,7 +14,7 @@ export default React.createClass({
     getViewForAttr(name) {
         let View = this.props.dashboard.fields[name];
         if (!View) {
-            throw new Error(`There is no view for required field ${attr.__name}`);
+            throw new Error(`There is no view for required field ${name}`);
         }
         return View;
     },
@@ -25,12 +25,51 @@ export default React.createClass({
         let required = this.props.model.getSchema().toIterator().filter((attr) => attr.required);
         return required.map((attr) => {
             let View = this.getViewForAttr(attr.__name);
-            return (<View key={attr.__name} value={hashMap[attr.__name] || attr.default || ''} />);
+            return (
+                <View
+                    key={attr.__name}
+                    schema={attr}
+                    value={hashMap[attr.__name] || attr.default || ''}
+                />);
         });
     },
 
     renderUpdate() {
+        return (
+        <div>
+            <div className="tabs">
+                {this.renderTabs()}
+            </div>
+            <div className="fields">
+                {this.renderFields()}
+            </div>
+        </div>
+        );
+    },
 
+    renderTabs() {
+        return this.props.dashboard.layout.map((tab) => {
+            return (
+            <a href="#" key={tab.name} className="EditProductForm__controls__list__item__link">
+                {tab.name}
+            </a>
+            );
+        });
+    },
+
+    renderFields() {
+        let schema = this.props.model.getSchema().toObject();
+        let hashMap = this.getPlainObject();
+        return this.props.dashboard.layout[0].fields.map((field) => {
+            let attr = schema[field];
+            let View = this.getViewForAttr(field);
+            return (
+                <View
+                    key={field}
+                    schema={attr}
+                    value={hashMap[field] || attr.default || ''}
+                />);
+        });
     },
 
     render() {

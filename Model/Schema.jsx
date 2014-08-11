@@ -28,9 +28,14 @@ export default class Schema {
         this._obj = {};
         this.add('status', {
             type: String,
-            default: 'active'
+            default: 'active',
+            available: ['active', 'inactive']
         });
+
+        this.addFields();
     }
+
+    addFields() {}
 
     add(name, value) {
         if (this._obj[name]) {

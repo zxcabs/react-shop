@@ -6,12 +6,15 @@ export default class Category extends MongooseModel {
 }
 
 class CategorySchema extends Schema {
-    constructor(...args) {
-        super(...args);
-
+    addFields() {
         this.add('name', {
             type: String,
             required: true
+        });
+
+        this.add('description', {
+            type: String,
+            default: ''
         });
 
         this.add('parent', {
