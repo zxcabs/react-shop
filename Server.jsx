@@ -3,7 +3,7 @@ Promise.prototype.then = function() {
     if (!this._inited) {
         this._inited = true;
         this.catch((error) => {
-            setTimeout(() => {throw error});
+            console.log(error);
         });
     }
     return then.apply(this, arguments);
@@ -26,6 +26,13 @@ let bcrypt   = require('bcrypt-nodejs');
 
 let defaultMiddlewares = [
     bodyParser.urlencoded({extended: true}),
+    methodOverride(function(req, res) {
+        if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+            let method = req.body._method;
+            delete req.body._method;
+            return method;
+        }
+    }),
     cookie('some secret secret'),
     session({
         cookie: {

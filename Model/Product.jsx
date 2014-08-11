@@ -5,17 +5,21 @@ export default class Product extends MongooseModel {
         return {
             name: String,
             attributes: [{
-                type: this.getMongo().Schema.ObjectId,
+                type: this.getMongoSchema().ObjectId,
                 ref: 'Attribute'
             }],
             mainCategory: {
-                type: this.getMongo().Schema.ObjectId,
+                type: this.getMongoSchema().ObjectId,
                 ref: 'Category'
             },
             categories: [{
-                type: this.getMongo().Schema.ObjectId,
+                type: this.getMongoSchema().ObjectId,
                 ref: 'Category'
-            }]
+            }],
+            status: {
+                type: String,
+                default: 'active'
+            }
         };
     }
 }

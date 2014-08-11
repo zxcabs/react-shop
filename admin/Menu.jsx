@@ -5,12 +5,12 @@ export default React.createClass({
     getData() {
         let menuPoints = [{
             name : 'Товары',
-            url : '/manager/products',
+            url : '/admin/Product',
             id : '1'
         },
         {
             name : 'Категории',
-            url : '/manager/categories',
+            url : '/admin/Category',
             id : '2'
         }];
 

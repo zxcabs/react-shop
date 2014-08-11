@@ -1,15 +1,21 @@
+html, body
+    height 100%
+
 .content
+    min-height 100%
+
     &:after
         content ""
         display block
         clear both
     &__list
-        margin-left 240px
-        overflow auto
+        margin-left 200px
+        overflow hidden
         float left
-        width 541px
+        width 540px
+        min-height 100%
         border-left 1px solid #e5e5e5
     &__current-operation
-        overflow auto
+        overflow hidden
         float left
         width 500px

@@ -5,11 +5,13 @@ import DashboardItem from './DashboardItem.jsx';
 export default React.createClass({
     renderItems() {
         return this.props.collection.map((item) => {
-            return (<DashboardItem
-                        dashboard={this.props.dashboard}
-                        key={item.get('_id')}
-                        item={item}
-                    />);
+            return (
+            <DashboardItem
+                dashboard={this.props.dashboard}
+                key={item.get('_id')}
+                item={item}
+            />
+            );
         });
     },
 

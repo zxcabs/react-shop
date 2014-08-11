@@ -28,6 +28,13 @@ export default class MongooseModel extends BaseModel {
         return this._mongoModel.toJSON();
     }
 
+    toObject() {
+        if (!this._mongoModel) {
+            return this._fields;
+        }
+        return this._mongoModel.toObject();
+    }
+
     static getSchema() {
         if (!this._schema) {
             let schema = this.generateSchema();
@@ -42,6 +49,10 @@ export default class MongooseModel extends BaseModel {
 
     static generateSchema() {
         return null;
+    }
+
+    getSchemaPlainObj() {
+        return this.constructor.generateSchema();
     }
 
     static setServer(...args) {
@@ -91,6 +102,19 @@ export default class MongooseModel extends BaseModel {
         });
     }
 
+    getMongoSchema() {
+        return this.constructor.getMongoSchema();
+    }
+
+    static getMongoSchema() {
+        if (typeof window === 'undefined') {
+            return this.getMongo().Schema;
+        }
+        return {
+            ObjectId: function() {}
+        };
+    }
+
     static findByIdOnServer(id, params) {
         return new Promise((resolve, reject) => {
             let mongoose = this.getMongo();
@@ -118,6 +142,13 @@ export default class MongooseModel extends BaseModel {
             value = this._mongoModel.get(path);
         }
         return super(path, value);
+    }
+
+    get(path) {
+        if (this._mongoModel) {
+            return this._mongoModel.get(path);
+        }
+        return super(path);
     }
 
     saveOnServer(params) {

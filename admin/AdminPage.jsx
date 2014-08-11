@@ -3,12 +3,17 @@ let React = require('react/addons');
 
 import Menu from './Menu.jsx'
 import DashboardList from './DashboardList.jsx'
-import CreateProduct from './CreateProduct.jsx'
+import DashboardCreateItem from './DashboardCreateItem.jsx'
 
 let dashboards = {
     Category: {
         listScheme: {
             bottomLine: 'parent.name'
+        }
+    },
+    Product: {
+        listScheme: {
+            bottomLine: ''
         }
     }
 };
@@ -45,6 +50,11 @@ export default React.createClass({
                             />
                         </div>
                         <div className="content__current-operation">
+                            {this.props.params.id
+                                ? (<DashboardCreateItem
+                                    modelName={dashboardName}
+                                    model={this.props.models[dashboardName]}
+                                />) : null}
                         </div>
                     </div>
                     <script id="initialData" type="text/json">

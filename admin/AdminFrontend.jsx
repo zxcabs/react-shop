@@ -3,7 +3,6 @@ import AdminPage from './AdminPage.jsx';
 let React = require('react/addons');
 
 export default class AdminFrontend {
-
     constructor(opt) {
         this._models = {};
         this.user = opt.user;
@@ -20,6 +19,10 @@ export default class AdminFrontend {
                     this._models[modelName + 'Collection'] = Models;
                     resolve(this._models);
                 }).catch((error) => reject(error))
+            }
+            if (id === 'new') {
+                this._models[modelName] = new Model();
+                return resolve(this._models);
             }
             return Model.findById(id, params).then((Model) => {
                 this._models[modelName] = Model;
@@ -46,7 +49,6 @@ export default class AdminFrontend {
                 promises.push(this.loadModel(this.params.dashboard, this.params.id, this.query));
             }
             Promise.all(promises).then(() => {
-                console.log(this._models);
                 resolve(200);
             }).catch((error) => {
                 reject(error);
