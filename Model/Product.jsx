@@ -8,6 +8,13 @@ export default class Product extends MongooseModel {
                 type: this.getMongoSchema().ObjectId,
                 ref: 'Attribute'
             }],
+            price: {
+                type: Number,
+                default: 0
+            },
+            mainImage: String,
+            weight: Number,
+            description: String,
             mainCategory: {
                 type: this.getMongoSchema().ObjectId,
                 ref: 'Category'

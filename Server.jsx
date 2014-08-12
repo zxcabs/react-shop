@@ -176,10 +176,13 @@ export default class Server {
     }
 
     init() {
-        this.defaultMiddlewares(this);
-        this.mountDataEndPoints();
-        this.mountAdmin();
-        this.express().use(express.static('./dist'));
+        if (!this._inited) {
+            this._inited = true;
+            this.defaultMiddlewares(this);
+            this.mountDataEndPoints();
+            this.mountAdmin();
+            this.express().use(express.static('./dist'));
+        }
         return this;
     }
 
