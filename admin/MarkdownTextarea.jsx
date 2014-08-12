@@ -2,15 +2,15 @@
 module React from 'react/addons';
 
 export default React.createClass({
-    mixins: [React.addons.LinkedStateMixin],
-
-    getInitialState() {
-        return {
-            value: this.props.value
-        }
+    requestChange(newValue) {
+        this.props.setValue(this.props.key, newValue);
     },
 
     render() {
+        let Link = {
+            value: this.props.value,
+            requestChange: this.requestChange
+        }
         return (
         <label className="ProductForm__label">
             <span className="ProductForm__label__description">
@@ -19,8 +19,8 @@ export default React.createClass({
             <textarea
                 className="ProductForm__label__textarea"
                 name={this.props.key}
-                placeholder={this.props.key}
-                valueLink={this.linkState('value')}
+                placeholder={this.props.placeholder || this.props.key}
+                valueLink={Link}
             ></textarea>
         </label>
         );

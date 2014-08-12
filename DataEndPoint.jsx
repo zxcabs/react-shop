@@ -5,7 +5,11 @@ export default class DataEndPoint extends EndPoint {
         let model = req.models[req.params.relModel || req.params.model];
         for (let key in req.body) {
             if (!req.body.hasOwnProperty(key)) {continue;}
-            if (!model.get(key) && !req.body[key]) {continue;}
+            if (!req.body[key]) {
+                let res = model.get(key);
+                if (!res) {continue;}
+                if (Array.isArray(res) && !res.length) {continue;}
+            }
             model.set(key, req.body[key]);
         }
         model.save(req.query).then(() => {
@@ -14,7 +18,7 @@ export default class DataEndPoint extends EndPoint {
                     models: req.models
                 }
             });
-        }).catch((err) => res.send(500));
+        }).catch((err) => res.status(500).send());
     }
 
     _read(req, res) {

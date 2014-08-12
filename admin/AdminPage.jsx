@@ -51,9 +51,19 @@ let dashboards = {
 };
 
 export default React.createClass({
+    handleRoutes(event) {
+        if (event.target.href) {
+            event.preventDefault();
+            this.props.routeChange(event.target.href);
+        }
+    },
+
     render() {
         let dashboardName = this.props.params.dashboard;
         let dashboard = dashboards[this.props.params.dashboard];
+        if (typeof window !== 'undefined') {
+            window.asd = this.props.models;
+        }
         return (
             <html>
                 <head>
@@ -67,7 +77,7 @@ export default React.createClass({
                     <link href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" rel="stylesheet" />
                     <link href="/css/app.css" rel="stylesheet" />
                 </head>
-                <body>
+                <body onClick={this.handleRoutes}>
                     <div className="menu">
                         <Menu />
                     </div>

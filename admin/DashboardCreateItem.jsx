@@ -67,7 +67,8 @@ export default React.createClass({
     },
 
     updateValue(name, value) {
-
+        this.props.model.set(name, value);
+        this.forceUpdate();
     },
 
     renderFields() {
@@ -88,6 +89,21 @@ export default React.createClass({
         });
     },
 
+    onSubmit(event) {
+        event.preventDefault();
+        if (!this.props.model.isChanged()) {
+            return;
+        }
+
+        this.props.model.save().then((model) => {
+            this.updateModel(this.model);
+        });
+    },
+
+    dropChanges(event) {
+        this.props.model.dropChanges();
+    },
+
     render() {
         let id = this.props.model.get('_id');
         let actionUrl = `/api/data/${this.props.modelName}/${id||''}`;
@@ -99,7 +115,7 @@ export default React.createClass({
                         {this.props.model.isNew() ? "Создание" : "Редактирование"}
                     </h1>
                 </div>
-                <form method="POST" action={actionUrl}>
+                <form onSubmit={this.onSubmit} method="POST" action={actionUrl}>
                     {this.props.model.isNew()
                         ? null : (<input type="hidden" name="_method" value="PUT" />)}
                     {this.props.model.isNew() ? this.renderNew() : this.renderUpdate()}
@@ -108,7 +124,7 @@ export default React.createClass({
                         <button className="btn btn__primary" type="submit">
                             Сохранить
                         </button>
-                        <a href={`/admin/${this.props.modelName}`} className="btn">
+                        <a onClick={this.dropChanges} href={`/admin/${this.props.modelName}`} className="btn">
                             Отменить
                         </a>
                     </div>

@@ -46,16 +46,9 @@ class AdminFrontend {
                 this._models[key].notNew();
             }
         }
-        window.onpopstate = (event) => {
+        window.addEventListener('popstate', (event) => {
             this.run();
-        };
-        document.body.addEventListener('click', (event) => {
-            if (event.target.href) {
-                event.preventDefault();
-                window.history.pushState('', '', event.target.href);
-                setTimeout(() => this.run(), 5);
-            }
-        })
+        }, false);
     }
 
     serverRoute(req, res) {
@@ -88,7 +81,6 @@ class AdminFrontend {
             }
             return Model.findById(id, params).then((Model) => {
                 this._models[modelName] = Model;
-                console.log(123, this._models);
                 resolve(this._models);
             }).catch((error) => reject(error));
         });
@@ -102,9 +94,15 @@ class AdminFrontend {
         return this.renderToString();
     }
 
+    routeChange(route) {
+        window.history.pushState('', '', route);
+        this.run();
+    }
+
     getView() {
         return AdminPage({
             models: this._models,
+            routeChange: this.routeChange.bind(this),
             params: this.params
         });
     }

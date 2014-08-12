@@ -12,7 +12,8 @@ class BaseModel {
     }
 
     dropChanges() {
-        this._fields = Object.create(this._initialFields);
+        this._changed = false;
+        this._fields = Object.assign({}, this._initialFields);
     }
 
     toJSON() {
@@ -67,7 +68,9 @@ class BaseModel {
         return new Promise((resolve, reject) => {
             request.get(`/api/data/${name}`).query(params).end((res) => {
                 name = `${name}Collection`;
-                if (!res.body.result) {
+                if (!res.body) {
+                    return reject();
+                } else if (!res.body.result) {
                     return reject();
                 } else if (!res.body.result.models) {
                     return reject();
@@ -86,7 +89,9 @@ class BaseModel {
         let name = this._name;
         return new Promise((resolve, reject) => {
             request.get(`/api/data/${name}/${id}`).query(params).end((res) => {
-                if (!res.body.result) {
+                if (!res.body) {
+                    return reject();
+                } else if (!res.body.result) {
                     return reject();
                 } else if (!res.body.result.models) {
                     return reject();
@@ -132,9 +137,7 @@ class BaseModel {
     }
 
     set(path, value) {
-        if (!this.isNew()) {
-            this._changed = true;
-        }
+        this._changed = true;
         if (!this._fields) {
             this._fields = {};
         }
@@ -176,7 +179,7 @@ class BaseModel {
         } else {
             promise = this.saveOnClient(params);
         }
-        promise.then(() => this._initialFields = Object.create(this._fields));
+        promise.then(() => this._initialFields = Object.assign({}, this._fields));
         if (this.isNew()) {
             promise.then(() => this.notNew());
         }
@@ -192,11 +195,13 @@ class BaseModel {
     }
 
     saveOnClient() {
-        let req = this.isNew ? 'post' : 'put';
+        let req = this.isNew() ? 'post' : 'put';
         let name = this.name;
         return new Promise((resolve, reject) => {
-            request[req](`/api/data/${name}/${this.id}`).type('form').send(this._fields).end((res) => {
-                if (!res.body.result) {
+            request[req](`/api/data/${name}/${this.get('_id')}`).type('form').send(this._fields).end((res) => {
+                if (!req.body) {
+                    return reject();
+                } else if (!res.body.result) {
                     return reject();
                 } else if (!res.body.result.models) {
                     return reject();
