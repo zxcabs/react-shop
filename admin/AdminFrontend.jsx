@@ -11,7 +11,9 @@ let parse = (path) => {
         return null;
     }
     return res.slice(1).reduce((accum, item, index) => {
-        accum[keys[index].name] = item;
+        if (item !== null && item !== undefined) {
+            accum[keys[index].name] = item;
+        }
         return accum;
     }, {});
 }
@@ -33,7 +35,6 @@ class AdminFrontend {
         for (let key in this._models) {
             if (!this._models.hasOwnProperty(key)) {continue;}
             let modelName = key;
-            console.log(modelName);
             if (Array.isArray(this._models[key])) {
                 modelName = key.slice(0, key.lastIndexOf('Collection'));
                 this._models[key] = this._models[key].map((obj) => {
@@ -43,14 +44,15 @@ class AdminFrontend {
                 });
             } else {
                 this._models[key] = new Models[modelName](this._models[key]);
+                this._models[key].notNew();
             }
         }
         window.addEventListener('popstate', (event) => {
             this.run();
         });
         document.body.addEventListener('click', (event) => {
-            event.preventDefault();
             if (event.target.href) {
+                event.preventDefault();
                 window.history.pushState('', '', event.target.href);
             }
         })
@@ -100,6 +102,7 @@ class AdminFrontend {
     }
 
     getView() {
+        console.log(this._models, this.params);
         return AdminPage({
             models: this._models,
             params: this.params
@@ -161,7 +164,7 @@ class AdminFrontend {
     }
 
     renderToDOM() {
-        React.renderComponent(this.getView(), document.documentElement);
+        React.renderComponent(this.getView(), document);
     }
 
     renderToErrorDOM(error) {

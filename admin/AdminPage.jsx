@@ -54,7 +54,6 @@ export default React.createClass({
     render() {
         let dashboardName = this.props.params.dashboard;
         let dashboard = dashboards[this.props.params.dashboard];
-
         return (
             <html>
                 <head>
@@ -90,7 +89,7 @@ export default React.createClass({
                                 />) : null}
                         </div>
                     </div>
-                    <div style={{display: 'none'}} id="initialData" type="text/json">
+                    <div style={{display: 'none'}} id="initialData">
                         {JSON.stringify(this.props.models)}
                     </div>
                     <script src="/vendor/traceur-runtime.js"></script>
