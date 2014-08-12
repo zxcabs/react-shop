@@ -179,13 +179,14 @@ export default class Server {
     }
 
     init() {
-        Object.keys(Models).forEach((name) => this.model(name, Models[name]));
-        this.defaultMiddlewares(this);
-        this.mountDataEndPoints();
-        this.mountAdmin();
-        this.express().use(express.static('./dist'));
-        return this;
-    }
+        if (!this._inited) {
+            Object.keys(Models).forEach((name) => this.model(name, Models[name]));
+            this._inited = true;
+            this.defaultMiddlewares(this);
+            this.mountDataEndPoints();
+            this.mountAdmin();
+            this.express().use(express.static('./dist'));
+        }
 
     run() {
         this.init().express().listen(8080);

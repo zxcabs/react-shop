@@ -25,6 +25,12 @@ class ProductSchema extends Schema {
         }]).add('description', {
             type: String,
             default: ''
+        }).add('quantity', {
+            type: Number,
+            default: 0
+        }).add('availability', {
+            type: Boolean,
+            default: true
         });
     }
 }
