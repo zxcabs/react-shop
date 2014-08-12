@@ -12,12 +12,12 @@ export default React.createClass({
 
     render() {
         return (
-        <label className="product-form__label">
-            <span className="product-form__label__description">
+        <label className="ProductForm__label">
+            <span className="ProductForm__label__description">
                 {this.props.key}
             </span>
             <select
-                className="product-form__label__input"
+                className="ProductForm__label__input"
                 name={this.props.key}
                 valueLink={this.linkState('value')}
             >

@@ -12,13 +12,13 @@ export default React.createClass({
 
     render() {
         return (
-        <label className="product-form__label">
-            <span className="product-form__label__description">
+        <label className="ProductForm__label">
+            <span className="ProductForm__label__description">
                 {this.props.key}
             </span>
             <input
                 autoComplete="off"
-                className="product-form__label__input"
+                className="ProductForm__label__input"
                 type="text"
                 name={this.props.key}
                 placeholder={this.props.placeholder || this.props.key}
