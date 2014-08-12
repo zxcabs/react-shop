@@ -30,7 +30,6 @@ class AdminFrontend {
 
     initClient() {
         let json = unescape(document.querySelector('#initialData').innerHTML.trim());
-        console.log(json);
         this._models = JSON.parse(json);
         for (let key in this._models) {
             if (!this._models.hasOwnProperty(key)) {continue;}
@@ -47,13 +46,14 @@ class AdminFrontend {
                 this._models[key].notNew();
             }
         }
-        window.addEventListener('popstate', (event) => {
+        window.onpopstate = (event) => {
             this.run();
-        });
+        };
         document.body.addEventListener('click', (event) => {
             if (event.target.href) {
                 event.preventDefault();
                 window.history.pushState('', '', event.target.href);
+                setTimeout(() => this.run(), 5);
             }
         })
     }
@@ -88,6 +88,7 @@ class AdminFrontend {
             }
             return Model.findById(id, params).then((Model) => {
                 this._models[modelName] = Model;
+                console.log(123, this._models);
                 resolve(this._models);
             }).catch((error) => reject(error));
         });
@@ -102,7 +103,6 @@ class AdminFrontend {
     }
 
     getView() {
-        console.log(this._models, this.params);
         return AdminPage({
             models: this._models,
             params: this.params

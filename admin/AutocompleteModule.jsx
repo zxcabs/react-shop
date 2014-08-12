@@ -3,7 +3,6 @@ module React from 'react/addons';
 
 let AutocompleteItem = React.createClass({
     onClick(event) {
-        console.log(123);
         this.props.bindValue(this.props.attr);
     },
 

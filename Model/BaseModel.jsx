@@ -67,15 +67,15 @@ class BaseModel {
         return new Promise((resolve, reject) => {
             request.get(`/api/data/${name}`).query(params).end((res) => {
                 name = `${name}Collection`;
-                if (!res.result) {
+                if (!res.body.result) {
                     return reject();
-                } else if (!res.result.models) {
+                } else if (!res.body.result.models) {
                     return reject();
-                } else if (!res.result.models[name]) {
+                } else if (!res.body.result.models[name]) {
                     return reject();
                 }
 
-                let models = res.result.models[name].map((model) => new this(model));
+                let models = res.body.result.models[name].map((model) => new this(model));
                 models = models.map((model) => model.notNew());
                 resolve(models);
             });
@@ -86,15 +86,15 @@ class BaseModel {
         let name = this._name;
         return new Promise((resolve, reject) => {
             request.get(`/api/data/${name}/${id}`).query(params).end((res) => {
-                if (!res.result) {
+                if (!res.body.result) {
                     return reject();
-                } else if (!res.result.models) {
+                } else if (!res.body.result.models) {
                     return reject();
-                } else if (!res.result.models[name]) {
+                } else if (!res.body.result.models[name]) {
                     return reject();
                 }
 
-                let model = new this(res.result.models[name])
+                let model = new this(res.body.result.models[name]);
                 model.notNew();
                 resolve(model);
             });
@@ -196,15 +196,15 @@ class BaseModel {
         let name = this.name;
         return new Promise((resolve, reject) => {
             request[req](`/api/data/${name}/${this.id}`).type('form').send(this._fields).end((res) => {
-                if (!res.result) {
+                if (!res.body.result) {
                     return reject();
-                } else if (!res.result.models) {
+                } else if (!res.body.result.models) {
                     return reject();
-                } else if (!res.result.models[name]) {
+                } else if (!res.body.result.models[name]) {
                     return reject();
                 }
 
-                this.setFields(res.result.models[name]);
+                this.setFields(res.body.result.models[name]);
                 this.notNew();
                 resolve(this);
             });

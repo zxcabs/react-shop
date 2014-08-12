@@ -10,14 +10,18 @@ export default class DataEndPoint extends EndPoint {
         }
         model.save(req.query).then(() => {
             res.send({
-                models: req.models
+                result: {
+                    models: req.models
+                }
             });
         }).catch((err) => res.send(500));
     }
 
     _read(req, res) {
         res.status(200).send({
-            models: req.models
+            result: {
+                models: req.models
+            }
         });
     }
 

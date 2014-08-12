@@ -82,6 +82,7 @@ export default React.createClass({
                         <div className="content__current-operation">
                             {this.props.params.id
                                 ? (<DashboardCreateItem
+                                    key={dashboardName + this.props.params.id}
                                     tab={this.props.params.tab || 0}
                                     dashboard={dashboard}
                                     modelName={dashboardName}
