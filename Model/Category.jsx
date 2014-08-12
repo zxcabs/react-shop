@@ -1,22 +1,30 @@
 import MongooseModel from './MongooseModel.jsx';
+import Schema from './Schema.jsx';
 
-export default class Category extends MongooseModel {
-    static generateSchema() {
-        return {
-            name: {
-                type: String,
-                default: ''
-            },
-            status: {
-                type: String,
-                default: 'active'
-            },
-            parent: {
-                type: this.getMongoSchema().ObjectId,
-                ref: 'Category'
-            }
-        };
+class Category extends MongooseModel {
+
+}
+
+class CategorySchema extends Schema {
+    addFields() {
+        this.add('name', {
+            type: String,
+            required: true
+        });
+
+        this.add('description', {
+            type: String,
+            default: ''
+        });
+
+        this.add('parent', {
+            type: Schema.ObjectId,
+            ref: 'Category'
+        });
     }
 }
 
-Category.name = 'Category';
+Category.Schema = CategorySchema;
+Category.setName('Category');
+
+export default Category;

@@ -1,29 +1,29 @@
 import MongooseModel from './MongooseModel.jsx';
+import Schema from './Schema.jsx';
 
-export default class User extends MongooseModel {
+class User extends MongooseModel {
     is(role) {
         return this.role === role;
     }
+}
 
-    static generateSchema() {
-        return {
-            email: {
-                type: String,
-                required: true,
-                unique: true
-            },
-            password: {
-                type: String,
-                required: true
-            },
-            role: String,
-            name: {
-                first: String,
-                middle: String,
-                last: String
-            }
-        };
+class UserSchema extends Schema {
+    addFields() {
+        this.add('email', {
+            type: String,
+            required: true,
+            unique: true
+        }).add('password', {
+            type: String,
+            required: true
+        }).add('role', {
+            type: String,
+            default: 'user'
+        });
     }
 }
 
-User.name = 'User';
+User.Schema = UserSchema;
+User.setName('User');
+
+export default User;

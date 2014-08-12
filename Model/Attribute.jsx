@@ -1,11 +1,20 @@
 import MongooseModel from './MongooseModel.jsx';
+import Schema from './Schema.jsx';
 
-export default class Attribute extends MongooseModel {
-    static generateSchema() {
-        return {
-            name: String
-        }
+class Attribute extends MongooseModel {
+
+}
+
+class AttributeSchema extends Schema {
+    addFields() {
+        this.add('name', {
+            type: String,
+            required: true
+        });
     }
 }
 
-Attribute.name = 'Attribute';
+Attribute.Schema = AttributeSchema;
+Attribute.setName('Attribute');
+
+export default Attribute;

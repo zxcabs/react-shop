@@ -5,6 +5,7 @@ export default class DataEndPoint extends EndPoint {
         let model = req.models[req.params.relModel || req.params.model];
         for (let key in req.body) {
             if (!req.body.hasOwnProperty(key)) {continue;}
+            if (!model.get(key) && !req.body[key]) {continue;}
             model.set(key, req.body[key]);
         }
         model.save(req.query).then(() => {

@@ -1,6 +1,6 @@
 import BaseModel from './BaseModel.jsx';
 
-export default class MongooseModel extends BaseModel {
+class MongooseModel extends BaseModel {
     static getPageSize() {
         return 20;
     }
@@ -37,41 +37,25 @@ export default class MongooseModel extends BaseModel {
 
     static getSchema() {
         if (!this._schema) {
-            let schema = this.generateSchema();
-            if (!schema) {
-                return null;
-            }
-            let mongo = this.getMongo();
-            this._schema = new mongo.Schema(schema);
+            this._schema = new this.Schema();
         }
         return this._schema;
     }
 
-    static generateSchema() {
-        return null;
+    getSchema() {
+        return this.constructor.getSchema();
     }
 
-    getSchemaPlainObj() {
-        return this.constructor.generateSchema();
+    static init() {
+        this.mongo.model(this._name, new this.mongo.Schema(this.getSchema().toObject()));
     }
 
-    static setServer(...args) {
-        let res = super(...args);
-        let schema = this.getSchema();
-        if (!schema) {
-            throw new Error(`Implement schema on Model ${this.name} before passing it to server`);
-        }
-        let mongo = this.getMongo();
-        mongo.model(this.name, this.getSchema());
-        return res;
+    static get mongo() {
+        return this.server.getMongo();
     }
 
-    static getMongo() {
-        return require('mongo' + 'ose');
-    }
-
-    getMongo() {
-        return this.constructor.getMongo();
+    get mongo() {
+        return this.constructor.mongo;
     }
 
     static populate(query, populate) {
@@ -83,8 +67,7 @@ export default class MongooseModel extends BaseModel {
 
     static findOnServer(params) {
         return new Promise((resolve, reject) => {
-            let mongoose = this.getMongo();
-            let query = mongoose.model(this.name).find(...this.prepareParams(params));
+            let query = this.mongo.model(this._name).find(...this.prepareParams(params));
             if (params.refs) {
                 query = this.populate(query, params.refs);
             }
@@ -102,23 +85,9 @@ export default class MongooseModel extends BaseModel {
         });
     }
 
-    getMongoSchema() {
-        return this.constructor.getMongoSchema();
-    }
-
-    static getMongoSchema() {
-        if (typeof window === 'undefined') {
-            return this.getMongo().Schema;
-        }
-        return {
-            ObjectId: function() {}
-        };
-    }
-
     static findByIdOnServer(id, params) {
         return new Promise((resolve, reject) => {
-            let mongoose = this.getMongo();
-            let model = mongoose.model(this.name);
+            let model = this.mongo.model(this._name);
             let fields = this.prepareParams[1] || null;
             let query = model.findById(id, fields);
             if (params.populate) {
@@ -153,8 +122,7 @@ export default class MongooseModel extends BaseModel {
 
     saveOnServer(params) {
         if (!this._mongoModel) {
-            let mongoose = this.getMongo();
-            let Model = mongoose.model(this.name);
+            let Model = this.mongo.model(this.name);
             this._mongoModel = new Model(this._fields);
         }
         return new Promise((resolve, reject) => {
@@ -182,4 +150,6 @@ export default class MongooseModel extends BaseModel {
     }
 }
 
-MongooseModel.name = 'Mongoose';
+MongooseModel.setName('Mongoose');
+
+export default MongooseModel;

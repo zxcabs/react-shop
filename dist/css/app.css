@@ -278,7 +278,7 @@ body {
 .EditProductForm__row {
   overflow: hidden;
 }
-.EditProductForm__row:before {
+.EditProductForm__rowbefore {
   display: block;
   content: "";
 }
@@ -302,7 +302,7 @@ body {
   line-height: 18px;
 }
 .EditProductForm__controls__list__item__link {
-  display: block;
+  display: inline-block;
   border: 1px solid #e5e5e5;
   margin: 1px 10px 1px 0;
   padding: 5px 10px;
