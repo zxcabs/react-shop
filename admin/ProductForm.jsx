@@ -82,21 +82,21 @@ export default React.createClass({
 
         return (
             <div>
-                <form className="product-form">
-                    <label className="product-form__label">
-                        <span className="product-form__label__description">
+                <form className="ProductForm">
+                    <label className="ProductForm__label">
+                        <span className="ProductForm__label__description">
                             Название
                         </span>
-                        <input autoComplete="off" className="product-form__label__input" type="text" name="name" placeholder="Название" valueLink={this.linkState('new_product_name')} />
+                        <input autoComplete="off" className="ProductForm__label__input" type="text" name="name" placeholder="Название" valueLink={this.linkState('new_product_name')} />
                     </label>
-                    <label className="product-form__label">
-                        <span className="product-form__label__description">
+                    <label className="ProductForm__label">
+                        <span className="ProductForm__label__description">
                             Цена
                         </span>
-                        <input autoComplete="off" className="product-form__label__input" type="text" name="price" placeholder="Цена" valueLink={this.linkState('new_product_price')} />
+                        <input autoComplete="off" className="ProductForm__label__input" type="text" name="price" placeholder="Цена" valueLink={this.linkState('new_product_price')} />
                     </label>
-                    <label className="product-form__label">
-                        <span className="product-form__label__description">
+                    <label className="ProductForm__label">
+                        <span className="ProductForm__label__description">
                             Главная категория
                         </span>
                         <select value={selectState} onChange={handleSelectChange}>
@@ -104,7 +104,7 @@ export default React.createClass({
                         </select>
                     </label>
                 </form>
-                <div className="product-form__footer">
+                <div className="ProductForm__footer">
                     <button className="btn btn__primary" onClick={this.onClick} type="submit">
                         Сохранить
                     </button>

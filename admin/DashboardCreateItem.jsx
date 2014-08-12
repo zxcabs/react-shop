@@ -104,7 +104,7 @@ export default React.createClass({
                         ? null : (<input type="hidden" name="_method" value="PUT" />)}
                     {this.props.model.isNew() ? this.renderNew() : this.renderUpdate()}
 
-                    <div className="product-form__footer">
+                    <div className="ProductForm__footer">
                         <button className="btn btn__primary" type="submit">
                             Сохранить
                         </button>

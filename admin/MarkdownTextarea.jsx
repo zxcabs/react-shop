@@ -12,12 +12,12 @@ export default React.createClass({
 
     render() {
         return (
-        <label className="product-form__label">
-            <span className="product-form__label__description">
+        <label className="ProductForm__label">
+            <span className="ProductForm__label__description">
                 {this.props.key}
             </span>
             <textarea
-                className="product-form__label__textarea"
+                className="ProductForm__label__textarea"
                 name={this.props.key}
                 placeholder={this.props.key}
                 valueLink={this.linkState('value')}
