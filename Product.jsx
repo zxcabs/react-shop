@@ -1,7 +1,7 @@
 import EndPoint from './EndPoint.jsx';
-import Product from './frontend/Product.jsx';
+import ProductPage from './frontend/ProductPage.jsx';
 
-export default class SupplyClubProduct extends EndPoint {
+export default class Product extends EndPoint {
     mountEndPoints() {
         let route = this.route('/:Product/:id');
         route.get(this._get.bind(this));
@@ -13,7 +13,7 @@ export default class SupplyClubProduct extends EndPoint {
         let query = req.query;
         let params = req.params;
 
-        let frontend = new Product({
+        let frontend = new ProductPage({
             user,
             query,
             params

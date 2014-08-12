@@ -2,11 +2,15 @@
 let React = require('react/addons');
 
 export default React.createClass({
+    prepareURL() {
+        let id = this.props.data.get(id);
+        return '/products/' + id;
+    },
     render() {
         return(
             <div className="StoreItem">
                 <div className="StoreItem__image-and-details">
-                    <a href="#">
+                    <a href={this.prepareURL()} >
                         <img className="StoreItem__image" src="#" />
                     </a>
                     <div className="StoreItem__details StoreItem__details--active">
