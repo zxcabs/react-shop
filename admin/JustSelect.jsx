@@ -21,7 +21,7 @@ export default React.createClass({
                 name={this.props.key}
                 valueLink={Link}
             >
-                {this.props.schema.available.map((option) => (
+                {this.props.schema.enum.values.map((option) => (
                     <option key={option} value={option}>
                         {option}
                     </option>

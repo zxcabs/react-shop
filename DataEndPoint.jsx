@@ -18,7 +18,7 @@ export default class DataEndPoint extends EndPoint {
                     models: req.models
                 }
             });
-        }).catch((err) => res.status(500).send());
+        }).catch((err) => res.status(500).send(err));
     }
 
     _read(req, res) {
@@ -47,7 +47,7 @@ export default class DataEndPoint extends EndPoint {
             this.server.loadModel(req.method, req.params.model, req.params.modelId, req.models, req.query, User)
             .then(() => next()).catch((error) => {
                 console.log(error);
-                res.status(404 || 403 || 500).end();
+                res.status(404 || 403 || 500).end(error);
             });
         });
         this.router.param('relModel', (req, res, next) => {
@@ -55,7 +55,7 @@ export default class DataEndPoint extends EndPoint {
             this.server.loadModels(req.method, req.params.relModel, req.params.relModelId, req.models, req.query, User)
             .then(() => next()).catch((error) => {
                 console.log(error);
-                res.status(404 || 403 || 500).end();
+                res.status(404 || 403 || 500).end(error);
             });
         });
 

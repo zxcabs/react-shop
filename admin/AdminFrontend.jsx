@@ -119,8 +119,19 @@ class AdminFrontend {
                 promises.push(this.loadModel(this.params.dashboard, this.params.id, this.query));
             }
             Promise.all(promises).then(() => {
+                if (promises.length > 1) {
+                    let Model = this._models[this.params.dashboard];
+                    let id = Model.get('_id');
+                    let Models = this._models[this.params.dashboard + 'Collection'];
+                    for (let index = 0; index < Models.length; index++) {
+                        if (Models[index].get('_id') !== id) {continue;}
+                        Models.splice(index, 1, Model);
+                        break;
+                    }
+                }
                 resolve(200);
             }).catch((error) => {
+                this._models = {};
                 reject(error);
             });
         });

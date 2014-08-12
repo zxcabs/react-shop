@@ -179,7 +179,10 @@ class BaseModel {
         } else {
             promise = this.saveOnClient(params);
         }
-        promise.then(() => this._initialFields = Object.assign({}, this._fields));
+        promise.then(() => {
+            this._initialFields = Object.assign({}, this._fields);
+            this._changed = false;
+        });
         if (this.isNew()) {
             promise.then(() => this.notNew());
         }
@@ -196,10 +199,16 @@ class BaseModel {
 
     saveOnClient() {
         let req = this.isNew() ? 'post' : 'put';
+        if (req === 'put') {
+            if (!this.get('_id')) {
+                req = 'post';
+            }
+        }
         let name = this.name;
         return new Promise((resolve, reject) => {
-            request[req](`/api/data/${name}/${this.get('_id')}`).type('form').send(this._fields).end((res) => {
-                if (!req.body) {
+            let url = `/api/data/${name}/${this.get('_id')}`;
+            request[req](url).type('form').send(this._fields).end((res) => {
+                if (!res.body) {
                     return reject();
                 } else if (!res.body.result) {
                     return reject();

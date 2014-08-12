@@ -1,5 +1,7 @@
 import BaseModel from './BaseModel.jsx';
-
+function escapeRegExp(str = '') {
+  return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
 class MongooseModel extends BaseModel {
     static getPageSize() {
         return 20;
@@ -8,6 +10,17 @@ class MongooseModel extends BaseModel {
     static prepareParams(params) {
         let res = [];
         let conditions = {};
+        if (params.query) {
+            conditions['$text'] = {
+                $search: params.query
+            };
+        }
+        if (params.search_query) {
+            conditions[params.search_field || 'name'] = {
+                $regex: new RegExp(escapeRegExp(params.search_query)}),
+                $options: 'i'
+            };
+        }
         res.push(conditions);
         let fields = (params.fields || '').split(',').join(' ');
         res.push(fields.length ? fields : null);

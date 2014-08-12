@@ -31,6 +31,7 @@ export default React.createClass({
                 schema={attr}
                 setValue={this.updateValue}
                 placeholder={attr.default}
+                model={this.props.model}
                 value={hashMap[attr.__name] || ''}
             />
             );
@@ -83,6 +84,7 @@ export default React.createClass({
                 schema={attr}
                 setValue={this.updateValue}
                 placeholder={attr.default}
+                model={this.props.model}
                 value={hashMap[field] || ''}
             />
             );
@@ -95,8 +97,13 @@ export default React.createClass({
             return;
         }
 
-        this.props.model.save().then((model) => {
-            this.updateModel(this.model);
+        let self = this;
+        this.props.model.save().then(() => {
+            if (self.props.requestParentUpdate) {
+                self.props.requestParentUpdate();
+            }
+        }).catch((e) => {
+            console.log('implement error save');
         });
     },
 

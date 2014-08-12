@@ -7,6 +7,7 @@ import DashboardCreateItem from './DashboardCreateItem.jsx'
 import JustInput from './JustInput.jsx'
 import JustSelect from './JustSelect.jsx'
 import MarkdownTextarea from './MarkdownTextarea.jsx'
+import AutocompleteInput from './AutocompleteInput.jsx'
 
 let dashboards = {
     Category: {
@@ -16,7 +17,7 @@ let dashboards = {
         fields: {
             name: JustInput,
             description: MarkdownTextarea,
-            parent: JustInput,
+            parent: AutocompleteInput,
             status: JustSelect
         },
         layout: [{
@@ -31,7 +32,7 @@ let dashboards = {
         fields: {
             name: JustInput,
             price: JustInput,
-            mainCategory: JustInput,
+            mainCategory: AutocompleteInput,
             status: JustSelect
         },
         layout: [{
@@ -58,12 +59,40 @@ export default React.createClass({
         }
     },
 
-    render() {
+    renderTabs() {
         let dashboardName = this.props.params.dashboard;
         let dashboard = dashboards[this.props.params.dashboard];
+
+        let tabs = [
+            (<div key="1" className="content__list">
+                <DashboardList
+                    dashboard={dashboard}
+                    dashboardName={dashboardName}
+                    collection={this.props.models[`${dashboardName}Collection`]}
+                />
+            </div>),
+            (<div key="2" className="content__current-operation">
+                {this.props.params.id
+                    ? (<DashboardCreateItem
+                        key={dashboardName + this.props.params.id}
+                        tab={this.props.params.tab || 0}
+                        dashboard={dashboard}
+                        modelName={dashboardName}
+                        requestParentUpdate={this.forceUpdate.bind(this)}
+                        model={this.props.models[dashboardName]}
+                    />) : null}
+            </div>)
+        ];
+
+        return tabs;
+    },
+
+    render() {
+        let isInitialRender = !!this.notInitialRender;
         if (typeof window !== 'undefined') {
             window.asd = this.props.models;
         }
+        this.notInitialRender = true;
         return (
             <html>
                 <head>
@@ -82,23 +111,7 @@ export default React.createClass({
                         <Menu />
                     </div>
                     <div className="content">
-                        <div className="content__list">
-                            <DashboardList
-                                dashboard={dashboard}
-                                dashboardName={dashboardName}
-                                collection={this.props.models[`${dashboardName}Collection`]}
-                            />
-                        </div>
-                        <div className="content__current-operation">
-                            {this.props.params.id
-                                ? (<DashboardCreateItem
-                                    key={dashboardName + this.props.params.id}
-                                    tab={this.props.params.tab || 0}
-                                    dashboard={dashboard}
-                                    modelName={dashboardName}
-                                    model={this.props.models[dashboardName]}
-                                />) : null}
-                        </div>
+                        {this.renderTabs()}
                     </div>
                     <div style={{display: 'none'}} id="initialData">
                         {JSON.stringify(this.props.models)}

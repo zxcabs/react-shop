@@ -18,6 +18,11 @@ var dist = 'dist';
 
 var jsxFiles = 'frontend/**/*.jsx';
 
+gulp.task('vendor', function () {
+    return gulp.src('node_modules/es6ify/node_modules/traceur/bin/traceur-runtime.js').
+        pipe(gulp.dest(dist + '/vendor'));
+});
+
 function compileScripts(watch) {
     gutil.log('Starting browserify');
 
@@ -31,11 +36,6 @@ function compileScripts(watch) {
         bundler = browserify(entryFile);
     // }
     //
-
-    gulp.task('vendor', function () {
-        return gulp.src('node_modules/es6ify/node_modules/traceur/bin/traceur-runtime.js').
-            pipe(gulp.dest(dist + '/vendor'));
-    });
 
     bundler.transform(reactify);
     bundler.transform(es6ify.configure(/.jsx/));
@@ -87,7 +87,7 @@ function initWatch(files, task) {
 /**
  * Run default task
  */
-gulp.task('default', ['build-css'], function () {
+gulp.task('default', ['vendor', 'build-css'], function () {
     function initWatch(files, task) {
         gulp.start(task);
         gulp.watch(files, [task]);
