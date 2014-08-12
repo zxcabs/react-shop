@@ -13,8 +13,10 @@ export default React.createClass({
             'DashboardItem__headline__info__label--inactive': item.get('status') === 'inactive'
         });
 
+        let url = `/admin/${this.props.dashboardName}/${item.get('_id')}`;
+
         return (
-            <a href={item.get('_id')} className="DashboardItem">
+            <a href={url} className="DashboardItem">
                 <span className="DashboardItem__image">
                 {item.get('main_pic')
                     ? (<img className="DashboardItem__image__pic" src={item.get('main_pic')} />)

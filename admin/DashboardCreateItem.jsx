@@ -26,11 +26,14 @@ export default React.createClass({
         return required.map((attr) => {
             let View = this.getViewForAttr(attr.__name);
             return (
-                <View
-                    key={attr.__name}
-                    schema={attr}
-                    value={hashMap[attr.__name] || attr.default || ''}
-                />);
+            <View
+                key={attr.__name}
+                schema={attr}
+                setValue={this.updateValue}
+                placeholder={attr.default}
+                value={hashMap[attr.__name] || ''}
+            />
+            );
         });
     },
 
@@ -48,60 +51,70 @@ export default React.createClass({
     },
 
     renderTabs() {
-        return this.props.dashboard.layout.map((tab) => {
+        return this.props.dashboard.layout.map((tab, index) => {
+            let url = `/admin/${this.props.modelName}/${this.props.model.get('_id')}/${index}`;
+            let currentTab = Number(this.props.tab);
+            let classes = React.addons.classSet({
+                "EditProductForm__controls__list__item__link": true,
+                "EditProductForm__controls__list__item__link--active": index === currentTab
+            });
             return (
-            <a href="#" key={tab.name} className="EditProductForm__controls__list__item__link">
+            <a href={url} key={tab.name} className={classes}>
                 {tab.name}
             </a>
             );
         });
     },
 
+    updateValue(name, value) {
+
+    },
+
     renderFields() {
         let schema = this.props.model.getSchema().toObject();
         let hashMap = this.getPlainObject();
-        return this.props.dashboard.layout[0].fields.map((field) => {
+        return this.props.dashboard.layout[this.props.tab].fields.map((field) => {
             let attr = schema[field];
             let View = this.getViewForAttr(field);
             return (
-                <View
-                    key={field}
-                    schema={attr}
-                    value={hashMap[field] || attr.default || ''}
-                />);
+            <View
+                key={field}
+                schema={attr}
+                setValue={this.updateValue}
+                placeholder={attr.default}
+                value={hashMap[field] || ''}
+            />
+            );
         });
     },
 
     render() {
         let id = this.props.model.get('_id');
-        let actionUrl = '/api/data/' + this.props.modelName + (id ? '/' + id :'');
+        let actionUrl = `/api/data/${this.props.modelName}/${id||''}`;
         return (
-            <div>
-                <div className="DashboardCreateItem">
-                    <div className="DashboardCreateItem__parent-box">
-                        <h1 className="DashboardCreateItem__parent-box__heading">
-                            {this.props.model.isNew() ? "Создание" : "Редактирование"}
-                        </h1>
-                    </div>
-                    <form method="POST" action={actionUrl}>
-                        {this.props.model.isNew()
-                            ? null : (<input type="hidden" name="_method" value="PUT" />)}
-                        {this.props.model.isNew() ? this.renderNew() : this.renderUpdate()}
-
-                        <div className="product-form__footer">
-                            <button className="btn btn__primary" type="submit">
-                                Сохранить
-                            </button>
-                            <button className="btn" type="cancel">
-                                Отменить
-                            </button>
-                        </div>
-                    </form>
+        <div>
+            <div className="DashboardCreateItem">
+                <div className="DashboardCreateItem__parent-box">
+                    <h1 className="DashboardCreateItem__parent-box__heading">
+                        {this.props.model.isNew() ? "Создание" : "Редактирование"}
+                    </h1>
                 </div>
+                <form method="POST" action={actionUrl}>
+                    {this.props.model.isNew()
+                        ? null : (<input type="hidden" name="_method" value="PUT" />)}
+                    {this.props.model.isNew() ? this.renderNew() : this.renderUpdate()}
+
+                    <div className="product-form__footer">
+                        <button className="btn btn__primary" type="submit">
+                            Сохранить
+                        </button>
+                        <a href={`/admin/${this.props.modelName}`} className="btn">
+                            Отменить
+                        </a>
+                    </div>
+                </form>
             </div>
+        </div>
         );
     }
 });
-
-
-

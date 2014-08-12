@@ -21,17 +21,22 @@ var jsxFiles = 'frontend/**/*.jsx';
 function compileScripts(watch) {
     gutil.log('Starting browserify');
 
-    var entryFile = './frontend/index.jsx';
+    var entryFile = './admin/AdminFrontend.jsx';
     es6ify.traceurOverrides = {experimental: true};
 
     var bundler;
-    if (watch) {
-        bundler = watchify(entryFile);
-    } else {
+    // if (watch) {
+    //     bundler = watchify(entryFile);
+    // } else {
         bundler = browserify(entryFile);
-    }
+    // }
+    //
 
-    bundler.require(requireFiles);
+    gulp.task('vendor', function () {
+        return gulp.src('node_modules/es6ify/node_modules/traceur/bin/traceur-runtime.js').
+            pipe(gulp.dest(dist + '/vendor'));
+    });
+
     bundler.transform(reactify);
     bundler.transform(es6ify.configure(/.jsx/));
 
@@ -88,7 +93,7 @@ gulp.task('default', ['build-css'], function () {
         gulp.watch(files, [task]);
     }
 
-    //compileScripts(true);
+    compileScripts(true);
 
 //    gulp.watch([dist + '/**/*'], reloadPage);
     gulp.watch([stylSelector], ['build-css']);

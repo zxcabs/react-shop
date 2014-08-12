@@ -1,7 +1,7 @@
 import MongooseModel from './MongooseModel.jsx';
 import Schema from './Schema.jsx';
 
-export default class Category extends MongooseModel {
+class Category extends MongooseModel {
 
 }
 
@@ -25,4 +25,6 @@ class CategorySchema extends Schema {
 }
 
 Category.Schema = CategorySchema;
-Category.name = 'Category';
+Category.setName('Category');
+
+export default Category;

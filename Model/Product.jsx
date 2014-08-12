@@ -1,7 +1,7 @@
 import MongooseModel from './MongooseModel.jsx';
 import Schema from './Schema.jsx';
 
-export default class Product extends MongooseModel {
+class Product extends MongooseModel {
 
 }
 
@@ -30,4 +30,6 @@ class ProductSchema extends Schema {
 }
 
 Product.Schema = ProductSchema;
-Product.name = 'Product';
+Product.setName('Product');
+
+export default Product;

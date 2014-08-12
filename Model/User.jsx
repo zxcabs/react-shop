@@ -1,7 +1,7 @@
 import MongooseModel from './MongooseModel.jsx';
 import Schema from './Schema.jsx';
 
-export default class User extends MongooseModel {
+class User extends MongooseModel {
     is(role) {
         return this.role === role;
     }
@@ -24,4 +24,6 @@ class UserSchema extends Schema {
 }
 
 User.Schema = UserSchema;
-User.name = 'User';
+User.setName('User');
+
+export default User;

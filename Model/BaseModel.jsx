@@ -1,6 +1,6 @@
 let request = require('superagent');
 
-export default class BaseModel {
+class BaseModel {
     constructor(fields) {
         this._isNotNew = false;
         this.setFields(fields);
@@ -63,7 +63,7 @@ export default class BaseModel {
     }
 
     static findOnClient(params) {
-        let name = this.name;
+        let name = this._name;
         return new Promise((resolve, reject) => {
             request.get(`/api/data/${name}`).query(params).end((res) => {
                 name = `${name}Collection`;
@@ -83,7 +83,7 @@ export default class BaseModel {
     }
 
     static findByIdOnClient(id, params) {
-        let name = this.name;
+        let name = this._name;
         return new Promise((resolve, reject) => {
             request.get(`/api/data/${name}/${id}`).query(params).end((res) => {
                 if (!res.result) {
@@ -102,7 +102,11 @@ export default class BaseModel {
     }
 
     get name() {
-        return this.constructor.name;
+        return this.constructor._name;
+    }
+
+    static setName(value) {
+        this._name = value;
     }
 
     get(path = '') {
@@ -208,4 +212,6 @@ export default class BaseModel {
     }
 }
 
-BaseModel.name = 'Base';
+BaseModel.setName('Base');
+
+export default BaseModel;

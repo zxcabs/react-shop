@@ -1,7 +1,7 @@
 import MongooseModel from './MongooseModel.jsx';
 import Schema from './Schema.jsx';
 
-export default class Attribute extends MongooseModel {
+class Attribute extends MongooseModel {
 
 }
 
@@ -15,4 +15,6 @@ class AttributeSchema extends Schema {
 }
 
 Attribute.Schema = AttributeSchema;
-Attribute.name = 'Attribute';
+Attribute.setName('Attribute');
+
+export default Attribute;

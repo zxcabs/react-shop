@@ -1,6 +1,6 @@
 import BaseModel from './BaseModel.jsx';
 
-export default class MongooseModel extends BaseModel {
+class MongooseModel extends BaseModel {
     static getPageSize() {
         return 20;
     }
@@ -47,7 +47,7 @@ export default class MongooseModel extends BaseModel {
     }
 
     static init() {
-        this.mongo.model(this.name, new this.mongo.Schema(this.getSchema().toObject()));
+        this.mongo.model(this._name, new this.mongo.Schema(this.getSchema().toObject()));
     }
 
     static get mongo() {
@@ -67,7 +67,7 @@ export default class MongooseModel extends BaseModel {
 
     static findOnServer(params) {
         return new Promise((resolve, reject) => {
-            let query = this.mongo.model(this.name).find(...this.prepareParams(params));
+            let query = this.mongo.model(this._name).find(...this.prepareParams(params));
             if (params.refs) {
                 query = this.populate(query, params.refs);
             }
@@ -87,7 +87,7 @@ export default class MongooseModel extends BaseModel {
 
     static findByIdOnServer(id, params) {
         return new Promise((resolve, reject) => {
-            let model = this.mongo.model(this.name);
+            let model = this.mongo.model(this._name);
             let fields = this.prepareParams[1] || null;
             let query = model.findById(id, fields);
             if (params.populate) {
@@ -150,4 +150,6 @@ export default class MongooseModel extends BaseModel {
     }
 }
 
-MongooseModel.name = 'Mongoose';
+MongooseModel.setName('Mongoose');
+
+export default MongooseModel;

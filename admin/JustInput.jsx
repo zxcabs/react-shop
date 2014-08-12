@@ -16,7 +16,14 @@ export default React.createClass({
             <span className="product-form__label__description">
                 {this.props.key}
             </span>
-            <input autoComplete="off" className="product-form__label__input" type="text" name={this.props.key} placeholder={this.props.key} valueLink={this.linkState('value')} />
+            <input
+                autoComplete="off"
+                className="product-form__label__input"
+                type="text"
+                name={this.props.key}
+                placeholder={this.props.placeholder || this.props.key}
+                valueLink={this.linkState('value')}
+            />
         </label>
         );
     }
