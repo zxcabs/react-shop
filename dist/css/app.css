@@ -1,3 +1,18 @@
+.AutocompleteInput {
+  display: block;
+}
+.AutocompleteList {
+  display: none;
+  position: absolute;
+}
+.AutocompleteList--visible {
+  display: block;
+}
+.AutocompleteItem {
+  display: block;
+  cursor: pointer;
+}
+
 .AutocompleteForm {
   display: block;
   width: 230px;

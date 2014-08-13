@@ -1,6 +1,8 @@
 /** @jsx React.DOM */
 let React = require('react/addons');
-
+if (typeof window !== 'undefined') {
+    window.React = React;
+}
 import Menu from './Menu.jsx'
 import DashboardList from './DashboardList.jsx'
 import DashboardCreateItem from './DashboardCreateItem.jsx'
@@ -113,9 +115,7 @@ export default React.createClass({
                     <div className="content">
                         {this.renderTabs()}
                     </div>
-                    <div style={{display: 'none'}} id="initialData">
-                        {JSON.stringify(this.props.models)}
-                    </div>
+                    <input readOnly="true" value={JSON.stringify(this.props.models)} style={{display: 'none'}} id="initialData"/>
                     <script src="/vendor/traceur-runtime.js"></script>
                     <script src="/bundle/app.js"></script>
                 </body>

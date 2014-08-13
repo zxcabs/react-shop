@@ -1,6 +1,10 @@
+var React = require('react/addons');
+if (typeof window !== 'undefined') {
+    window.React = React;
+}
+
 import Models from '../Models.jsx';
 import AdminPage from './AdminPage.jsx';
-let React = require('react/addons');
 
 let keys = [];
 let parser = require('path-to-regexp')('/:dashboard/:id?/:tab?', keys);
@@ -29,8 +33,8 @@ class AdminFrontend {
     }
 
     initClient() {
-        let json = unescape(document.querySelector('#initialData').innerHTML.trim());
-        this._models = JSON.parse(json);
+        let initialJSON = document.querySelector('#initialData').value;
+        this._models = JSON.parse(initialJSON);
         for (let key in this._models) {
             if (!this._models.hasOwnProperty(key)) {continue;}
             let modelName = key;
@@ -68,7 +72,6 @@ class AdminFrontend {
         }
         return new Promise((resolve, reject) => {
             let Model = Models[modelName];
-            params.refs = 'parent';
             if (!id) {
                 return Model.find(params).then((Models) => {
                     this._models[modelName + 'Collection'] = Models;
