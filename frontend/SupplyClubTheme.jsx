@@ -2,7 +2,7 @@ import MainPage from './MainPage.jsx';
 import Models from '../Models.jsx';
 let React = require('react/addons');
 
-export default class AdminFrontend {
+export default class SupplyClubTheme {
     constructor(opt) {
         this._models = {};
         this.user = opt.user;

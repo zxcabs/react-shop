@@ -32,12 +32,13 @@ let dashboards = {
         fields: {
             name: JustInput,
             price: JustInput,
+            description: MarkdownTextarea,
             mainCategory: AutocompleteInput,
             status: JustSelect
         },
         layout: [{
             name: 'main',
-            fields: ['name', 'price', 'mainCategory', 'status']
+            fields: ['name', 'price', 'description', 'mainCategory', 'status']
         }, {
             name: 'images',
             fields: []

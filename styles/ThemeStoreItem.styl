@@ -9,6 +9,8 @@
     margin-bottom 40px
     position relative
     height 350px
+    &:hover &__details
+        transform translate3d(0,-70px,0)
     &:nth-child(4n+4)
         margin-right 0
     &__image-and-details
@@ -47,8 +49,6 @@
         transform translate3d(0,0,0)
         transform-style preserve-3d
         transition 200ms ease
-        &--active
-             transform translate3d(0,-70px,0)
         &__fast-look
             display block
             text-align center

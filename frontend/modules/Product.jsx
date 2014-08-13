@@ -15,13 +15,13 @@ export default React.createClass({
                     </div>
                     <div className="Product__top__right">
                         <span className="Product__top__right__small-description">
-                            Роторная тату машинка
+                            Модель здесь!
                         </span>
                         <span className="Product__top__right__title">
-                            Dragonfly V1 Blue
+                            {this.props.model.get('name')}
                         </span>
-                        <ProductBuyForm />
-                        <ProductTabs />
+                        <ProductBuyForm data={this.props.model} />
+                        <ProductTabs text={this.props.model.get('description')} attrs={this.props.model.get('attributes')} />
                     </div>
                 </div>
             </div>

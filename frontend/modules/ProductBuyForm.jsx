@@ -14,12 +14,12 @@ export default React.createClass({
                         </td>
                         <td className="ProductBuyForm__table__td__price-only">
                             <span className="ProductBuyForm__table__price">
-                                1360 руб.
+                                {this.props.data.get('price')} руб.
                             </span>
                         </td>
                         <td className="ProductBuyForm__table__td__price-and-availability">
                             <span className="ProductBuyForm__table__price">
-                                3300 руб.
+                                {this.props.data.get('price')} руб.
                             </span>
                             <span className="ProductBuyForm__table__availability">
                                 В наличии
@@ -33,7 +33,7 @@ export default React.createClass({
                         </td>
                         <td className="ProductBuyForm__table__td__buy-button">
                             <div className="ProductBuyForm__table__td__buy-button__container">
-                                <input type="hidden" name="product_id" value="847" />
+                                <input type="hidden" name="product_id" value={this.props.data.get('id')} />
                                 <input type="hidden" name="added_from" value="page" />
                                 <input type="submit" value="В корзину" className="ProductBuyForm__table__buy-button" />
                                 <span className="ProductBuyForm__table__buy-button__loader"></span>

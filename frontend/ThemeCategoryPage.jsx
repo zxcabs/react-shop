@@ -20,8 +20,6 @@ export default React.createClass({
                 </head>
                 <body>
                     <Header />
-                    <Categories data={this.props.models.CategoryCollection} />
-                    <Product model={this.props.models.Product} />
                 </body>
             </html>
         );

@@ -1,8 +1,8 @@
-import ThemeProductPage from './ThemeProductPage.jsx';
+import ThemeCategoryPage from './ThemeCategoryPage.jsx';
 import Models from '../Models.jsx';
 let React = require('react/addons');
 
-export default class ProductPage {
+export default class CategoryPage {
     constructor(opt) {
         this._models = {};
         this.user = opt.user;
@@ -36,7 +36,7 @@ export default class ProductPage {
     }
 
     renderToString() {
-        return '<!DOCTYPE html>' + React.renderComponentToString(ThemeProductPage({
+        return '<!DOCTYPE html>' + React.renderComponentToString(ThemeCategoryPage({
             models: this._models,
             query: this.query
         }));

@@ -4,9 +4,15 @@
         padding 8px 20px
         font-family 'Roboto Condensed','Arial Narrow'
         text-transform uppercase
+        cursor pointer
+        &:hover
+            color #9d005c
         &--active
             border 1px solid #ebebeb
             border-bottom 1px solid #fff
+            &:hover
+                cursor default
+                color #000
     &__info
         display none
         &--active

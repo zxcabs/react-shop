@@ -5,7 +5,7 @@ export default React.createClass({
     prepareURL() {
         try {
             let id = this.props.data.get('id');
-            return '/products/' + id;
+            return '/product/' + id;
         } catch (e) {
             console.log('fuck');
         }
@@ -17,7 +17,7 @@ export default React.createClass({
                     <a href={this.prepareURL()} >
                         <img className="StoreItem__image" src="#" />
                     </a>
-                    <div className="StoreItem__details StoreItem__details--active">
+                    <div className="StoreItem__details">
                         <a href="#" className="StoreItem__details__fast-look">
                             Быстрый просмотр
                         </a>
