@@ -17,7 +17,7 @@ class MongooseModel extends BaseModel {
         }
         if (params.search_query) {
             conditions[params.search_field || 'name'] = {
-                $regex: new RegExp(escapeRegExp(params.search_query)}),
+                $regex: new RegExp(escapeRegExp(params.search_query)),
                 $options: 'i'
             };
         }
