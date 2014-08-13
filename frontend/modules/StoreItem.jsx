@@ -3,8 +3,12 @@ let React = require('react/addons');
 
 export default React.createClass({
     prepareURL() {
-        let id = this.props.data.get(id);
-        return '/products/' + id;
+        try {
+            let id = this.props.data.get('id');
+            return '/products/' + id;
+        } catch (e) {
+            console.log('fuck');
+        }
     },
     render() {
         return(

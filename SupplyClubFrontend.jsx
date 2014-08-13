@@ -4,10 +4,12 @@ import ProductPage from './frontend/ProductPage.jsx';
 
 export default class SupplyClubFrontend extends EndPoint {
     mountEndPoints() {
-        let route = this.route('/');
-        route.get(this._get.bind(this));
         let productRoute = this.route('/:product/:id');
         productRoute.get(this.getProductLayout);
+
+        let route = this.route('/');
+        route.get(this._get.bind(this));
+
         return this;
     }
 
