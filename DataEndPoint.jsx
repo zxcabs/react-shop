@@ -5,7 +5,11 @@ export default class DataEndPoint extends EndPoint {
         let model = req.models[req.params.relModel || req.params.model];
         for (let key in req.body) {
             if (!req.body.hasOwnProperty(key)) {continue;}
-            if (!model.get(key) && !req.body[key]) {continue;}
+            if (!req.body[key]) {
+                let res = model.get(key);
+                if (!res) {continue;}
+                if (Array.isArray(res) && !res.length) {continue;}
+            }
             model.set(key, req.body[key]);
         }
         model.save(req.query).then(() => {
@@ -14,7 +18,7 @@ export default class DataEndPoint extends EndPoint {
                     models: req.models
                 }
             });
-        }).catch((err) => res.send(500));
+        }).catch((err) => res.status(500).send(err));
     }
 
     _read(req, res) {
@@ -43,7 +47,7 @@ export default class DataEndPoint extends EndPoint {
             this.server.loadModel(req.method, req.params.model, req.params.modelId, req.models, req.query, User)
             .then(() => next()).catch((error) => {
                 console.log(error);
-                res.status(404 || 403 || 500).end();
+                res.status(404 || 403 || 500).end(error);
             });
         });
         this.router.param('relModel', (req, res, next) => {
@@ -51,7 +55,7 @@ export default class DataEndPoint extends EndPoint {
             this.server.loadModels(req.method, req.params.relModel, req.params.relModelId, req.models, req.query, User)
             .then(() => next()).catch((error) => {
                 console.log(error);
-                res.status(404 || 403 || 500).end();
+                res.status(404 || 403 || 500).end(error);
             });
         });
 

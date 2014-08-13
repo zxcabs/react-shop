@@ -7,10 +7,7 @@ class Product extends MongooseModel {
 
 class ProductSchema extends Schema {
     addFields() {
-        this.add('name', {
-            type: String,
-            required: true
-        }).add('price', {
+        this.add('price', {
             type: Number,
             required: true
         }).add('attributes', [{

@@ -29,7 +29,18 @@ export default class Schema {
         this.add('status', {
             type: String,
             default: 'active',
-            available: ['active', 'inactive']
+            enum: {
+                values: ['active', 'inactive']
+            },
+            trim: true
+        });
+
+        this.add('name', {
+            type: String,
+            required: true,
+            index: {
+                type: 'text'
+            }
         });
 
         this.addFields();

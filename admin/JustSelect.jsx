@@ -2,15 +2,15 @@
 module React from 'react/addons';
 
 export default React.createClass({
-    mixins: [React.addons.LinkedStateMixin],
-
-    getInitialState() {
-        return {
-            value: this.props.value
-        }
+    requestChange(newValue) {
+        this.props.setValue(this.props.key, newValue);
     },
 
     render() {
+        let Link = {
+            value: this.props.value,
+            requestChange: this.requestChange
+        }
         return (
         <label className="ProductForm__label">
             <span className="ProductForm__label__description">
@@ -19,9 +19,9 @@ export default React.createClass({
             <select
                 className="ProductForm__label__input"
                 name={this.props.key}
-                valueLink={this.linkState('value')}
+                valueLink={Link}
             >
-                {this.props.schema.available.map((option) => (
+                {this.props.schema.enum.values.map((option) => (
                     <option key={option} value={option}>
                         {option}
                     </option>

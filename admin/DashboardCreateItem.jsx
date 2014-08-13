@@ -31,6 +31,7 @@ export default React.createClass({
                 schema={attr}
                 setValue={this.updateValue}
                 placeholder={attr.default}
+                model={this.props.model}
                 value={hashMap[attr.__name] || ''}
             />
             );
@@ -67,7 +68,8 @@ export default React.createClass({
     },
 
     updateValue(name, value) {
-
+        this.props.model.set(name, value);
+        this.forceUpdate();
     },
 
     renderFields() {
@@ -82,10 +84,31 @@ export default React.createClass({
                 schema={attr}
                 setValue={this.updateValue}
                 placeholder={attr.default}
+                model={this.props.model}
                 value={hashMap[field] || ''}
             />
             );
         });
+    },
+
+    onSubmit(event) {
+        event.preventDefault();
+        if (!this.props.model.isChanged()) {
+            return;
+        }
+
+        let self = this;
+        this.props.model.save().then(() => {
+            if (self.props.requestParentUpdate) {
+                self.props.requestParentUpdate();
+            }
+        }).catch((e) => {
+            console.log('implement error save');
+        });
+    },
+
+    dropChanges(event) {
+        this.props.model.dropChanges();
     },
 
     render() {
@@ -99,7 +122,7 @@ export default React.createClass({
                         {this.props.model.isNew() ? "Создание" : "Редактирование"}
                     </h1>
                 </div>
-                <form method="POST" action={actionUrl}>
+                <form onSubmit={this.onSubmit} method="POST" action={actionUrl}>
                     {this.props.model.isNew()
                         ? null : (<input type="hidden" name="_method" value="PUT" />)}
                     {this.props.model.isNew() ? this.renderNew() : this.renderUpdate()}
@@ -108,7 +131,7 @@ export default React.createClass({
                         <button className="btn btn__primary" type="submit">
                             Сохранить
                         </button>
-                        <a href={`/admin/${this.props.modelName}`} className="btn">
+                        <a onClick={this.dropChanges} href={`/admin/${this.props.modelName}`} className="btn">
                             Отменить
                         </a>
                     </div>

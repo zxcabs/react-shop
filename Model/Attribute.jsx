@@ -7,10 +7,7 @@ class Attribute extends MongooseModel {
 
 class AttributeSchema extends Schema {
     addFields() {
-        this.add('name', {
-            type: String,
-            required: true
-        });
+        this.get('name').unique = true;
     }
 }
 

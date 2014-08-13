@@ -46,16 +46,9 @@ class AdminFrontend {
                 this._models[key].notNew();
             }
         }
-        window.onpopstate = (event) => {
+        window.addEventListener('popstate', (event) => {
             this.run();
-        };
-        document.body.addEventListener('click', (event) => {
-            if (event.target.href) {
-                event.preventDefault();
-                window.history.pushState('', '', event.target.href);
-                setTimeout(() => this.run(), 5);
-            }
-        })
+        }, false);
     }
 
     serverRoute(req, res) {
@@ -88,7 +81,6 @@ class AdminFrontend {
             }
             return Model.findById(id, params).then((Model) => {
                 this._models[modelName] = Model;
-                console.log(123, this._models);
                 resolve(this._models);
             }).catch((error) => reject(error));
         });
@@ -102,9 +94,15 @@ class AdminFrontend {
         return this.renderToString();
     }
 
+    routeChange(route) {
+        window.history.pushState('', '', route);
+        this.run();
+    }
+
     getView() {
         return AdminPage({
             models: this._models,
+            routeChange: this.routeChange.bind(this),
             params: this.params
         });
     }
@@ -121,8 +119,19 @@ class AdminFrontend {
                 promises.push(this.loadModel(this.params.dashboard, this.params.id, this.query));
             }
             Promise.all(promises).then(() => {
+                if (promises.length > 1) {
+                    let Model = this._models[this.params.dashboard];
+                    let id = Model.get('_id');
+                    let Models = this._models[this.params.dashboard + 'Collection'];
+                    for (let index = 0; index < Models.length; index++) {
+                        if (Models[index].get('_id') !== id) {continue;}
+                        Models.splice(index, 1, Model);
+                        break;
+                    }
+                }
                 resolve(200);
             }).catch((error) => {
+                this._models = {};
                 reject(error);
             });
         });

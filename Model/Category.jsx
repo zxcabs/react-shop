@@ -7,11 +7,6 @@ class Category extends MongooseModel {
 
 class CategorySchema extends Schema {
     addFields() {
-        this.add('name', {
-            type: String,
-            required: true
-        });
-
         this.add('description', {
             type: String,
             default: ''
