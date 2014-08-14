@@ -64,7 +64,7 @@ export default React.createClass({
 
     requestParentUpdate(item = null) {
         if (item) {
-            this.props.models.unshift(item);
+            this.props.models[this.props.params.dashboard + 'Collection'].unshift(item);
         }
         this.forceUpdate();
     },
