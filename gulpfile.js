@@ -104,7 +104,7 @@ gulp.task('server', ['vendor', 'build-js'], (function() {
 /**
  * Run default task
  */
-gulp.task('default', ['server'], function () {
+gulp.task('default', ['build-css', 'server'], function () {
     compileScripts(true);
     gulp.watch([stylSelector], ['build-css']);
     gulp.watch([jsSelector], ['server']);
