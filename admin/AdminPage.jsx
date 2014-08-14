@@ -14,17 +14,17 @@ import AutocompleteInput from './AutocompleteInput.jsx'
 let dashboards = {
     Category: {
         listScheme: {
-            bottomLine: 'parent.name'
+            bottomLine: 'description'
         },
         fields: {
             name: JustInput,
             description: MarkdownTextarea,
-            parent: AutocompleteInput,
+            childs: AutocompleteInput,
             status: JustSelect
         },
         layout: [{
             name: 'main',
-            fields: ['name', 'description', 'parent', 'status']
+            fields: ['name', 'description', 'childs', 'status']
         }]
     },
     Product: {
@@ -35,6 +35,7 @@ let dashboards = {
             name: JustInput,
             price: JustInput,
             mainCategory: AutocompleteInput,
+            categories: AutocompleteInput,
             status: JustSelect
         },
         layout: [{
@@ -90,11 +91,9 @@ export default React.createClass({
     },
 
     render() {
-        let isInitialRender = !!this.notInitialRender;
         if (typeof window !== 'undefined') {
             window.asd = this.props.models;
         }
-        this.notInitialRender = true;
         return (
             <html>
                 <head>

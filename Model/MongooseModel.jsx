@@ -34,11 +34,10 @@ class MongooseModel extends BaseModel {
         return res;
     }
 
-    toJSON() {
-        return this._fields;
-    }
-
     toObject() {
+        if (this._mongoModel) {
+            return this._mongoModel.toObject();
+        }
         return this._fields;
     }
 
@@ -82,13 +81,14 @@ class MongooseModel extends BaseModel {
 
             let refs = 'refs' in params ? params.refs.split(',') : this.getDefaultRefs();
             if (refs.length) {
-                query = this.populate(query, refs.join(','));
+                query = this.populate(query, refs.join(' '));
             }
             let promise = query.exec();
             promise.then((models) => {
                 resolve(models.map((model) => {
                     let newModel = new this(model.toObject({minimize: false}));
                     newModel._mongoModel = model;
+                    this.fixNullRefFields(newModel, refs);
                     newModel.notNew();
                     return newModel;
                 }));
@@ -105,12 +105,13 @@ class MongooseModel extends BaseModel {
             let query = model.findById(id, fields);
             let refs = params.refs ? params.refs.split(',') : this.getDefaultRefs();
             if (refs.length) {
-                query = this.populate(query, refs.join(','));
+                query = this.populate(query, refs.join(' '));
             }
             let promise = query.exec();
             promise.then((model) => {
                 let newModel = new this(model.toObject({minimize: false}));
                 newModel._mongoModel = model;
+                this.fixNullRefFields(newModel, refs);
                 newModel.notNew();
                 resolve(newModel);
             }).onReject((error) => {
@@ -121,10 +122,13 @@ class MongooseModel extends BaseModel {
 
     set(path, value) {
         if (this._mongoModel) {
-            console.log(111, path, value);
+            if (Array.isArray(value) && value.length) {
+                if (value[0] && value[0]._id) {
+                    value = value.map((model) => model._id);
+                }
+            }
             this._mongoModel.set(path, value);
             value = this._mongoModel.get(path);
-            console.log(222, path, value);
         }
         return super(path, value);
     }
@@ -161,6 +165,20 @@ class MongooseModel extends BaseModel {
                 }).catch((error) => reject(error));
             });
         });
+    }
+
+    static fixNullRefFields(model, refs) {
+        for (let field of refs) {
+            if (model.get(field)) {continue;}
+            let schema = model.getSchema();
+            if ('default' in schema.get(field)) {
+                model.set(field, schema.get(field).default);
+            }
+        }
+    }
+
+    fixNullRefFields(refs) {
+        this.constructor.fixNullRefFields(this, refs);
     }
 
     getDefaultRefs() {

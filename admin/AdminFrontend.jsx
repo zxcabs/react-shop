@@ -84,7 +84,6 @@ class AdminFrontend {
             }
             return Model.findById(id, params).then((Model) => {
                 this._models[modelName] = Model;
-                console.log(Model);
                 resolve(this._models);
             }).catch((error) => reject(error));
         });

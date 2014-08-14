@@ -27,6 +27,10 @@ class BaseModel {
     }
 
     toJSON() {
+        return this.toObject();
+    }
+
+    toObject() {
         return this._fields;
     }
 

@@ -10,6 +10,7 @@ export default React.createClass({
         return {
             variants: [],
             visible: false,
+            picked: null,
             query: ''
         }
     },
@@ -23,18 +24,47 @@ export default React.createClass({
             return this.props.getVariants.call(this);
         }
 
-        return Models[this.props.schema.ref].find({
+        let modelName = '';
+        if (Array.isArray(this.props.schema)) {
+            modelName = this.props.schema[0].ref;
+        } else {
+            if (Array.isArray(this.props.schema.type)) {
+                modelName = this.props.schema.type[0].ref;
+            } else {
+                modelName = this.props.schema.ref;
+            }
+        }
+
+        if (!modelName) {
+            throw new Error(`this "${this.props.key}" field is not ref field`);
+        }
+
+        return Models[modelName].find({
             search: {
                 field: 'name',
                 query: this.state.query
             }
         }).then((models) => {
             let variants = models.slice();
-            if (this.props.schema.ref === this.props.model.name) {
+            if (modelName === this.props.model.name) {
                 variants = variants.filter((model) => {
                     return this.props.model.get('_id') !== model.get('_id');
                 });
             }
+            let values = this.props.value;
+            if (!Array.isArray(values) && values) {
+                values = [values];
+            } else if (!values) {
+                value = [];
+            }
+            if (values.length) {
+                variants = variants.filter((model) => {
+                    return !values.filter((value) => {
+                        return value._id === model.get('_id');
+                    }).length;
+                });
+            }
+
             this.setState({
                 variants: variants
             });
@@ -64,15 +94,63 @@ export default React.createClass({
         }, 10);
     },
 
+    printValues() {
+        let arr = Array.isArray(this.props.value) ? this.props.value : [this.props.value];
+        return arr.map((category) => {
+            return (
+            <div>
+                {category.name}
+            </div>
+            );
+        });
+    },
+
     setCurrent(item) {
-        this.requestChange(item.get('_id'));
+        this.setState({
+            query: item.get('name'),
+            picked: item
+        });
+    },
+
+    add() {
+        let value = null;
+        let current = this.getCurrent();
+        if (!current) {
+            return console.log('imlement new');
+        }
+
+        current = current.toObject();
+
+        if (Array.isArray(this.props.value)) {
+            value = this.props.value.slice();
+            value.push(current);
+        } else {
+            value = current;
+        }
+        this.setState({
+            picked: null,
+            variants: [],
+            query: ''
+        });
+        this.requestChange(value);
+    },
+
+    getCurrent() {
+        if (this.state.picked) {
+            let name = this.state.picked.get('name');
+            if (name.trim().toLowerCase() === this.state.query.trim().toLowerCase()) {
+                return this.state.picked;
+            }
+        }
+        for (let item of this.state.variants) {
+            if (item.get('name').trim().toLowerCase() === this.state.query.trim().toLowerCase()) {
+                return item;
+            }
+        }
+        return null;
     },
 
     render() {
-        let Link = {
-            value: this.props.value,
-            requestChange: this.requestChange
-        }
         let autoCompleteClasses = React.addons.classSet({
             "AutocompleteList": true,
             "AutocompleteList--visible": this.state.visible
@@ -82,6 +160,9 @@ export default React.createClass({
             <span className="ProductForm__label__description">
                 {this.props.key}
             </span>
+            <div className="">
+                {this.printValues()}
+            </div>
             <input
                 onKeyUp={this.onKeyUp}
                 onFocus={this.onFocus}
@@ -92,6 +173,7 @@ export default React.createClass({
                 placeholder={this.props.placeholder || this.props.key}
                 valueLink={this.linkState('query')}
             />
+            <button className="" onClick={this.add} type="button">Добавить</button>
             <div className={autoCompleteClasses}>
                 {this.state.variants.map((model) => {
                     return (<AutocompleteItem onSelect={this.setCurrent} model={model} />);

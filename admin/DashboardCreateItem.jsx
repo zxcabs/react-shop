@@ -32,7 +32,7 @@ export default React.createClass({
                 setValue={this.updateValue}
                 placeholder={attr.default}
                 model={this.props.model}
-                value={hashMap[attr.__name] || ''}
+                value={hashMap[attr.__name]}
             />
             );
         });
@@ -85,7 +85,7 @@ export default React.createClass({
                 setValue={this.updateValue}
                 placeholder={attr.default}
                 model={this.props.model}
-                value={hashMap[field] || ''}
+                value={hashMap[field]}
             />
             );
         });

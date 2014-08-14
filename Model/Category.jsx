@@ -3,7 +3,7 @@ import Schema from './Schema.jsx';
 
 class Category extends MongooseModel {
     static getDefaultRefs() {
-        return ['parent'];
+        return ['childs'];
     }
 }
 
@@ -14,9 +14,12 @@ class CategorySchema extends Schema {
             default: ''
         });
 
-        this.add('parent', {
-            type: Schema.ObjectId,
-            ref: 'Category'
+        this.add('childs', {
+            type: [{
+                type: Schema.ObjectId,
+                ref: 'Category'
+            }],
+            default: []
         });
     }
 }
