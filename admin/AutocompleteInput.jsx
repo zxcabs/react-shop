@@ -95,11 +95,15 @@ export default React.createClass({
     },
 
     printValues() {
+        if (!this.props.value) {
+            return null;
+        }
+
         let arr = Array.isArray(this.props.value) ? this.props.value : [this.props.value];
-        return arr.map((category) => {
+        return arr.map((value) => {
             return (
             <div>
-                {category.name}
+                {value.name}
             </div>
             );
         });

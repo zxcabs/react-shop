@@ -114,7 +114,16 @@ class AdminFrontend {
         return '<!DOCTYPE html>' + React.renderComponentToString(this.getView());
     }
 
+    cleanCache() {
+        if (this._prevParams !== this.params) {
+            this._prevParams = this.params;
+            delete this._models[this.params.dashboard];
+            delete this._models[this.params.dashboard + 'Collection'];
+        }
+    }
+
     init() {
+        this.cleanCache();
         return new Promise((resolve, reject) => {
             let promises = [];
             promises.push(this.loadModel(this.params.dashboard, null, this.query));
@@ -156,6 +165,9 @@ class AdminFrontend {
     run() {
         let path = this.getCurrentPath();
         this.params = parse(path);
+        if (!this._prevParams) {
+            this._prevParams = this.params;
+        }
         if (!this.params) {
             let error = new Error(404);
             if (this.response) {

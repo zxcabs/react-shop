@@ -83,6 +83,7 @@ class MongooseModel extends BaseModel {
             if (refs.length) {
                 query = this.populate(query, refs.join(' '));
             }
+            query.sort('-_id');
             let promise = query.exec();
             promise.then((models) => {
                 resolve(models.map((model) => {
