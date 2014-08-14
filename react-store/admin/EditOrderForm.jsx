@@ -1,5 +1,5 @@
 /** @jsx React.DOM */
-module React from 'react/addons';
+let React = require('react/addons');
 
 let newOrder = [
     {

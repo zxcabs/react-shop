@@ -1,5 +1,5 @@
 /** @jsx React.DOM */
-module React from 'react/addons';
+let React = require('react/addons');
 
 import ProductForm from './ProductForm.jsx'
 import EditProductForm from './EditProductForm.jsx'

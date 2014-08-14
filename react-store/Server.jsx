@@ -51,7 +51,7 @@ let defaultMiddlewares = [
     }
 ];
 
-export default class Server {
+class Server {
     constructor() {
         mongoose.connect('mongodb://localhost/test');
         Schema.server = this;
@@ -185,12 +185,17 @@ export default class Server {
             this.defaultMiddlewares(this);
             this.mountDataEndPoints();
             this.mountAdmin();
-            this.express().use(express.static('../../dist'));
+            this.express().use(express.static('./dist'));
         }
         return this;
     }
 
     run() {
         this.init().express().listen(8080);
+        if (process.send) {
+            process.send('server started');
+        }
     }
 }
+
+export default Server;

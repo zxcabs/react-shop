@@ -1,5 +1,5 @@
 /** @jsx React.DOM */
-module React from 'react/addons';
+let React = require('react/addons');
 import Models from '../Models.jsx';
 import AutocompleteItem from './AutocompleteItem.jsx';
 
