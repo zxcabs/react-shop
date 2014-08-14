@@ -15,7 +15,7 @@ class MongooseModel extends BaseModel {
                 $search: params.query
             };
         }
-        if (params.search.query) {
+        if (params.search) {
             conditions[params.search.field || 'name'] = {
                 $regex: new RegExp(escapeRegExp(params.search.query)),
                 $options: 'i'
@@ -145,21 +145,27 @@ class MongooseModel extends BaseModel {
                     return reject(err);
                 }
 
-                let saved = (error, res) => {
-                    this._fields = this._mongoModel.toObject();
-                    if (error) {
-                        return reject(error);
-                    }
-
-                    resolve();
-                };
+                this._fields = res.toObject();
+                this._mongoModel = res;
+                if (err) {
+                    return reject(error);
+                }
 
                 let refs = params.refs ? params.refs.split(',') : this.getDefaultRefs();
+                console.log(refs);
                 if (refs.length) {
                     refs.forEach((ref) => this._mongoModel.populate(ref));
-                    this._mongoModel.populate(saved);
+                    this._mongoModel.populate((err, res) => {
+                        console.log(err, res);
+                        this._fields = res.toObject();
+                        this._mongoModel = res;
+                        if (err) {
+                            return reject(error);
+                        }
+                        resolve();
+                    });
                 } else {
-                    saved(err, res);
+                    resolve();
                 }
             });
         });
