@@ -2,6 +2,7 @@ import EndPoint from './EndPoint.jsx';
 import SupplyClubTheme from './frontend/SupplyClubTheme.jsx';
 import ProductPage from './frontend/ProductPage.jsx';
 import CategoryPage from './frontend/CategoryPage.jsx';
+import CartPage from './frontend/CartPage.jsx';
 
 export default class SupplyClubFrontend extends EndPoint {
     mountEndPoints() {
@@ -11,10 +12,28 @@ export default class SupplyClubFrontend extends EndPoint {
         let categoryRoute = this.route('/category/:id');
         categoryRoute.get(this.getCategoryLayout);
 
+        let cartRoute = this.route('/cart');
+        cartRoute.get(this.goCart);
+
         let route = this.route('/');
         route.get(this._get.bind(this));
 
         return this;
+    }
+
+    goCart(req, res) {
+        let user = req.user,
+            query = req.query,
+            params = req.params;
+
+        let layout = new CartPage({
+            user, query, params
+        });
+        layout.init().then((code) => {
+            res.status(code || 200).send(layout.toString());
+        }).catch((error) => {
+            res.status(500).send(error);
+        });
     }
 
     getProductLayout(req, res) {
