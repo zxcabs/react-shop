@@ -80,7 +80,7 @@ class MongooseModel extends BaseModel {
         return new Promise((resolve, reject) => {
             let query = this.mongo.model(this._name).find(...this.prepareParams(params));
 
-            let refs = params.refs ? params.refs.split(',') : this.getDefaultRefs();
+            let refs = 'refs' in params ? params.refs.split(',') : this.getDefaultRefs();
             if (refs.length) {
                 query = this.populate(query, refs.join(','));
             }
@@ -121,8 +121,10 @@ class MongooseModel extends BaseModel {
 
     set(path, value) {
         if (this._mongoModel) {
+            console.log(111, path, value);
             this._mongoModel.set(path, value);
             value = this._mongoModel.get(path);
+            console.log(222, path, value);
         }
         return super(path, value);
     }
@@ -151,22 +153,12 @@ class MongooseModel extends BaseModel {
                     return reject(error);
                 }
 
-                let refs = params.refs ? params.refs.split(',') : this.getDefaultRefs();
-                console.log(refs);
-                if (refs.length) {
-                    refs.forEach((ref) => this._mongoModel.populate(ref));
-                    this._mongoModel.populate((err, res) => {
-                        console.log(err, res);
-                        this._fields = res.toObject();
-                        this._mongoModel = res;
-                        if (err) {
-                            return reject(error);
-                        }
-                        resolve();
-                    });
-                } else {
+                let id = this._mongoModel.get('_id');
+                this.constructor.findById(id, params).then((Model) => {
+                    this._mongoModel = Model._mongoModel;
+                    this._fields = this._mongoModel.toObject();
                     resolve();
-                }
+                }).catch((error) => reject(error));
             });
         });
     }
