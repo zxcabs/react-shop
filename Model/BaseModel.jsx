@@ -179,6 +179,9 @@ class BaseModel {
     }
 
     isNew() {
+        if (!this.get('_id')) {
+            return true;
+        }
         return !this._isNotNew;
     }
 
@@ -220,7 +223,7 @@ class BaseModel {
         }
         let name = this.name;
         return new Promise((resolve, reject) => {
-            let url = `/api/data/${name}/${this.get('_id')}`;
+            let url = `/api/data/${name}/${this.get('_id')||''}`;
             request[req](url).type('form').send(serializeURI(this._fields)).end((res) => {
                 if (!res.body) {
                     return reject();

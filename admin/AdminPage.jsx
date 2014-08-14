@@ -62,6 +62,13 @@ export default React.createClass({
         }
     },
 
+    requestParentUpdate(item = null) {
+        if (item) {
+            this.props.models.unshift(item);
+        }
+        this.forceUpdate();
+    },
+
     renderTabs() {
         let dashboardName = this.props.params.dashboard;
         let dashboard = dashboards[this.props.params.dashboard];
@@ -82,7 +89,7 @@ export default React.createClass({
                         tab={this.props.params.tab || 0}
                         dashboard={dashboard}
                         modelName={dashboardName}
-                        requestParentUpdate={this.forceUpdate.bind(this)}
+                        requestParentUpdate={this.requestParentUpdate}
                         model={this.props.models[dashboardName]}
                     />) : null}
             </div>)

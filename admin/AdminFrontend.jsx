@@ -133,7 +133,7 @@ class AdminFrontend {
             Promise.all(promises).then(() => {
                 if (promises.length > 1) {
                     let Model = this._models[this.params.dashboard];
-                    let id = Model.get('_id');
+                    let id = Model.get('_id') || '';
                     let Models = this._models[this.params.dashboard + 'Collection'];
                     for (let index = 0; index < Models.length; index++) {
                         if (Models[index].get('_id').toString() !== id.toString()) {

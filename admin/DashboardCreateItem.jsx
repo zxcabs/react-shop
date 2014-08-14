@@ -98,9 +98,10 @@ export default React.createClass({
         }
 
         let self = this;
+        let wasNew = this.props.model.isNew();
         this.props.model.save().then(() => {
             if (self.props.requestParentUpdate) {
-                self.props.requestParentUpdate();
+                self.props.requestParentUpdate(wasNew ? this.props.model : null);
             }
         }).catch((e) => {
             console.log('implement error save');
