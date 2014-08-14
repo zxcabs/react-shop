@@ -8,6 +8,7 @@ export default React.createClass({
             return (
             <DashboardItem
                 dashboard={this.props.dashboard}
+                currentItem={this.props.currentItem}
                 dashboardName={this.props.dashboardName}
                 key={item.get('_id')}
                 item={item}

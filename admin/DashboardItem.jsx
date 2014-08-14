@@ -13,10 +13,15 @@ export default React.createClass({
             'DashboardItem__headline__info__label--inactive': item.get('status') === 'inactive'
         });
 
+        let classes = React.addons.classSet({
+            'DashboardItem': true,
+            'DashboardItem--current': this.props.item === this.props.currentItem
+        });
+
         let url = `/admin/${this.props.dashboardName}/${item.get('_id')}`;
 
         return (
-            <a href={url} className="DashboardItem">
+            <a href={url} className={classes}>
                 <span className="DashboardItem__image">
                 {item.get('main_pic')
                     ? (<img className="DashboardItem__image__pic" src={item.get('main_pic')} />)

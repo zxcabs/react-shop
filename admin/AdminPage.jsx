@@ -71,6 +71,7 @@ export default React.createClass({
                 <DashboardList
                     dashboard={dashboard}
                     dashboardName={dashboardName}
+                    currentItem={this.props.models[dashboardName]}
                     collection={this.props.models[`${dashboardName}Collection`]}
                 />
             </div>),

@@ -127,7 +127,9 @@ class AdminFrontend {
                     let id = Model.get('_id');
                     let Models = this._models[this.params.dashboard + 'Collection'];
                     for (let index = 0; index < Models.length; index++) {
-                        if (Models[index].get('_id') !== id) {continue;}
+                        if (Models[index].get('_id').toString() !== id.toString()) {
+                            continue;
+                        }
                         Models.splice(index, 1, Model);
                         break;
                     }
