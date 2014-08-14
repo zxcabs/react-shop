@@ -1,5 +1,15 @@
 let request = require('superagent');
 
+function serializeURI(obj, prefix = '') {
+    let str = [];
+    for(let p in obj) {
+        if (!obj.hasOwnProperty(p)) {continue;}
+        let k = prefix ? prefix + "[" + p + "]" : p, v = obj[p];
+        str.push(typeof v == "object" ? serializeURI(v, k) : k + "=" + v);
+    }
+    return str.join("&");
+}
+
 class BaseModel {
     constructor(fields) {
         this._isNotNew = false;
@@ -66,7 +76,7 @@ class BaseModel {
     static findOnClient(params) {
         let name = this._name;
         return new Promise((resolve, reject) => {
-            request.get(`/api/data/${name}`).query(params).end((res) => {
+            request.get(`/api/data/${name}`).query(serializeURI(params)).end((res) => {
                 name = `${name}Collection`;
                 if (!res.body) {
                     return reject();
@@ -88,7 +98,7 @@ class BaseModel {
     static findByIdOnClient(id, params) {
         let name = this._name;
         return new Promise((resolve, reject) => {
-            request.get(`/api/data/${name}/${id}`).query(params).end((res) => {
+            request.get(`/api/data/${name}/${id}`).query(serializeURI(params)).end((res) => {
                 if (!res.body) {
                     return reject();
                 } else if (!res.body.result) {
@@ -207,7 +217,7 @@ class BaseModel {
         let name = this.name;
         return new Promise((resolve, reject) => {
             let url = `/api/data/${name}/${this.get('_id')}`;
-            request[req](url).type('form').send(this._fields).end((res) => {
+            request[req](url).type('form').send(serializeURI(this._fields)).end((res) => {
                 if (!res.body) {
                     return reject();
                 } else if (!res.body.result) {

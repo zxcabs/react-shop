@@ -7,7 +7,7 @@ class MongooseModel extends BaseModel {
         return 20;
     }
 
-    static prepareParams(params) {
+    static prepareParams(params = {}) {
         let res = [];
         let conditions = {};
         if (params.query) {
@@ -15,9 +15,9 @@ class MongooseModel extends BaseModel {
                 $search: params.query
             };
         }
-        if (params.search_query) {
-            conditions[params.search_field || 'name'] = {
-                $regex: new RegExp(escapeRegExp(params.search_query)),
+        if (params.search) {
+            conditions[params.search.field || 'name'] = {
+                $regex: new RegExp(escapeRegExp(params.search.query)),
                 $options: 'i'
             };
         }
@@ -35,17 +35,11 @@ class MongooseModel extends BaseModel {
     }
 
     toJSON() {
-        if (!this._mongoModel) {
-            return this._fields;
-        }
-        return this._mongoModel.toJSON();
+        return this._fields;
     }
 
     toObject() {
-        if (!this._mongoModel) {
-            return this._fields;
-        }
-        return this._mongoModel.toObject();
+        return this._fields;
     }
 
     static getSchema() {
@@ -78,11 +72,17 @@ class MongooseModel extends BaseModel {
         return query;
     }
 
-    static findOnServer(params) {
+    static getDefaultRefs() {
+        return [];
+    }
+
+    static findOnServer(params = {}) {
         return new Promise((resolve, reject) => {
             let query = this.mongo.model(this._name).find(...this.prepareParams(params));
-            if (params.refs) {
-                query = this.populate(query, params.refs);
+
+            let refs = 'refs' in params ? params.refs.split(',') : this.getDefaultRefs();
+            if (refs.length) {
+                query = this.populate(query, refs.join(','));
             }
             let promise = query.exec();
             promise.then((models) => {
@@ -98,13 +98,14 @@ class MongooseModel extends BaseModel {
         });
     }
 
-    static findByIdOnServer(id, params) {
+    static findByIdOnServer(id, params = {}) {
         return new Promise((resolve, reject) => {
             let model = this.mongo.model(this._name);
-            let fields = this.prepareParams[1] || null;
+            let fields = this.prepareParams(params)[1] || null;
             let query = model.findById(id, fields);
-            if (params.populate) {
-                query = this.populate(query, params.refs);
+            let refs = params.refs ? params.refs.split(',') : this.getDefaultRefs();
+            if (refs.length) {
+                query = this.populate(query, refs.join(','));
             }
             let promise = query.exec();
             promise.then((model) => {
@@ -120,8 +121,10 @@ class MongooseModel extends BaseModel {
 
     set(path, value) {
         if (this._mongoModel) {
+            console.log(111, path, value);
             this._mongoModel.set(path, value);
             value = this._mongoModel.get(path);
+            console.log(222, path, value);
         }
         return super(path, value);
     }
@@ -133,7 +136,7 @@ class MongooseModel extends BaseModel {
         return super(path);
     }
 
-    saveOnServer(params) {
+    saveOnServer(params = {}) {
         if (!this._mongoModel) {
             let Model = this.mongo.model(this.name);
             this._mongoModel = new Model(this._fields);
@@ -144,22 +147,24 @@ class MongooseModel extends BaseModel {
                     return reject(err);
                 }
 
-                let saved = (error, res) => {
-                    this._fields = this._mongoModel.toObject();
-                    if (error) {
-                        return reject(error);
-                    }
-
-                    resolve();
-                };
-                if (params.refs) {
-                    params.refs.split(',').forEach((ref) => this._mongoModel.populate(ref));
-                    this._mongoModel.populate(saved);
-                } else {
-                    saved(err, res);
+                this._fields = res.toObject();
+                this._mongoModel = res;
+                if (err) {
+                    return reject(error);
                 }
+
+                let id = this._mongoModel.get('_id');
+                this.constructor.findById(id, params).then((Model) => {
+                    this._mongoModel = Model._mongoModel;
+                    this._fields = this._mongoModel.toObject();
+                    resolve();
+                }).catch((error) => reject(error));
             });
         });
+    }
+
+    getDefaultRefs() {
+        return this.constructor.getDefaultRefs();
     }
 }
 

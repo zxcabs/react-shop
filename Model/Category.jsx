@@ -2,7 +2,9 @@ import MongooseModel from './MongooseModel.jsx';
 import Schema from './Schema.jsx';
 
 class Category extends MongooseModel {
-
+    static getDefaultRefs() {
+        return ['parent'];
+    }
 }
 
 class CategorySchema extends Schema {

@@ -91,7 +91,7 @@ export default class Server {
                 });
             }
 
-            return Model.findById(modelId, query).then((model) => {
+            return Model.findById(modelId, query || {}).then((model) => {
                 objectToSave[modelName] = model;
                 if (!objectToSave[modelName].acl(method, User)) {
                     objectToSave[modelName] = null;
