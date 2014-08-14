@@ -86,7 +86,7 @@ export default React.createClass({
                     </tbody>
                 </table>
 
-                <span className="cart__1000-warning cart__total-price">
+                <span className="CartBody__total">
                     Товаров выбрано на сумму: 3300 руб.
                 </span>
 

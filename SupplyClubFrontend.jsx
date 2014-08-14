@@ -3,22 +3,41 @@ import SupplyClubTheme from './frontend/SupplyClubTheme.jsx';
 import ProductPage from './frontend/ProductPage.jsx';
 import CategoryPage from './frontend/CategoryPage.jsx';
 import CartPage from './frontend/CartPage.jsx';
+import CheckoutPage from './frontend/CheckoutPage.jsx'
 
 export default class SupplyClubFrontend extends EndPoint {
     mountEndPoints() {
-        let productRoute = this.route('/product/:id');
-        productRoute.get(this.getProductLayout);
+        let product = this.route('/product/:id');
+        product.get(this.getProductLayout);
 
-        let categoryRoute = this.route('/category/:id');
-        categoryRoute.get(this.getCategoryLayout);
+        let category = this.route('/category/:id');
+        category.get(this.getCategoryLayout);
 
-        let cartRoute = this.route('/cart');
-        cartRoute.get(this.goCart);
+        let cart = this.route('/cart');
+        cart.get(this.goCart);
 
-        let route = this.route('/');
-        route.get(this._get.bind(this));
+        let checkout = this.route('/checkout');
+        checkout.get(this.goCheckout);
+
+        let main = this.route('/');
+        main.get(this._get.bind(this));
 
         return this;
+    }
+
+    goCheckout(req, res) {
+        let user = req.user,
+            query = req.query,
+            params = req.params;
+
+        let layout = new CheckoutPage({
+            user, query, params
+        });
+        layout.init().then((code) => {
+            res.status(code || 200).send(layout.toString());
+        }).catch((error) => {
+            res.status(500).send(error);
+        });
     }
 
     goCart(req, res) {
