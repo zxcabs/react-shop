@@ -191,6 +191,7 @@ class Server {
     }
 
     run() {
+        console.log(1);
         this.init().express().listen(8080);
         if (process.send) {
             process.send('server started');
