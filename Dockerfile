@@ -1,8 +1,8 @@
 FROM ubuntu:14.04
 MAINTAINER Vsevolod Ivanov ""
 
-ADD . /opt/apps/reactshop
-WORKDIR /opt/apps/reactshop
+ADD . /vagrant
+WORKDIR /vagrant
 
 RUN chmod +x ./bootstrap.sh
 RUN ./bootstrap.sh
