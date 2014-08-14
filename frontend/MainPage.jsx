@@ -3,6 +3,7 @@ let React = require('react/addons');
 import Header from './modules/Header.jsx'
 import Categories from './modules/Categories.jsx'
 import Products from './modules/Products.jsx'
+import Panno from './modules/Panno.jsx'
 
 export default React.createClass({
     render() {
@@ -21,6 +22,7 @@ export default React.createClass({
                 <body>
                     <Header />
                     <Categories data={this.props.models.CategoryCollection} />
+                    <Panno />
                     <Products data={this.props.models.ProductCollection} />
                 </body>
             </html>
