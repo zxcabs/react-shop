@@ -6,7 +6,6 @@ import ProductTabs from './modules/ProductTabs.jsx'
 
 export default React.createClass({
     render() {
-        console.log(this.props._models);
         return(
             <div className="Product">
                 <div className="Product__top">

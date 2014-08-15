@@ -105,7 +105,7 @@ if (typeof window !== 'undefined') {
 }
 var $__default = AdminFrontend;
 
-},{"../BaseController.jsx":"/vagrant/dist/app/BaseController.jsx","../Models.jsx":"/vagrant/dist/app/Models.jsx","./AdminPage.jsx":"/vagrant/dist/app/admin/AdminPage.jsx","react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/BaseController.jsx":[function(require,module,exports){
+},{"../BaseController.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/BaseController.jsx","../Models.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/Models.jsx","./AdminPage.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/AdminPage.jsx","react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/BaseController.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -345,7 +345,7 @@ var BaseController = function BaseController() {
 }, {});
 var $__default = BaseController;
 
-},{"./Models.jsx":"/vagrant/dist/app/Models.jsx","path-to-regexp":"/vagrant/node_modules/path-to-regexp/index.js","react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/Model/Attribute.jsx":[function(require,module,exports){
+},{"./Models.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/Models.jsx","path-to-regexp":"/Users/wwwsevolod/Work/react-store/node_modules/path-to-regexp/index.js","react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/Model/Attribute.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -373,7 +373,7 @@ Attribute.Schema = AttributeSchema;
 Attribute.setName('Attribute');
 var $__default = Attribute;
 
-},{"./MongooseModel.jsx":"/vagrant/dist/app/Model/MongooseModel.jsx","./Schema.jsx":"/vagrant/dist/app/Model/Schema.jsx"}],"/vagrant/dist/app/Model/BaseModel.jsx":[function(require,module,exports){
+},{"./MongooseModel.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/Model/MongooseModel.jsx","./Schema.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/Model/Schema.jsx"}],"/Users/wwwsevolod/Work/react-store/dist/app/Model/BaseModel.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -633,7 +633,7 @@ var BaseModel = function BaseModel(fields) {
 BaseModel.setName('Base');
 var $__default = BaseModel;
 
-},{"superagent":"/vagrant/node_modules/superagent/lib/client.js"}],"/vagrant/dist/app/Model/Category.jsx":[function(require,module,exports){
+},{"superagent":"/Users/wwwsevolod/Work/react-store/node_modules/superagent/lib/client.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/Model/Category.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -673,7 +673,7 @@ Category.Schema = CategorySchema;
 Category.setName('Category');
 var $__default = Category;
 
-},{"./MongooseModel.jsx":"/vagrant/dist/app/Model/MongooseModel.jsx","./Schema.jsx":"/vagrant/dist/app/Model/Schema.jsx"}],"/vagrant/dist/app/Model/MongooseModel.jsx":[function(require,module,exports){
+},{"./MongooseModel.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/Model/MongooseModel.jsx","./Schema.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/Model/Schema.jsx"}],"/Users/wwwsevolod/Work/react-store/dist/app/Model/MongooseModel.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -899,7 +899,7 @@ var $MongooseModel = MongooseModel;
 MongooseModel.setName('Mongoose');
 var $__default = MongooseModel;
 
-},{"./BaseModel.jsx":"/vagrant/dist/app/Model/BaseModel.jsx"}],"/vagrant/dist/app/Model/Product.jsx":[function(require,module,exports){
+},{"./BaseModel.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/Model/BaseModel.jsx"}],"/Users/wwwsevolod/Work/react-store/dist/app/Model/Product.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -948,7 +948,7 @@ Product.Schema = ProductSchema;
 Product.setName('Product');
 var $__default = Product;
 
-},{"./MongooseModel.jsx":"/vagrant/dist/app/Model/MongooseModel.jsx","./Schema.jsx":"/vagrant/dist/app/Model/Schema.jsx"}],"/vagrant/dist/app/Model/Schema.jsx":[function(require,module,exports){
+},{"./MongooseModel.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/Model/MongooseModel.jsx","./Schema.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/Model/Schema.jsx"}],"/Users/wwwsevolod/Work/react-store/dist/app/Model/Schema.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -1022,7 +1022,7 @@ var Schema = function Schema() {
 });
 var $__default = Schema;
 
-},{}],"/vagrant/dist/app/Model/User.jsx":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/dist/app/Model/User.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -1062,7 +1062,7 @@ User.Schema = UserSchema;
 User.setName('User');
 var $__default = User;
 
-},{"./MongooseModel.jsx":"/vagrant/dist/app/Model/MongooseModel.jsx","./Schema.jsx":"/vagrant/dist/app/Model/Schema.jsx"}],"/vagrant/dist/app/Models.jsx":[function(require,module,exports){
+},{"./MongooseModel.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/Model/MongooseModel.jsx","./Schema.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/Model/Schema.jsx"}],"/Users/wwwsevolod/Work/react-store/dist/app/Models.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -1085,7 +1085,7 @@ var $__default = ({
   User: User
 });
 
-},{"./Model/Attribute.jsx":"/vagrant/dist/app/Model/Attribute.jsx","./Model/Category.jsx":"/vagrant/dist/app/Model/Category.jsx","./Model/Product.jsx":"/vagrant/dist/app/Model/Product.jsx","./Model/User.jsx":"/vagrant/dist/app/Model/User.jsx"}],"/vagrant/dist/app/admin/AdminPage.jsx":[function(require,module,exports){
+},{"./Model/Attribute.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/Model/Attribute.jsx","./Model/Category.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/Model/Category.jsx","./Model/Product.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/Model/Product.jsx","./Model/User.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/Model/User.jsx"}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/AdminPage.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -1212,7 +1212,7 @@ var $__default = React.createClass({
   }
 });
 
-},{"./AutocompleteInput.jsx":"/vagrant/dist/app/admin/AutocompleteInput.jsx","./DashboardCreateItem.jsx":"/vagrant/dist/app/admin/DashboardCreateItem.jsx","./DashboardList.jsx":"/vagrant/dist/app/admin/DashboardList.jsx","./JustInput.jsx":"/vagrant/dist/app/admin/JustInput.jsx","./JustSelect.jsx":"/vagrant/dist/app/admin/JustSelect.jsx","./MarkdownTextarea.jsx":"/vagrant/dist/app/admin/MarkdownTextarea.jsx","./Menu.jsx":"/vagrant/dist/app/admin/Menu.jsx","react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/admin/AutocompleteInput.jsx":[function(require,module,exports){
+},{"./AutocompleteInput.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/AutocompleteInput.jsx","./DashboardCreateItem.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/DashboardCreateItem.jsx","./DashboardList.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/DashboardList.jsx","./JustInput.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/JustInput.jsx","./JustSelect.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/JustSelect.jsx","./MarkdownTextarea.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/MarkdownTextarea.jsx","./Menu.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/Menu.jsx","react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/AutocompleteInput.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -1392,7 +1392,7 @@ var $__default = React.createClass({
   }
 });
 
-},{"../Models.jsx":"/vagrant/dist/app/Models.jsx","./AutocompleteItem.jsx":"/vagrant/dist/app/admin/AutocompleteItem.jsx","react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/admin/AutocompleteItem.jsx":[function(require,module,exports){
+},{"../Models.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/Models.jsx","./AutocompleteItem.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/AutocompleteItem.jsx","react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/AutocompleteItem.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -1414,7 +1414,7 @@ var $__default = React.createClass({
   }
 });
 
-},{"react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/admin/CategoryTabController.jsx":[function(require,module,exports){
+},{"react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/CategoryTabController.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -1510,7 +1510,7 @@ var $__default = React.createClass({
   }
 });
 
-},{"./CategoryTabControllerTabLinks.jsx":"/vagrant/dist/app/admin/CategoryTabControllerTabLinks.jsx","react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/admin/CategoryTabControllerTabLinks.jsx":[function(require,module,exports){
+},{"./CategoryTabControllerTabLinks.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/CategoryTabControllerTabLinks.jsx","react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/CategoryTabControllerTabLinks.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -1549,7 +1549,7 @@ var $__default = React.createClass({
   }
 });
 
-},{"react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/admin/CreateCategory.jsx":[function(require,module,exports){
+},{"react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/CreateCategory.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -1566,7 +1566,7 @@ var $__default = React.createClass({render: (function() {
     return (React.DOM.div({className: "CreateCategory"}, React.DOM.div({className: "CreateCategory__parent-box"}, React.DOM.h1({className: "CreateCategory__parent-box__heading"}, "Создание категории"), CreateCategoryForm(null)), React.DOM.div({className: "CreateCategory__parent-box"}, React.DOM.h1({className: "CreateCategory__parent-box__heading"}, "Редактирование категории"), EditCategoryForm(null))));
   })});
 
-},{"./CreateCategoryForm.jsx":"/vagrant/dist/app/admin/CreateCategoryForm.jsx","./EditCategoryForm.jsx":"/vagrant/dist/app/admin/EditCategoryForm.jsx","react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/admin/CreateCategoryForm.jsx":[function(require,module,exports){
+},{"./CreateCategoryForm.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/CreateCategoryForm.jsx","./EditCategoryForm.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/EditCategoryForm.jsx","react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/CreateCategoryForm.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -1606,7 +1606,7 @@ var $__default = React.createClass({
   }
 });
 
-},{"react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/admin/CreateOrder.jsx":[function(require,module,exports){
+},{"react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/CreateOrder.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -1623,7 +1623,7 @@ var $__default = React.createClass({render: function() {
     return (React.DOM.div({className: "CreateCategory"}, React.DOM.div({className: "CreateCategory__parent-box"}, React.DOM.h1({className: "CreateCategory__parent-box__heading"}, "Создание заказа"), CreateOrderForm(null)), React.DOM.div({className: "CreateCategory__parent-box"}, React.DOM.h1({className: "CreateCategory__parent-box__heading"}, "Редактирование заказа"), EditOrderForm(null))));
   }});
 
-},{"./CreateOrderForm.jsx":"/vagrant/dist/app/admin/CreateOrderForm.jsx","./EditOrderForm.jsx":"/vagrant/dist/app/admin/EditOrderForm.jsx","react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/admin/CreateOrderForm.jsx":[function(require,module,exports){
+},{"./CreateOrderForm.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/CreateOrderForm.jsx","./EditOrderForm.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/EditOrderForm.jsx","react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/CreateOrderForm.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -1655,7 +1655,7 @@ var $__default = React.createClass({
   }
 });
 
-},{"react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/admin/DashboardCreateItem.jsx":[function(require,module,exports){
+},{"react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/DashboardCreateItem.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -1783,7 +1783,7 @@ var $__default = React.createClass({
   }
 });
 
-},{"./CreateCategory.jsx":"/vagrant/dist/app/admin/CreateCategory.jsx","./CreateOrder.jsx":"/vagrant/dist/app/admin/CreateOrder.jsx","./EditProductForm.jsx":"/vagrant/dist/app/admin/EditProductForm.jsx","./ProductForm.jsx":"/vagrant/dist/app/admin/ProductForm.jsx","react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/admin/DashboardItem.jsx":[function(require,module,exports){
+},{"./CreateCategory.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/CreateCategory.jsx","./CreateOrder.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/CreateOrder.jsx","./EditProductForm.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/EditProductForm.jsx","./ProductForm.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/ProductForm.jsx","react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/DashboardItem.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -1816,7 +1816,7 @@ var $__default = React.createClass({render: function() {
     })) : null), React.DOM.div({className: "DashboardItem__headline"}, React.DOM.span({className: "DashboardItem__headline__link"}, item.get('name'))), React.DOM.small({className: "DashboardItem__headline__info"}, listScheme.bottomLine ? (item.get(listScheme.bottomLine) || '') : '', React.DOM.span({className: statusClasses}, item.get('status')))));
   }});
 
-},{"react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/admin/DashboardList.jsx":[function(require,module,exports){
+},{"react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/DashboardList.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -1859,7 +1859,7 @@ var $__default = React.createClass({
   }
 });
 
-},{"./DashboardItem.jsx":"/vagrant/dist/app/admin/DashboardItem.jsx","react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/admin/EditCategoryForm.jsx":[function(require,module,exports){
+},{"./DashboardItem.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/DashboardItem.jsx","react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/EditCategoryForm.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -1937,7 +1937,7 @@ var $__default = React.createClass({
   }
 });
 
-},{"./CategoryTabController.jsx":"/vagrant/dist/app/admin/CategoryTabController.jsx","react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/admin/EditOrderForm.jsx":[function(require,module,exports){
+},{"./CategoryTabController.jsx":"/Users/wwwsevolod/Work/react-store/dist/app/admin/CategoryTabController.jsx","react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/EditOrderForm.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -1997,10 +1997,10 @@ var $__default = React.createClass({
   }
 });
 
-},{"react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/admin/EditProductForm.jsx":[function(require,module,exports){
+},{"react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/EditProductForm.jsx":[function(require,module,exports){
 "use strict";
 
-},{}],"/vagrant/dist/app/admin/JustInput.jsx":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/JustInput.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -2029,7 +2029,7 @@ var $__default = React.createClass({
   }
 });
 
-},{"react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/admin/JustSelect.jsx":[function(require,module,exports){
+},{"react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/JustSelect.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -2060,7 +2060,7 @@ var $__default = React.createClass({
   }
 });
 
-},{"react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/admin/MarkdownTextarea.jsx":[function(require,module,exports){
+},{"react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/MarkdownTextarea.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -2089,7 +2089,7 @@ var $__default = React.createClass({
   }
 });
 
-},{"react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/admin/Menu.jsx":[function(require,module,exports){
+},{"react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/Menu.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -2136,7 +2136,7 @@ var $__default = React.createClass({
   }
 });
 
-},{"react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/admin/ProductForm.jsx":[function(require,module,exports){
+},{"react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/dist/app/admin/ProductForm.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -2225,7 +2225,7 @@ var $__default = React.createClass({
   }
 });
 
-},{"react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
+},{"react/addons":"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -2290,7 +2290,7 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 
-},{}],"/vagrant/node_modules/path-to-regexp/index.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/path-to-regexp/index.js":[function(require,module,exports){
 /**
  * Expose `pathtoRegexp`.
  */
@@ -2459,10 +2459,10 @@ function pathtoRegexp (path, keys, options) {
   return attachKeys(new RegExp('^' + path + (end ? '$' : ''), flags), keys);
 };
 
-},{}],"/vagrant/node_modules/react/addons.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/addons.js":[function(require,module,exports){
 module.exports = require('./lib/ReactWithAddons');
 
-},{"./lib/ReactWithAddons":"/vagrant/node_modules/react/lib/ReactWithAddons.js"}],"/vagrant/node_modules/react/lib/AutoFocusMixin.js":[function(require,module,exports){
+},{"./lib/ReactWithAddons":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactWithAddons.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/AutoFocusMixin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -2496,7 +2496,7 @@ var AutoFocusMixin = {
 
 module.exports = AutoFocusMixin;
 
-},{"./focusNode":"/vagrant/node_modules/react/lib/focusNode.js"}],"/vagrant/node_modules/react/lib/BeforeInputEventPlugin.js":[function(require,module,exports){
+},{"./focusNode":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/focusNode.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/BeforeInputEventPlugin.js":[function(require,module,exports){
 /**
  * Copyright 2013 Facebook, Inc.
  *
@@ -2720,7 +2720,7 @@ var BeforeInputEventPlugin = {
 
 module.exports = BeforeInputEventPlugin;
 
-},{"./EventConstants":"/vagrant/node_modules/react/lib/EventConstants.js","./EventPropagators":"/vagrant/node_modules/react/lib/EventPropagators.js","./ExecutionEnvironment":"/vagrant/node_modules/react/lib/ExecutionEnvironment.js","./SyntheticInputEvent":"/vagrant/node_modules/react/lib/SyntheticInputEvent.js","./keyOf":"/vagrant/node_modules/react/lib/keyOf.js"}],"/vagrant/node_modules/react/lib/CSSCore.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventConstants.js","./EventPropagators":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPropagators.js","./ExecutionEnvironment":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ExecutionEnvironment.js","./SyntheticInputEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticInputEvent.js","./keyOf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/keyOf.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/CSSCore.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -2839,7 +2839,7 @@ var CSSCore = {
 module.exports = CSSCore;
 
 }).call(this,require('_process'))
-},{"./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/CSSProperty.js":[function(require,module,exports){
+},{"./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/CSSProperty.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -2962,7 +2962,7 @@ var CSSProperty = {
 
 module.exports = CSSProperty;
 
-},{}],"/vagrant/node_modules/react/lib/CSSPropertyOperations.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/CSSPropertyOperations.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -3061,7 +3061,7 @@ var CSSPropertyOperations = {
 
 module.exports = CSSPropertyOperations;
 
-},{"./CSSProperty":"/vagrant/node_modules/react/lib/CSSProperty.js","./dangerousStyleValue":"/vagrant/node_modules/react/lib/dangerousStyleValue.js","./hyphenateStyleName":"/vagrant/node_modules/react/lib/hyphenateStyleName.js","./memoizeStringOnly":"/vagrant/node_modules/react/lib/memoizeStringOnly.js"}],"/vagrant/node_modules/react/lib/CallbackQueue.js":[function(require,module,exports){
+},{"./CSSProperty":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/CSSProperty.js","./dangerousStyleValue":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/dangerousStyleValue.js","./hyphenateStyleName":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/hyphenateStyleName.js","./memoizeStringOnly":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/memoizeStringOnly.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/CallbackQueue.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -3168,7 +3168,7 @@ PooledClass.addPoolingTo(CallbackQueue);
 module.exports = CallbackQueue;
 
 }).call(this,require('_process'))
-},{"./PooledClass":"/vagrant/node_modules/react/lib/PooledClass.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","./mixInto":"/vagrant/node_modules/react/lib/mixInto.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ChangeEventPlugin.js":[function(require,module,exports){
+},{"./PooledClass":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/PooledClass.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","./mixInto":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mixInto.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ChangeEventPlugin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -3557,7 +3557,7 @@ var ChangeEventPlugin = {
 
 module.exports = ChangeEventPlugin;
 
-},{"./EventConstants":"/vagrant/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/vagrant/node_modules/react/lib/EventPluginHub.js","./EventPropagators":"/vagrant/node_modules/react/lib/EventPropagators.js","./ExecutionEnvironment":"/vagrant/node_modules/react/lib/ExecutionEnvironment.js","./ReactUpdates":"/vagrant/node_modules/react/lib/ReactUpdates.js","./SyntheticEvent":"/vagrant/node_modules/react/lib/SyntheticEvent.js","./isEventSupported":"/vagrant/node_modules/react/lib/isEventSupported.js","./isTextInputElement":"/vagrant/node_modules/react/lib/isTextInputElement.js","./keyOf":"/vagrant/node_modules/react/lib/keyOf.js"}],"/vagrant/node_modules/react/lib/ClientReactRootIndex.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPluginHub.js","./EventPropagators":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPropagators.js","./ExecutionEnvironment":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ExecutionEnvironment.js","./ReactUpdates":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactUpdates.js","./SyntheticEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticEvent.js","./isEventSupported":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/isEventSupported.js","./isTextInputElement":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/isTextInputElement.js","./keyOf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/keyOf.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ClientReactRootIndex.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -3589,7 +3589,7 @@ var ClientReactRootIndex = {
 
 module.exports = ClientReactRootIndex;
 
-},{}],"/vagrant/node_modules/react/lib/CompositionEventPlugin.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/CompositionEventPlugin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -3855,7 +3855,7 @@ var CompositionEventPlugin = {
 
 module.exports = CompositionEventPlugin;
 
-},{"./EventConstants":"/vagrant/node_modules/react/lib/EventConstants.js","./EventPropagators":"/vagrant/node_modules/react/lib/EventPropagators.js","./ExecutionEnvironment":"/vagrant/node_modules/react/lib/ExecutionEnvironment.js","./ReactInputSelection":"/vagrant/node_modules/react/lib/ReactInputSelection.js","./SyntheticCompositionEvent":"/vagrant/node_modules/react/lib/SyntheticCompositionEvent.js","./getTextContentAccessor":"/vagrant/node_modules/react/lib/getTextContentAccessor.js","./keyOf":"/vagrant/node_modules/react/lib/keyOf.js"}],"/vagrant/node_modules/react/lib/DOMChildrenOperations.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventConstants.js","./EventPropagators":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPropagators.js","./ExecutionEnvironment":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ExecutionEnvironment.js","./ReactInputSelection":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactInputSelection.js","./SyntheticCompositionEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticCompositionEvent.js","./getTextContentAccessor":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getTextContentAccessor.js","./keyOf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/keyOf.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/DOMChildrenOperations.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -4037,7 +4037,7 @@ var DOMChildrenOperations = {
 module.exports = DOMChildrenOperations;
 
 }).call(this,require('_process'))
-},{"./Danger":"/vagrant/node_modules/react/lib/Danger.js","./ReactMultiChildUpdateTypes":"/vagrant/node_modules/react/lib/ReactMultiChildUpdateTypes.js","./getTextContentAccessor":"/vagrant/node_modules/react/lib/getTextContentAccessor.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/DOMProperty.js":[function(require,module,exports){
+},{"./Danger":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/Danger.js","./ReactMultiChildUpdateTypes":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMultiChildUpdateTypes.js","./getTextContentAccessor":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getTextContentAccessor.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/DOMProperty.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -4339,7 +4339,7 @@ var DOMProperty = {
 module.exports = DOMProperty;
 
 }).call(this,require('_process'))
-},{"./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/DOMPropertyOperations.js":[function(require,module,exports){
+},{"./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/DOMPropertyOperations.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -4536,7 +4536,7 @@ var DOMPropertyOperations = {
 module.exports = DOMPropertyOperations;
 
 }).call(this,require('_process'))
-},{"./DOMProperty":"/vagrant/node_modules/react/lib/DOMProperty.js","./escapeTextForBrowser":"/vagrant/node_modules/react/lib/escapeTextForBrowser.js","./memoizeStringOnly":"/vagrant/node_modules/react/lib/memoizeStringOnly.js","./warning":"/vagrant/node_modules/react/lib/warning.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/Danger.js":[function(require,module,exports){
+},{"./DOMProperty":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/DOMProperty.js","./escapeTextForBrowser":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/escapeTextForBrowser.js","./memoizeStringOnly":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/memoizeStringOnly.js","./warning":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/warning.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/Danger.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -4727,7 +4727,7 @@ var Danger = {
 module.exports = Danger;
 
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":"/vagrant/node_modules/react/lib/ExecutionEnvironment.js","./createNodesFromMarkup":"/vagrant/node_modules/react/lib/createNodesFromMarkup.js","./emptyFunction":"/vagrant/node_modules/react/lib/emptyFunction.js","./getMarkupWrap":"/vagrant/node_modules/react/lib/getMarkupWrap.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/DefaultEventPluginOrder.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ExecutionEnvironment.js","./createNodesFromMarkup":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/createNodesFromMarkup.js","./emptyFunction":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/emptyFunction.js","./getMarkupWrap":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getMarkupWrap.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/DefaultEventPluginOrder.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -4774,7 +4774,7 @@ var DefaultEventPluginOrder = [
 
 module.exports = DefaultEventPluginOrder;
 
-},{"./keyOf":"/vagrant/node_modules/react/lib/keyOf.js"}],"/vagrant/node_modules/react/lib/EnterLeaveEventPlugin.js":[function(require,module,exports){
+},{"./keyOf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/keyOf.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EnterLeaveEventPlugin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -4921,7 +4921,7 @@ var EnterLeaveEventPlugin = {
 
 module.exports = EnterLeaveEventPlugin;
 
-},{"./EventConstants":"/vagrant/node_modules/react/lib/EventConstants.js","./EventPropagators":"/vagrant/node_modules/react/lib/EventPropagators.js","./ReactMount":"/vagrant/node_modules/react/lib/ReactMount.js","./SyntheticMouseEvent":"/vagrant/node_modules/react/lib/SyntheticMouseEvent.js","./keyOf":"/vagrant/node_modules/react/lib/keyOf.js"}],"/vagrant/node_modules/react/lib/EventConstants.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventConstants.js","./EventPropagators":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPropagators.js","./ReactMount":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMount.js","./SyntheticMouseEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticMouseEvent.js","./keyOf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/keyOf.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventConstants.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -5000,7 +5000,7 @@ var EventConstants = {
 
 module.exports = EventConstants;
 
-},{"./keyMirror":"/vagrant/node_modules/react/lib/keyMirror.js"}],"/vagrant/node_modules/react/lib/EventListener.js":[function(require,module,exports){
+},{"./keyMirror":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/keyMirror.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventListener.js":[function(require,module,exports){
 (function (process){
 /**
  * @providesModule EventListener
@@ -5076,7 +5076,7 @@ var EventListener = {
 module.exports = EventListener;
 
 }).call(this,require('_process'))
-},{"./emptyFunction":"/vagrant/node_modules/react/lib/emptyFunction.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/EventPluginHub.js":[function(require,module,exports){
+},{"./emptyFunction":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/emptyFunction.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPluginHub.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -5370,7 +5370,7 @@ var EventPluginHub = {
 module.exports = EventPluginHub;
 
 }).call(this,require('_process'))
-},{"./EventPluginRegistry":"/vagrant/node_modules/react/lib/EventPluginRegistry.js","./EventPluginUtils":"/vagrant/node_modules/react/lib/EventPluginUtils.js","./accumulate":"/vagrant/node_modules/react/lib/accumulate.js","./forEachAccumulated":"/vagrant/node_modules/react/lib/forEachAccumulated.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","./isEventSupported":"/vagrant/node_modules/react/lib/isEventSupported.js","./monitorCodeUse":"/vagrant/node_modules/react/lib/monitorCodeUse.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/EventPluginRegistry.js":[function(require,module,exports){
+},{"./EventPluginRegistry":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPluginRegistry.js","./EventPluginUtils":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPluginUtils.js","./accumulate":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/accumulate.js","./forEachAccumulated":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/forEachAccumulated.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","./isEventSupported":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/isEventSupported.js","./monitorCodeUse":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/monitorCodeUse.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPluginRegistry.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -5657,7 +5657,7 @@ var EventPluginRegistry = {
 module.exports = EventPluginRegistry;
 
 }).call(this,require('_process'))
-},{"./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/EventPluginUtils.js":[function(require,module,exports){
+},{"./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPluginUtils.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -5885,7 +5885,7 @@ var EventPluginUtils = {
 module.exports = EventPluginUtils;
 
 }).call(this,require('_process'))
-},{"./EventConstants":"/vagrant/node_modules/react/lib/EventConstants.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/EventPropagators.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventConstants.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPropagators.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -6032,7 +6032,7 @@ var EventPropagators = {
 module.exports = EventPropagators;
 
 }).call(this,require('_process'))
-},{"./EventConstants":"/vagrant/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/vagrant/node_modules/react/lib/EventPluginHub.js","./accumulate":"/vagrant/node_modules/react/lib/accumulate.js","./forEachAccumulated":"/vagrant/node_modules/react/lib/forEachAccumulated.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ExecutionEnvironment.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPluginHub.js","./accumulate":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/accumulate.js","./forEachAccumulated":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/forEachAccumulated.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ExecutionEnvironment.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -6084,7 +6084,7 @@ var ExecutionEnvironment = {
 
 module.exports = ExecutionEnvironment;
 
-},{}],"/vagrant/node_modules/react/lib/HTMLDOMPropertyConfig.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/HTMLDOMPropertyConfig.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -6272,7 +6272,7 @@ var HTMLDOMPropertyConfig = {
 
 module.exports = HTMLDOMPropertyConfig;
 
-},{"./DOMProperty":"/vagrant/node_modules/react/lib/DOMProperty.js","./ExecutionEnvironment":"/vagrant/node_modules/react/lib/ExecutionEnvironment.js"}],"/vagrant/node_modules/react/lib/LinkedStateMixin.js":[function(require,module,exports){
+},{"./DOMProperty":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/DOMProperty.js","./ExecutionEnvironment":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ExecutionEnvironment.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/LinkedStateMixin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -6320,7 +6320,7 @@ var LinkedStateMixin = {
 
 module.exports = LinkedStateMixin;
 
-},{"./ReactLink":"/vagrant/node_modules/react/lib/ReactLink.js","./ReactStateSetters":"/vagrant/node_modules/react/lib/ReactStateSetters.js"}],"/vagrant/node_modules/react/lib/LinkedValueUtils.js":[function(require,module,exports){
+},{"./ReactLink":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactLink.js","./ReactStateSetters":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactStateSetters.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/LinkedValueUtils.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -6483,7 +6483,7 @@ var LinkedValueUtils = {
 module.exports = LinkedValueUtils;
 
 }).call(this,require('_process'))
-},{"./ReactPropTypes":"/vagrant/node_modules/react/lib/ReactPropTypes.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/LocalEventTrapMixin.js":[function(require,module,exports){
+},{"./ReactPropTypes":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPropTypes.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/LocalEventTrapMixin.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014 Facebook, Inc.
@@ -6539,7 +6539,7 @@ var LocalEventTrapMixin = {
 module.exports = LocalEventTrapMixin;
 
 }).call(this,require('_process'))
-},{"./ReactBrowserEventEmitter":"/vagrant/node_modules/react/lib/ReactBrowserEventEmitter.js","./accumulate":"/vagrant/node_modules/react/lib/accumulate.js","./forEachAccumulated":"/vagrant/node_modules/react/lib/forEachAccumulated.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/MobileSafariClickEventPlugin.js":[function(require,module,exports){
+},{"./ReactBrowserEventEmitter":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactBrowserEventEmitter.js","./accumulate":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/accumulate.js","./forEachAccumulated":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/forEachAccumulated.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/MobileSafariClickEventPlugin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -6604,7 +6604,7 @@ var MobileSafariClickEventPlugin = {
 
 module.exports = MobileSafariClickEventPlugin;
 
-},{"./EventConstants":"/vagrant/node_modules/react/lib/EventConstants.js","./emptyFunction":"/vagrant/node_modules/react/lib/emptyFunction.js"}],"/vagrant/node_modules/react/lib/PooledClass.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventConstants.js","./emptyFunction":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/emptyFunction.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/PooledClass.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -6727,7 +6727,7 @@ var PooledClass = {
 module.exports = PooledClass;
 
 }).call(this,require('_process'))
-},{"./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/React.js":[function(require,module,exports){
+},{"./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/React.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -6862,7 +6862,7 @@ React.version = '0.11.1';
 module.exports = React;
 
 }).call(this,require('_process'))
-},{"./DOMPropertyOperations":"/vagrant/node_modules/react/lib/DOMPropertyOperations.js","./EventPluginUtils":"/vagrant/node_modules/react/lib/EventPluginUtils.js","./ExecutionEnvironment":"/vagrant/node_modules/react/lib/ExecutionEnvironment.js","./ReactChildren":"/vagrant/node_modules/react/lib/ReactChildren.js","./ReactComponent":"/vagrant/node_modules/react/lib/ReactComponent.js","./ReactCompositeComponent":"/vagrant/node_modules/react/lib/ReactCompositeComponent.js","./ReactContext":"/vagrant/node_modules/react/lib/ReactContext.js","./ReactCurrentOwner":"/vagrant/node_modules/react/lib/ReactCurrentOwner.js","./ReactDOM":"/vagrant/node_modules/react/lib/ReactDOM.js","./ReactDOMComponent":"/vagrant/node_modules/react/lib/ReactDOMComponent.js","./ReactDefaultInjection":"/vagrant/node_modules/react/lib/ReactDefaultInjection.js","./ReactDescriptor":"/vagrant/node_modules/react/lib/ReactDescriptor.js","./ReactInstanceHandles":"/vagrant/node_modules/react/lib/ReactInstanceHandles.js","./ReactMount":"/vagrant/node_modules/react/lib/ReactMount.js","./ReactMultiChild":"/vagrant/node_modules/react/lib/ReactMultiChild.js","./ReactPerf":"/vagrant/node_modules/react/lib/ReactPerf.js","./ReactPropTypes":"/vagrant/node_modules/react/lib/ReactPropTypes.js","./ReactServerRendering":"/vagrant/node_modules/react/lib/ReactServerRendering.js","./ReactTextComponent":"/vagrant/node_modules/react/lib/ReactTextComponent.js","./onlyChild":"/vagrant/node_modules/react/lib/onlyChild.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactBrowserComponentMixin.js":[function(require,module,exports){
+},{"./DOMPropertyOperations":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/DOMPropertyOperations.js","./EventPluginUtils":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPluginUtils.js","./ExecutionEnvironment":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ExecutionEnvironment.js","./ReactChildren":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactChildren.js","./ReactComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactComponent.js","./ReactCompositeComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCompositeComponent.js","./ReactContext":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactContext.js","./ReactCurrentOwner":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCurrentOwner.js","./ReactDOM":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOM.js","./ReactDOMComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMComponent.js","./ReactDefaultInjection":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDefaultInjection.js","./ReactDescriptor":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDescriptor.js","./ReactInstanceHandles":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactInstanceHandles.js","./ReactMount":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMount.js","./ReactMultiChild":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMultiChild.js","./ReactPerf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPerf.js","./ReactPropTypes":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPropTypes.js","./ReactServerRendering":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactServerRendering.js","./ReactTextComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactTextComponent.js","./onlyChild":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/onlyChild.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactBrowserComponentMixin.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -6912,7 +6912,7 @@ var ReactBrowserComponentMixin = {
 module.exports = ReactBrowserComponentMixin;
 
 }).call(this,require('_process'))
-},{"./ReactEmptyComponent":"/vagrant/node_modules/react/lib/ReactEmptyComponent.js","./ReactMount":"/vagrant/node_modules/react/lib/ReactMount.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactBrowserEventEmitter.js":[function(require,module,exports){
+},{"./ReactEmptyComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactEmptyComponent.js","./ReactMount":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMount.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactBrowserEventEmitter.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -7274,7 +7274,7 @@ var ReactBrowserEventEmitter = merge(ReactEventEmitterMixin, {
 
 module.exports = ReactBrowserEventEmitter;
 
-},{"./EventConstants":"/vagrant/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/vagrant/node_modules/react/lib/EventPluginHub.js","./EventPluginRegistry":"/vagrant/node_modules/react/lib/EventPluginRegistry.js","./ReactEventEmitterMixin":"/vagrant/node_modules/react/lib/ReactEventEmitterMixin.js","./ViewportMetrics":"/vagrant/node_modules/react/lib/ViewportMetrics.js","./isEventSupported":"/vagrant/node_modules/react/lib/isEventSupported.js","./merge":"/vagrant/node_modules/react/lib/merge.js"}],"/vagrant/node_modules/react/lib/ReactCSSTransitionGroup.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPluginHub.js","./EventPluginRegistry":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPluginRegistry.js","./ReactEventEmitterMixin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactEventEmitterMixin.js","./ViewportMetrics":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ViewportMetrics.js","./isEventSupported":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/isEventSupported.js","./merge":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/merge.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCSSTransitionGroup.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -7343,7 +7343,7 @@ var ReactCSSTransitionGroup = React.createClass({
 
 module.exports = ReactCSSTransitionGroup;
 
-},{"./React":"/vagrant/node_modules/react/lib/React.js","./ReactCSSTransitionGroupChild":"/vagrant/node_modules/react/lib/ReactCSSTransitionGroupChild.js","./ReactTransitionGroup":"/vagrant/node_modules/react/lib/ReactTransitionGroup.js"}],"/vagrant/node_modules/react/lib/ReactCSSTransitionGroupChild.js":[function(require,module,exports){
+},{"./React":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/React.js","./ReactCSSTransitionGroupChild":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCSSTransitionGroupChild.js","./ReactTransitionGroup":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactTransitionGroup.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCSSTransitionGroupChild.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -7482,7 +7482,7 @@ var ReactCSSTransitionGroupChild = React.createClass({
 module.exports = ReactCSSTransitionGroupChild;
 
 }).call(this,require('_process'))
-},{"./CSSCore":"/vagrant/node_modules/react/lib/CSSCore.js","./React":"/vagrant/node_modules/react/lib/React.js","./ReactTransitionEvents":"/vagrant/node_modules/react/lib/ReactTransitionEvents.js","./onlyChild":"/vagrant/node_modules/react/lib/onlyChild.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactChildren.js":[function(require,module,exports){
+},{"./CSSCore":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/CSSCore.js","./React":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/React.js","./ReactTransitionEvents":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactTransitionEvents.js","./onlyChild":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/onlyChild.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactChildren.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -7639,7 +7639,7 @@ var ReactChildren = {
 module.exports = ReactChildren;
 
 }).call(this,require('_process'))
-},{"./PooledClass":"/vagrant/node_modules/react/lib/PooledClass.js","./traverseAllChildren":"/vagrant/node_modules/react/lib/traverseAllChildren.js","./warning":"/vagrant/node_modules/react/lib/warning.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactComponent.js":[function(require,module,exports){
+},{"./PooledClass":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/PooledClass.js","./traverseAllChildren":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/traverseAllChildren.js","./warning":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/warning.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactComponent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -8089,7 +8089,7 @@ var ReactComponent = {
 module.exports = ReactComponent;
 
 }).call(this,require('_process'))
-},{"./ReactDescriptor":"/vagrant/node_modules/react/lib/ReactDescriptor.js","./ReactOwner":"/vagrant/node_modules/react/lib/ReactOwner.js","./ReactUpdates":"/vagrant/node_modules/react/lib/ReactUpdates.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","./keyMirror":"/vagrant/node_modules/react/lib/keyMirror.js","./merge":"/vagrant/node_modules/react/lib/merge.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactComponentBrowserEnvironment.js":[function(require,module,exports){
+},{"./ReactDescriptor":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDescriptor.js","./ReactOwner":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactOwner.js","./ReactUpdates":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactUpdates.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","./keyMirror":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/keyMirror.js","./merge":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/merge.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactComponentBrowserEnvironment.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -8218,7 +8218,7 @@ var ReactComponentBrowserEnvironment = {
 module.exports = ReactComponentBrowserEnvironment;
 
 }).call(this,require('_process'))
-},{"./ReactDOMIDOperations":"/vagrant/node_modules/react/lib/ReactDOMIDOperations.js","./ReactMarkupChecksum":"/vagrant/node_modules/react/lib/ReactMarkupChecksum.js","./ReactMount":"/vagrant/node_modules/react/lib/ReactMount.js","./ReactPerf":"/vagrant/node_modules/react/lib/ReactPerf.js","./ReactReconcileTransaction":"/vagrant/node_modules/react/lib/ReactReconcileTransaction.js","./getReactRootElementInContainer":"/vagrant/node_modules/react/lib/getReactRootElementInContainer.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","./setInnerHTML":"/vagrant/node_modules/react/lib/setInnerHTML.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactComponentWithPureRenderMixin.js":[function(require,module,exports){
+},{"./ReactDOMIDOperations":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMIDOperations.js","./ReactMarkupChecksum":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMarkupChecksum.js","./ReactMount":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMount.js","./ReactPerf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPerf.js","./ReactReconcileTransaction":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactReconcileTransaction.js","./getReactRootElementInContainer":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getReactRootElementInContainer.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","./setInnerHTML":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/setInnerHTML.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactComponentWithPureRenderMixin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -8274,7 +8274,7 @@ var ReactComponentWithPureRenderMixin = {
 
 module.exports = ReactComponentWithPureRenderMixin;
 
-},{"./shallowEqual":"/vagrant/node_modules/react/lib/shallowEqual.js"}],"/vagrant/node_modules/react/lib/ReactCompositeComponent.js":[function(require,module,exports){
+},{"./shallowEqual":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/shallowEqual.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCompositeComponent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -9703,7 +9703,7 @@ var ReactCompositeComponent = {
 module.exports = ReactCompositeComponent;
 
 }).call(this,require('_process'))
-},{"./ReactComponent":"/vagrant/node_modules/react/lib/ReactComponent.js","./ReactContext":"/vagrant/node_modules/react/lib/ReactContext.js","./ReactCurrentOwner":"/vagrant/node_modules/react/lib/ReactCurrentOwner.js","./ReactDescriptor":"/vagrant/node_modules/react/lib/ReactDescriptor.js","./ReactDescriptorValidator":"/vagrant/node_modules/react/lib/ReactDescriptorValidator.js","./ReactEmptyComponent":"/vagrant/node_modules/react/lib/ReactEmptyComponent.js","./ReactErrorUtils":"/vagrant/node_modules/react/lib/ReactErrorUtils.js","./ReactOwner":"/vagrant/node_modules/react/lib/ReactOwner.js","./ReactPerf":"/vagrant/node_modules/react/lib/ReactPerf.js","./ReactPropTransferer":"/vagrant/node_modules/react/lib/ReactPropTransferer.js","./ReactPropTypeLocationNames":"/vagrant/node_modules/react/lib/ReactPropTypeLocationNames.js","./ReactPropTypeLocations":"/vagrant/node_modules/react/lib/ReactPropTypeLocations.js","./ReactUpdates":"/vagrant/node_modules/react/lib/ReactUpdates.js","./instantiateReactComponent":"/vagrant/node_modules/react/lib/instantiateReactComponent.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","./keyMirror":"/vagrant/node_modules/react/lib/keyMirror.js","./mapObject":"/vagrant/node_modules/react/lib/mapObject.js","./merge":"/vagrant/node_modules/react/lib/merge.js","./mixInto":"/vagrant/node_modules/react/lib/mixInto.js","./monitorCodeUse":"/vagrant/node_modules/react/lib/monitorCodeUse.js","./shouldUpdateReactComponent":"/vagrant/node_modules/react/lib/shouldUpdateReactComponent.js","./warning":"/vagrant/node_modules/react/lib/warning.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactContext.js":[function(require,module,exports){
+},{"./ReactComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactComponent.js","./ReactContext":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactContext.js","./ReactCurrentOwner":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCurrentOwner.js","./ReactDescriptor":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDescriptor.js","./ReactDescriptorValidator":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDescriptorValidator.js","./ReactEmptyComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactEmptyComponent.js","./ReactErrorUtils":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactErrorUtils.js","./ReactOwner":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactOwner.js","./ReactPerf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPerf.js","./ReactPropTransferer":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPropTransferer.js","./ReactPropTypeLocationNames":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPropTypeLocationNames.js","./ReactPropTypeLocations":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPropTypeLocations.js","./ReactUpdates":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactUpdates.js","./instantiateReactComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/instantiateReactComponent.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","./keyMirror":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/keyMirror.js","./mapObject":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mapObject.js","./merge":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/merge.js","./mixInto":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mixInto.js","./monitorCodeUse":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/monitorCodeUse.js","./shouldUpdateReactComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/shouldUpdateReactComponent.js","./warning":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/warning.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactContext.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -9772,7 +9772,7 @@ var ReactContext = {
 
 module.exports = ReactContext;
 
-},{"./merge":"/vagrant/node_modules/react/lib/merge.js"}],"/vagrant/node_modules/react/lib/ReactCurrentOwner.js":[function(require,module,exports){
+},{"./merge":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/merge.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCurrentOwner.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -9813,7 +9813,7 @@ var ReactCurrentOwner = {
 
 module.exports = ReactCurrentOwner;
 
-},{}],"/vagrant/node_modules/react/lib/ReactDOM.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOM.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -10026,7 +10026,7 @@ ReactDOM.injection = injection;
 module.exports = ReactDOM;
 
 }).call(this,require('_process'))
-},{"./ReactDOMComponent":"/vagrant/node_modules/react/lib/ReactDOMComponent.js","./ReactDescriptor":"/vagrant/node_modules/react/lib/ReactDescriptor.js","./ReactDescriptorValidator":"/vagrant/node_modules/react/lib/ReactDescriptorValidator.js","./mapObject":"/vagrant/node_modules/react/lib/mapObject.js","./mergeInto":"/vagrant/node_modules/react/lib/mergeInto.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactDOMButton.js":[function(require,module,exports){
+},{"./ReactDOMComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMComponent.js","./ReactDescriptor":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDescriptor.js","./ReactDescriptorValidator":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDescriptorValidator.js","./mapObject":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mapObject.js","./mergeInto":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mergeInto.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMButton.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -10097,7 +10097,7 @@ var ReactDOMButton = ReactCompositeComponent.createClass({
 
 module.exports = ReactDOMButton;
 
-},{"./AutoFocusMixin":"/vagrant/node_modules/react/lib/AutoFocusMixin.js","./ReactBrowserComponentMixin":"/vagrant/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactCompositeComponent":"/vagrant/node_modules/react/lib/ReactCompositeComponent.js","./ReactDOM":"/vagrant/node_modules/react/lib/ReactDOM.js","./keyMirror":"/vagrant/node_modules/react/lib/keyMirror.js"}],"/vagrant/node_modules/react/lib/ReactDOMComponent.js":[function(require,module,exports){
+},{"./AutoFocusMixin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/AutoFocusMixin.js","./ReactBrowserComponentMixin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactCompositeComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCompositeComponent.js","./ReactDOM":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOM.js","./keyMirror":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/keyMirror.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMComponent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -10519,7 +10519,7 @@ mixInto(ReactDOMComponent, ReactBrowserComponentMixin);
 module.exports = ReactDOMComponent;
 
 }).call(this,require('_process'))
-},{"./CSSPropertyOperations":"/vagrant/node_modules/react/lib/CSSPropertyOperations.js","./DOMProperty":"/vagrant/node_modules/react/lib/DOMProperty.js","./DOMPropertyOperations":"/vagrant/node_modules/react/lib/DOMPropertyOperations.js","./ReactBrowserComponentMixin":"/vagrant/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactBrowserEventEmitter":"/vagrant/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactComponent":"/vagrant/node_modules/react/lib/ReactComponent.js","./ReactMount":"/vagrant/node_modules/react/lib/ReactMount.js","./ReactMultiChild":"/vagrant/node_modules/react/lib/ReactMultiChild.js","./ReactPerf":"/vagrant/node_modules/react/lib/ReactPerf.js","./escapeTextForBrowser":"/vagrant/node_modules/react/lib/escapeTextForBrowser.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","./keyOf":"/vagrant/node_modules/react/lib/keyOf.js","./merge":"/vagrant/node_modules/react/lib/merge.js","./mixInto":"/vagrant/node_modules/react/lib/mixInto.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactDOMForm.js":[function(require,module,exports){
+},{"./CSSPropertyOperations":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/CSSPropertyOperations.js","./DOMProperty":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/DOMProperty.js","./DOMPropertyOperations":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/DOMPropertyOperations.js","./ReactBrowserComponentMixin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactBrowserEventEmitter":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactComponent.js","./ReactMount":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMount.js","./ReactMultiChild":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMultiChild.js","./ReactPerf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPerf.js","./escapeTextForBrowser":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/escapeTextForBrowser.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","./keyOf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/keyOf.js","./merge":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/merge.js","./mixInto":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mixInto.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMForm.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -10575,7 +10575,7 @@ var ReactDOMForm = ReactCompositeComponent.createClass({
 
 module.exports = ReactDOMForm;
 
-},{"./EventConstants":"/vagrant/node_modules/react/lib/EventConstants.js","./LocalEventTrapMixin":"/vagrant/node_modules/react/lib/LocalEventTrapMixin.js","./ReactBrowserComponentMixin":"/vagrant/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactCompositeComponent":"/vagrant/node_modules/react/lib/ReactCompositeComponent.js","./ReactDOM":"/vagrant/node_modules/react/lib/ReactDOM.js"}],"/vagrant/node_modules/react/lib/ReactDOMIDOperations.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventConstants.js","./LocalEventTrapMixin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/LocalEventTrapMixin.js","./ReactBrowserComponentMixin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactCompositeComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCompositeComponent.js","./ReactDOM":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOM.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMIDOperations.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -10768,7 +10768,7 @@ var ReactDOMIDOperations = {
 module.exports = ReactDOMIDOperations;
 
 }).call(this,require('_process'))
-},{"./CSSPropertyOperations":"/vagrant/node_modules/react/lib/CSSPropertyOperations.js","./DOMChildrenOperations":"/vagrant/node_modules/react/lib/DOMChildrenOperations.js","./DOMPropertyOperations":"/vagrant/node_modules/react/lib/DOMPropertyOperations.js","./ReactMount":"/vagrant/node_modules/react/lib/ReactMount.js","./ReactPerf":"/vagrant/node_modules/react/lib/ReactPerf.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","./setInnerHTML":"/vagrant/node_modules/react/lib/setInnerHTML.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactDOMImg.js":[function(require,module,exports){
+},{"./CSSPropertyOperations":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/CSSPropertyOperations.js","./DOMChildrenOperations":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/DOMChildrenOperations.js","./DOMPropertyOperations":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/DOMPropertyOperations.js","./ReactMount":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMount.js","./ReactPerf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPerf.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","./setInnerHTML":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/setInnerHTML.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMImg.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -10822,7 +10822,7 @@ var ReactDOMImg = ReactCompositeComponent.createClass({
 
 module.exports = ReactDOMImg;
 
-},{"./EventConstants":"/vagrant/node_modules/react/lib/EventConstants.js","./LocalEventTrapMixin":"/vagrant/node_modules/react/lib/LocalEventTrapMixin.js","./ReactBrowserComponentMixin":"/vagrant/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactCompositeComponent":"/vagrant/node_modules/react/lib/ReactCompositeComponent.js","./ReactDOM":"/vagrant/node_modules/react/lib/ReactDOM.js"}],"/vagrant/node_modules/react/lib/ReactDOMInput.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventConstants.js","./LocalEventTrapMixin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/LocalEventTrapMixin.js","./ReactBrowserComponentMixin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactCompositeComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCompositeComponent.js","./ReactDOM":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOM.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMInput.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -11008,7 +11008,7 @@ var ReactDOMInput = ReactCompositeComponent.createClass({
 module.exports = ReactDOMInput;
 
 }).call(this,require('_process'))
-},{"./AutoFocusMixin":"/vagrant/node_modules/react/lib/AutoFocusMixin.js","./DOMPropertyOperations":"/vagrant/node_modules/react/lib/DOMPropertyOperations.js","./LinkedValueUtils":"/vagrant/node_modules/react/lib/LinkedValueUtils.js","./ReactBrowserComponentMixin":"/vagrant/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactCompositeComponent":"/vagrant/node_modules/react/lib/ReactCompositeComponent.js","./ReactDOM":"/vagrant/node_modules/react/lib/ReactDOM.js","./ReactMount":"/vagrant/node_modules/react/lib/ReactMount.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","./merge":"/vagrant/node_modules/react/lib/merge.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactDOMOption.js":[function(require,module,exports){
+},{"./AutoFocusMixin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/AutoFocusMixin.js","./DOMPropertyOperations":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/DOMPropertyOperations.js","./LinkedValueUtils":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/LinkedValueUtils.js","./ReactBrowserComponentMixin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactCompositeComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCompositeComponent.js","./ReactDOM":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOM.js","./ReactMount":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMount.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","./merge":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/merge.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMOption.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -11067,7 +11067,7 @@ var ReactDOMOption = ReactCompositeComponent.createClass({
 module.exports = ReactDOMOption;
 
 }).call(this,require('_process'))
-},{"./ReactBrowserComponentMixin":"/vagrant/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactCompositeComponent":"/vagrant/node_modules/react/lib/ReactCompositeComponent.js","./ReactDOM":"/vagrant/node_modules/react/lib/ReactDOM.js","./warning":"/vagrant/node_modules/react/lib/warning.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactDOMSelect.js":[function(require,module,exports){
+},{"./ReactBrowserComponentMixin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactCompositeComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCompositeComponent.js","./ReactDOM":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOM.js","./warning":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/warning.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMSelect.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -11250,7 +11250,7 @@ var ReactDOMSelect = ReactCompositeComponent.createClass({
 
 module.exports = ReactDOMSelect;
 
-},{"./AutoFocusMixin":"/vagrant/node_modules/react/lib/AutoFocusMixin.js","./LinkedValueUtils":"/vagrant/node_modules/react/lib/LinkedValueUtils.js","./ReactBrowserComponentMixin":"/vagrant/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactCompositeComponent":"/vagrant/node_modules/react/lib/ReactCompositeComponent.js","./ReactDOM":"/vagrant/node_modules/react/lib/ReactDOM.js","./merge":"/vagrant/node_modules/react/lib/merge.js"}],"/vagrant/node_modules/react/lib/ReactDOMSelection.js":[function(require,module,exports){
+},{"./AutoFocusMixin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/AutoFocusMixin.js","./LinkedValueUtils":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/LinkedValueUtils.js","./ReactBrowserComponentMixin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactCompositeComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCompositeComponent.js","./ReactDOM":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOM.js","./merge":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/merge.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMSelection.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -11466,7 +11466,7 @@ var ReactDOMSelection = {
 
 module.exports = ReactDOMSelection;
 
-},{"./ExecutionEnvironment":"/vagrant/node_modules/react/lib/ExecutionEnvironment.js","./getNodeForCharacterOffset":"/vagrant/node_modules/react/lib/getNodeForCharacterOffset.js","./getTextContentAccessor":"/vagrant/node_modules/react/lib/getTextContentAccessor.js"}],"/vagrant/node_modules/react/lib/ReactDOMTextarea.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ExecutionEnvironment.js","./getNodeForCharacterOffset":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getNodeForCharacterOffset.js","./getTextContentAccessor":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getTextContentAccessor.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMTextarea.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -11612,7 +11612,7 @@ var ReactDOMTextarea = ReactCompositeComponent.createClass({
 module.exports = ReactDOMTextarea;
 
 }).call(this,require('_process'))
-},{"./AutoFocusMixin":"/vagrant/node_modules/react/lib/AutoFocusMixin.js","./DOMPropertyOperations":"/vagrant/node_modules/react/lib/DOMPropertyOperations.js","./LinkedValueUtils":"/vagrant/node_modules/react/lib/LinkedValueUtils.js","./ReactBrowserComponentMixin":"/vagrant/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactCompositeComponent":"/vagrant/node_modules/react/lib/ReactCompositeComponent.js","./ReactDOM":"/vagrant/node_modules/react/lib/ReactDOM.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","./merge":"/vagrant/node_modules/react/lib/merge.js","./warning":"/vagrant/node_modules/react/lib/warning.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactDefaultBatchingStrategy.js":[function(require,module,exports){
+},{"./AutoFocusMixin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/AutoFocusMixin.js","./DOMPropertyOperations":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/DOMPropertyOperations.js","./LinkedValueUtils":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/LinkedValueUtils.js","./ReactBrowserComponentMixin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactCompositeComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCompositeComponent.js","./ReactDOM":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOM.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","./merge":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/merge.js","./warning":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/warning.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDefaultBatchingStrategy.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -11689,7 +11689,7 @@ var ReactDefaultBatchingStrategy = {
 
 module.exports = ReactDefaultBatchingStrategy;
 
-},{"./ReactUpdates":"/vagrant/node_modules/react/lib/ReactUpdates.js","./Transaction":"/vagrant/node_modules/react/lib/Transaction.js","./emptyFunction":"/vagrant/node_modules/react/lib/emptyFunction.js","./mixInto":"/vagrant/node_modules/react/lib/mixInto.js"}],"/vagrant/node_modules/react/lib/ReactDefaultInjection.js":[function(require,module,exports){
+},{"./ReactUpdates":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactUpdates.js","./Transaction":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/Transaction.js","./emptyFunction":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/emptyFunction.js","./mixInto":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mixInto.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDefaultInjection.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -11821,7 +11821,7 @@ module.exports = {
 };
 
 }).call(this,require('_process'))
-},{"./BeforeInputEventPlugin":"/vagrant/node_modules/react/lib/BeforeInputEventPlugin.js","./ChangeEventPlugin":"/vagrant/node_modules/react/lib/ChangeEventPlugin.js","./ClientReactRootIndex":"/vagrant/node_modules/react/lib/ClientReactRootIndex.js","./CompositionEventPlugin":"/vagrant/node_modules/react/lib/CompositionEventPlugin.js","./DefaultEventPluginOrder":"/vagrant/node_modules/react/lib/DefaultEventPluginOrder.js","./EnterLeaveEventPlugin":"/vagrant/node_modules/react/lib/EnterLeaveEventPlugin.js","./ExecutionEnvironment":"/vagrant/node_modules/react/lib/ExecutionEnvironment.js","./HTMLDOMPropertyConfig":"/vagrant/node_modules/react/lib/HTMLDOMPropertyConfig.js","./MobileSafariClickEventPlugin":"/vagrant/node_modules/react/lib/MobileSafariClickEventPlugin.js","./ReactBrowserComponentMixin":"/vagrant/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactComponentBrowserEnvironment":"/vagrant/node_modules/react/lib/ReactComponentBrowserEnvironment.js","./ReactDOM":"/vagrant/node_modules/react/lib/ReactDOM.js","./ReactDOMButton":"/vagrant/node_modules/react/lib/ReactDOMButton.js","./ReactDOMForm":"/vagrant/node_modules/react/lib/ReactDOMForm.js","./ReactDOMImg":"/vagrant/node_modules/react/lib/ReactDOMImg.js","./ReactDOMInput":"/vagrant/node_modules/react/lib/ReactDOMInput.js","./ReactDOMOption":"/vagrant/node_modules/react/lib/ReactDOMOption.js","./ReactDOMSelect":"/vagrant/node_modules/react/lib/ReactDOMSelect.js","./ReactDOMTextarea":"/vagrant/node_modules/react/lib/ReactDOMTextarea.js","./ReactDefaultBatchingStrategy":"/vagrant/node_modules/react/lib/ReactDefaultBatchingStrategy.js","./ReactDefaultPerf":"/vagrant/node_modules/react/lib/ReactDefaultPerf.js","./ReactEventListener":"/vagrant/node_modules/react/lib/ReactEventListener.js","./ReactInjection":"/vagrant/node_modules/react/lib/ReactInjection.js","./ReactInstanceHandles":"/vagrant/node_modules/react/lib/ReactInstanceHandles.js","./ReactMount":"/vagrant/node_modules/react/lib/ReactMount.js","./SVGDOMPropertyConfig":"/vagrant/node_modules/react/lib/SVGDOMPropertyConfig.js","./SelectEventPlugin":"/vagrant/node_modules/react/lib/SelectEventPlugin.js","./ServerReactRootIndex":"/vagrant/node_modules/react/lib/ServerReactRootIndex.js","./SimpleEventPlugin":"/vagrant/node_modules/react/lib/SimpleEventPlugin.js","./createFullPageComponent":"/vagrant/node_modules/react/lib/createFullPageComponent.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactDefaultPerf.js":[function(require,module,exports){
+},{"./BeforeInputEventPlugin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/BeforeInputEventPlugin.js","./ChangeEventPlugin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ChangeEventPlugin.js","./ClientReactRootIndex":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ClientReactRootIndex.js","./CompositionEventPlugin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/CompositionEventPlugin.js","./DefaultEventPluginOrder":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/DefaultEventPluginOrder.js","./EnterLeaveEventPlugin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EnterLeaveEventPlugin.js","./ExecutionEnvironment":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ExecutionEnvironment.js","./HTMLDOMPropertyConfig":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/HTMLDOMPropertyConfig.js","./MobileSafariClickEventPlugin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/MobileSafariClickEventPlugin.js","./ReactBrowserComponentMixin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactComponentBrowserEnvironment":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactComponentBrowserEnvironment.js","./ReactDOM":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOM.js","./ReactDOMButton":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMButton.js","./ReactDOMForm":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMForm.js","./ReactDOMImg":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMImg.js","./ReactDOMInput":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMInput.js","./ReactDOMOption":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMOption.js","./ReactDOMSelect":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMSelect.js","./ReactDOMTextarea":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMTextarea.js","./ReactDefaultBatchingStrategy":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDefaultBatchingStrategy.js","./ReactDefaultPerf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDefaultPerf.js","./ReactEventListener":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactEventListener.js","./ReactInjection":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactInjection.js","./ReactInstanceHandles":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactInstanceHandles.js","./ReactMount":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMount.js","./SVGDOMPropertyConfig":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SVGDOMPropertyConfig.js","./SelectEventPlugin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SelectEventPlugin.js","./ServerReactRootIndex":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ServerReactRootIndex.js","./SimpleEventPlugin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SimpleEventPlugin.js","./createFullPageComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/createFullPageComponent.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDefaultPerf.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -12084,7 +12084,7 @@ var ReactDefaultPerf = {
 
 module.exports = ReactDefaultPerf;
 
-},{"./DOMProperty":"/vagrant/node_modules/react/lib/DOMProperty.js","./ReactDefaultPerfAnalysis":"/vagrant/node_modules/react/lib/ReactDefaultPerfAnalysis.js","./ReactMount":"/vagrant/node_modules/react/lib/ReactMount.js","./ReactPerf":"/vagrant/node_modules/react/lib/ReactPerf.js","./performanceNow":"/vagrant/node_modules/react/lib/performanceNow.js"}],"/vagrant/node_modules/react/lib/ReactDefaultPerfAnalysis.js":[function(require,module,exports){
+},{"./DOMProperty":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/DOMProperty.js","./ReactDefaultPerfAnalysis":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDefaultPerfAnalysis.js","./ReactMount":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMount.js","./ReactPerf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPerf.js","./performanceNow":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/performanceNow.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDefaultPerfAnalysis.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -12289,7 +12289,7 @@ var ReactDefaultPerfAnalysis = {
 
 module.exports = ReactDefaultPerfAnalysis;
 
-},{"./merge":"/vagrant/node_modules/react/lib/merge.js"}],"/vagrant/node_modules/react/lib/ReactDescriptor.js":[function(require,module,exports){
+},{"./merge":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/merge.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDescriptor.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014 Facebook, Inc.
@@ -12544,7 +12544,7 @@ ReactDescriptor.isValidDescriptor = function(object) {
 module.exports = ReactDescriptor;
 
 }).call(this,require('_process'))
-},{"./ReactContext":"/vagrant/node_modules/react/lib/ReactContext.js","./ReactCurrentOwner":"/vagrant/node_modules/react/lib/ReactCurrentOwner.js","./merge":"/vagrant/node_modules/react/lib/merge.js","./warning":"/vagrant/node_modules/react/lib/warning.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactDescriptorValidator.js":[function(require,module,exports){
+},{"./ReactContext":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactContext.js","./ReactCurrentOwner":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCurrentOwner.js","./merge":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/merge.js","./warning":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/warning.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDescriptorValidator.js":[function(require,module,exports){
 /**
  * Copyright 2014 Facebook, Inc.
  *
@@ -12829,7 +12829,7 @@ var ReactDescriptorValidator = {
 
 module.exports = ReactDescriptorValidator;
 
-},{"./ReactCurrentOwner":"/vagrant/node_modules/react/lib/ReactCurrentOwner.js","./ReactDescriptor":"/vagrant/node_modules/react/lib/ReactDescriptor.js","./ReactPropTypeLocations":"/vagrant/node_modules/react/lib/ReactPropTypeLocations.js","./monitorCodeUse":"/vagrant/node_modules/react/lib/monitorCodeUse.js"}],"/vagrant/node_modules/react/lib/ReactEmptyComponent.js":[function(require,module,exports){
+},{"./ReactCurrentOwner":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCurrentOwner.js","./ReactDescriptor":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDescriptor.js","./ReactPropTypeLocations":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPropTypeLocations.js","./monitorCodeUse":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/monitorCodeUse.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactEmptyComponent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014 Facebook, Inc.
@@ -12911,7 +12911,7 @@ var ReactEmptyComponent = {
 module.exports = ReactEmptyComponent;
 
 }).call(this,require('_process'))
-},{"./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactErrorUtils.js":[function(require,module,exports){
+},{"./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactErrorUtils.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -12950,7 +12950,7 @@ var ReactErrorUtils = {
 
 module.exports = ReactErrorUtils;
 
-},{}],"/vagrant/node_modules/react/lib/ReactEventEmitterMixin.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactEventEmitterMixin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -13007,7 +13007,7 @@ var ReactEventEmitterMixin = {
 
 module.exports = ReactEventEmitterMixin;
 
-},{"./EventPluginHub":"/vagrant/node_modules/react/lib/EventPluginHub.js"}],"/vagrant/node_modules/react/lib/ReactEventListener.js":[function(require,module,exports){
+},{"./EventPluginHub":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPluginHub.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactEventListener.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -13198,7 +13198,7 @@ var ReactEventListener = {
 
 module.exports = ReactEventListener;
 
-},{"./EventListener":"/vagrant/node_modules/react/lib/EventListener.js","./ExecutionEnvironment":"/vagrant/node_modules/react/lib/ExecutionEnvironment.js","./PooledClass":"/vagrant/node_modules/react/lib/PooledClass.js","./ReactInstanceHandles":"/vagrant/node_modules/react/lib/ReactInstanceHandles.js","./ReactMount":"/vagrant/node_modules/react/lib/ReactMount.js","./ReactUpdates":"/vagrant/node_modules/react/lib/ReactUpdates.js","./getEventTarget":"/vagrant/node_modules/react/lib/getEventTarget.js","./getUnboundedScrollPosition":"/vagrant/node_modules/react/lib/getUnboundedScrollPosition.js","./mixInto":"/vagrant/node_modules/react/lib/mixInto.js"}],"/vagrant/node_modules/react/lib/ReactInjection.js":[function(require,module,exports){
+},{"./EventListener":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventListener.js","./ExecutionEnvironment":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ExecutionEnvironment.js","./PooledClass":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/PooledClass.js","./ReactInstanceHandles":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactInstanceHandles.js","./ReactMount":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMount.js","./ReactUpdates":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactUpdates.js","./getEventTarget":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getEventTarget.js","./getUnboundedScrollPosition":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getUnboundedScrollPosition.js","./mixInto":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mixInto.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactInjection.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -13245,7 +13245,7 @@ var ReactInjection = {
 
 module.exports = ReactInjection;
 
-},{"./DOMProperty":"/vagrant/node_modules/react/lib/DOMProperty.js","./EventPluginHub":"/vagrant/node_modules/react/lib/EventPluginHub.js","./ReactBrowserEventEmitter":"/vagrant/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactComponent":"/vagrant/node_modules/react/lib/ReactComponent.js","./ReactCompositeComponent":"/vagrant/node_modules/react/lib/ReactCompositeComponent.js","./ReactDOM":"/vagrant/node_modules/react/lib/ReactDOM.js","./ReactEmptyComponent":"/vagrant/node_modules/react/lib/ReactEmptyComponent.js","./ReactPerf":"/vagrant/node_modules/react/lib/ReactPerf.js","./ReactRootIndex":"/vagrant/node_modules/react/lib/ReactRootIndex.js","./ReactUpdates":"/vagrant/node_modules/react/lib/ReactUpdates.js"}],"/vagrant/node_modules/react/lib/ReactInputSelection.js":[function(require,module,exports){
+},{"./DOMProperty":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/DOMProperty.js","./EventPluginHub":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPluginHub.js","./ReactBrowserEventEmitter":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactComponent.js","./ReactCompositeComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCompositeComponent.js","./ReactDOM":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOM.js","./ReactEmptyComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactEmptyComponent.js","./ReactPerf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPerf.js","./ReactRootIndex":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactRootIndex.js","./ReactUpdates":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactUpdates.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactInputSelection.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -13388,7 +13388,7 @@ var ReactInputSelection = {
 
 module.exports = ReactInputSelection;
 
-},{"./ReactDOMSelection":"/vagrant/node_modules/react/lib/ReactDOMSelection.js","./containsNode":"/vagrant/node_modules/react/lib/containsNode.js","./focusNode":"/vagrant/node_modules/react/lib/focusNode.js","./getActiveElement":"/vagrant/node_modules/react/lib/getActiveElement.js"}],"/vagrant/node_modules/react/lib/ReactInstanceHandles.js":[function(require,module,exports){
+},{"./ReactDOMSelection":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOMSelection.js","./containsNode":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/containsNode.js","./focusNode":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/focusNode.js","./getActiveElement":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getActiveElement.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactInstanceHandles.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -13730,7 +13730,7 @@ var ReactInstanceHandles = {
 module.exports = ReactInstanceHandles;
 
 }).call(this,require('_process'))
-},{"./ReactRootIndex":"/vagrant/node_modules/react/lib/ReactRootIndex.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactLink.js":[function(require,module,exports){
+},{"./ReactRootIndex":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactRootIndex.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactLink.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -13810,7 +13810,7 @@ ReactLink.PropTypes = {
 
 module.exports = ReactLink;
 
-},{"./React":"/vagrant/node_modules/react/lib/React.js"}],"/vagrant/node_modules/react/lib/ReactMarkupChecksum.js":[function(require,module,exports){
+},{"./React":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/React.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMarkupChecksum.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -13865,7 +13865,7 @@ var ReactMarkupChecksum = {
 
 module.exports = ReactMarkupChecksum;
 
-},{"./adler32":"/vagrant/node_modules/react/lib/adler32.js"}],"/vagrant/node_modules/react/lib/ReactMount.js":[function(require,module,exports){
+},{"./adler32":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/adler32.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMount.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -14550,7 +14550,7 @@ var ReactMount = {
 module.exports = ReactMount;
 
 }).call(this,require('_process'))
-},{"./DOMProperty":"/vagrant/node_modules/react/lib/DOMProperty.js","./ReactBrowserEventEmitter":"/vagrant/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactCurrentOwner":"/vagrant/node_modules/react/lib/ReactCurrentOwner.js","./ReactDescriptor":"/vagrant/node_modules/react/lib/ReactDescriptor.js","./ReactInstanceHandles":"/vagrant/node_modules/react/lib/ReactInstanceHandles.js","./ReactPerf":"/vagrant/node_modules/react/lib/ReactPerf.js","./containsNode":"/vagrant/node_modules/react/lib/containsNode.js","./getReactRootElementInContainer":"/vagrant/node_modules/react/lib/getReactRootElementInContainer.js","./instantiateReactComponent":"/vagrant/node_modules/react/lib/instantiateReactComponent.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","./shouldUpdateReactComponent":"/vagrant/node_modules/react/lib/shouldUpdateReactComponent.js","./warning":"/vagrant/node_modules/react/lib/warning.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactMultiChild.js":[function(require,module,exports){
+},{"./DOMProperty":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/DOMProperty.js","./ReactBrowserEventEmitter":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactCurrentOwner":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCurrentOwner.js","./ReactDescriptor":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDescriptor.js","./ReactInstanceHandles":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactInstanceHandles.js","./ReactPerf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPerf.js","./containsNode":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/containsNode.js","./getReactRootElementInContainer":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getReactRootElementInContainer.js","./instantiateReactComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/instantiateReactComponent.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","./shouldUpdateReactComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/shouldUpdateReactComponent.js","./warning":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/warning.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMultiChild.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -14982,7 +14982,7 @@ var ReactMultiChild = {
 
 module.exports = ReactMultiChild;
 
-},{"./ReactComponent":"/vagrant/node_modules/react/lib/ReactComponent.js","./ReactMultiChildUpdateTypes":"/vagrant/node_modules/react/lib/ReactMultiChildUpdateTypes.js","./flattenChildren":"/vagrant/node_modules/react/lib/flattenChildren.js","./instantiateReactComponent":"/vagrant/node_modules/react/lib/instantiateReactComponent.js","./shouldUpdateReactComponent":"/vagrant/node_modules/react/lib/shouldUpdateReactComponent.js"}],"/vagrant/node_modules/react/lib/ReactMultiChildUpdateTypes.js":[function(require,module,exports){
+},{"./ReactComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactComponent.js","./ReactMultiChildUpdateTypes":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMultiChildUpdateTypes.js","./flattenChildren":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/flattenChildren.js","./instantiateReactComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/instantiateReactComponent.js","./shouldUpdateReactComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/shouldUpdateReactComponent.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMultiChildUpdateTypes.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -15022,7 +15022,7 @@ var ReactMultiChildUpdateTypes = keyMirror({
 
 module.exports = ReactMultiChildUpdateTypes;
 
-},{"./keyMirror":"/vagrant/node_modules/react/lib/keyMirror.js"}],"/vagrant/node_modules/react/lib/ReactOwner.js":[function(require,module,exports){
+},{"./keyMirror":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/keyMirror.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactOwner.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -15185,7 +15185,7 @@ var ReactOwner = {
 module.exports = ReactOwner;
 
 }).call(this,require('_process'))
-},{"./emptyObject":"/vagrant/node_modules/react/lib/emptyObject.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactPerf.js":[function(require,module,exports){
+},{"./emptyObject":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/emptyObject.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPerf.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -15274,7 +15274,7 @@ function _noMeasure(objName, fnName, func) {
 module.exports = ReactPerf;
 
 }).call(this,require('_process'))
-},{"_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactPropTransferer.js":[function(require,module,exports){
+},{"_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPropTransferer.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -15440,7 +15440,7 @@ var ReactPropTransferer = {
 module.exports = ReactPropTransferer;
 
 }).call(this,require('_process'))
-},{"./emptyFunction":"/vagrant/node_modules/react/lib/emptyFunction.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","./joinClasses":"/vagrant/node_modules/react/lib/joinClasses.js","./merge":"/vagrant/node_modules/react/lib/merge.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactPropTypeLocationNames.js":[function(require,module,exports){
+},{"./emptyFunction":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/emptyFunction.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","./joinClasses":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/joinClasses.js","./merge":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/merge.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPropTypeLocationNames.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -15475,7 +15475,7 @@ if ("production" !== process.env.NODE_ENV) {
 module.exports = ReactPropTypeLocationNames;
 
 }).call(this,require('_process'))
-},{"_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactPropTypeLocations.js":[function(require,module,exports){
+},{"_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPropTypeLocations.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -15506,7 +15506,7 @@ var ReactPropTypeLocations = keyMirror({
 
 module.exports = ReactPropTypeLocations;
 
-},{"./keyMirror":"/vagrant/node_modules/react/lib/keyMirror.js"}],"/vagrant/node_modules/react/lib/ReactPropTypes.js":[function(require,module,exports){
+},{"./keyMirror":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/keyMirror.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPropTypes.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -15851,7 +15851,7 @@ function getPreciseType(propValue) {
 
 module.exports = ReactPropTypes;
 
-},{"./ReactDescriptor":"/vagrant/node_modules/react/lib/ReactDescriptor.js","./ReactPropTypeLocationNames":"/vagrant/node_modules/react/lib/ReactPropTypeLocationNames.js","./emptyFunction":"/vagrant/node_modules/react/lib/emptyFunction.js"}],"/vagrant/node_modules/react/lib/ReactPutListenerQueue.js":[function(require,module,exports){
+},{"./ReactDescriptor":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDescriptor.js","./ReactPropTypeLocationNames":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPropTypeLocationNames.js","./emptyFunction":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/emptyFunction.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPutListenerQueue.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -15914,7 +15914,7 @@ PooledClass.addPoolingTo(ReactPutListenerQueue);
 
 module.exports = ReactPutListenerQueue;
 
-},{"./PooledClass":"/vagrant/node_modules/react/lib/PooledClass.js","./ReactBrowserEventEmitter":"/vagrant/node_modules/react/lib/ReactBrowserEventEmitter.js","./mixInto":"/vagrant/node_modules/react/lib/mixInto.js"}],"/vagrant/node_modules/react/lib/ReactReconcileTransaction.js":[function(require,module,exports){
+},{"./PooledClass":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/PooledClass.js","./ReactBrowserEventEmitter":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactBrowserEventEmitter.js","./mixInto":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mixInto.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactReconcileTransaction.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -16098,7 +16098,7 @@ PooledClass.addPoolingTo(ReactReconcileTransaction);
 
 module.exports = ReactReconcileTransaction;
 
-},{"./CallbackQueue":"/vagrant/node_modules/react/lib/CallbackQueue.js","./PooledClass":"/vagrant/node_modules/react/lib/PooledClass.js","./ReactBrowserEventEmitter":"/vagrant/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactInputSelection":"/vagrant/node_modules/react/lib/ReactInputSelection.js","./ReactPutListenerQueue":"/vagrant/node_modules/react/lib/ReactPutListenerQueue.js","./Transaction":"/vagrant/node_modules/react/lib/Transaction.js","./mixInto":"/vagrant/node_modules/react/lib/mixInto.js"}],"/vagrant/node_modules/react/lib/ReactRootIndex.js":[function(require,module,exports){
+},{"./CallbackQueue":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/CallbackQueue.js","./PooledClass":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/PooledClass.js","./ReactBrowserEventEmitter":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactInputSelection":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactInputSelection.js","./ReactPutListenerQueue":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPutListenerQueue.js","./Transaction":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/Transaction.js","./mixInto":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mixInto.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactRootIndex.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -16136,7 +16136,7 @@ var ReactRootIndex = {
 
 module.exports = ReactRootIndex;
 
-},{}],"/vagrant/node_modules/react/lib/ReactServerRendering.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactServerRendering.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -16229,7 +16229,7 @@ module.exports = {
 };
 
 }).call(this,require('_process'))
-},{"./ReactDescriptor":"/vagrant/node_modules/react/lib/ReactDescriptor.js","./ReactInstanceHandles":"/vagrant/node_modules/react/lib/ReactInstanceHandles.js","./ReactMarkupChecksum":"/vagrant/node_modules/react/lib/ReactMarkupChecksum.js","./ReactServerRenderingTransaction":"/vagrant/node_modules/react/lib/ReactServerRenderingTransaction.js","./instantiateReactComponent":"/vagrant/node_modules/react/lib/instantiateReactComponent.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactServerRenderingTransaction.js":[function(require,module,exports){
+},{"./ReactDescriptor":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDescriptor.js","./ReactInstanceHandles":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactInstanceHandles.js","./ReactMarkupChecksum":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMarkupChecksum.js","./ReactServerRenderingTransaction":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactServerRenderingTransaction.js","./instantiateReactComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/instantiateReactComponent.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactServerRenderingTransaction.js":[function(require,module,exports){
 /**
  * Copyright 2014 Facebook, Inc.
  *
@@ -16346,7 +16346,7 @@ PooledClass.addPoolingTo(ReactServerRenderingTransaction);
 
 module.exports = ReactServerRenderingTransaction;
 
-},{"./CallbackQueue":"/vagrant/node_modules/react/lib/CallbackQueue.js","./PooledClass":"/vagrant/node_modules/react/lib/PooledClass.js","./ReactPutListenerQueue":"/vagrant/node_modules/react/lib/ReactPutListenerQueue.js","./Transaction":"/vagrant/node_modules/react/lib/Transaction.js","./emptyFunction":"/vagrant/node_modules/react/lib/emptyFunction.js","./mixInto":"/vagrant/node_modules/react/lib/mixInto.js"}],"/vagrant/node_modules/react/lib/ReactStateSetters.js":[function(require,module,exports){
+},{"./CallbackQueue":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/CallbackQueue.js","./PooledClass":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/PooledClass.js","./ReactPutListenerQueue":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPutListenerQueue.js","./Transaction":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/Transaction.js","./emptyFunction":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/emptyFunction.js","./mixInto":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mixInto.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactStateSetters.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -16459,7 +16459,7 @@ ReactStateSetters.Mixin = {
 
 module.exports = ReactStateSetters;
 
-},{}],"/vagrant/node_modules/react/lib/ReactTestUtils.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactTestUtils.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -16873,7 +16873,7 @@ for (eventType in topLevelTypes) {
 
 module.exports = ReactTestUtils;
 
-},{"./EventConstants":"/vagrant/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/vagrant/node_modules/react/lib/EventPluginHub.js","./EventPropagators":"/vagrant/node_modules/react/lib/EventPropagators.js","./React":"/vagrant/node_modules/react/lib/React.js","./ReactBrowserEventEmitter":"/vagrant/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactDOM":"/vagrant/node_modules/react/lib/ReactDOM.js","./ReactDescriptor":"/vagrant/node_modules/react/lib/ReactDescriptor.js","./ReactMount":"/vagrant/node_modules/react/lib/ReactMount.js","./ReactTextComponent":"/vagrant/node_modules/react/lib/ReactTextComponent.js","./ReactUpdates":"/vagrant/node_modules/react/lib/ReactUpdates.js","./SyntheticEvent":"/vagrant/node_modules/react/lib/SyntheticEvent.js","./copyProperties":"/vagrant/node_modules/react/lib/copyProperties.js","./mergeInto":"/vagrant/node_modules/react/lib/mergeInto.js"}],"/vagrant/node_modules/react/lib/ReactTextComponent.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPluginHub.js","./EventPropagators":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPropagators.js","./React":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/React.js","./ReactBrowserEventEmitter":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactDOM":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDOM.js","./ReactDescriptor":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDescriptor.js","./ReactMount":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactMount.js","./ReactTextComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactTextComponent.js","./ReactUpdates":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactUpdates.js","./SyntheticEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticEvent.js","./copyProperties":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/copyProperties.js","./mergeInto":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mergeInto.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactTextComponent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -16982,7 +16982,7 @@ mixInto(ReactTextComponent, {
 
 module.exports = ReactDescriptor.createFactory(ReactTextComponent);
 
-},{"./DOMPropertyOperations":"/vagrant/node_modules/react/lib/DOMPropertyOperations.js","./ReactBrowserComponentMixin":"/vagrant/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactComponent":"/vagrant/node_modules/react/lib/ReactComponent.js","./ReactDescriptor":"/vagrant/node_modules/react/lib/ReactDescriptor.js","./escapeTextForBrowser":"/vagrant/node_modules/react/lib/escapeTextForBrowser.js","./mixInto":"/vagrant/node_modules/react/lib/mixInto.js"}],"/vagrant/node_modules/react/lib/ReactTransitionChildMapping.js":[function(require,module,exports){
+},{"./DOMPropertyOperations":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/DOMPropertyOperations.js","./ReactBrowserComponentMixin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactComponent.js","./ReactDescriptor":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDescriptor.js","./escapeTextForBrowser":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/escapeTextForBrowser.js","./mixInto":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mixInto.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactTransitionChildMapping.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -17090,7 +17090,7 @@ var ReactTransitionChildMapping = {
 
 module.exports = ReactTransitionChildMapping;
 
-},{"./ReactChildren":"/vagrant/node_modules/react/lib/ReactChildren.js"}],"/vagrant/node_modules/react/lib/ReactTransitionEvents.js":[function(require,module,exports){
+},{"./ReactChildren":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactChildren.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactTransitionEvents.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -17208,7 +17208,7 @@ var ReactTransitionEvents = {
 
 module.exports = ReactTransitionEvents;
 
-},{"./ExecutionEnvironment":"/vagrant/node_modules/react/lib/ExecutionEnvironment.js"}],"/vagrant/node_modules/react/lib/ReactTransitionGroup.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ExecutionEnvironment.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactTransitionGroup.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -17400,7 +17400,7 @@ var ReactTransitionGroup = React.createClass({
 
 module.exports = ReactTransitionGroup;
 
-},{"./React":"/vagrant/node_modules/react/lib/React.js","./ReactTransitionChildMapping":"/vagrant/node_modules/react/lib/ReactTransitionChildMapping.js","./cloneWithProps":"/vagrant/node_modules/react/lib/cloneWithProps.js","./emptyFunction":"/vagrant/node_modules/react/lib/emptyFunction.js","./merge":"/vagrant/node_modules/react/lib/merge.js"}],"/vagrant/node_modules/react/lib/ReactUpdates.js":[function(require,module,exports){
+},{"./React":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/React.js","./ReactTransitionChildMapping":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactTransitionChildMapping.js","./cloneWithProps":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/cloneWithProps.js","./emptyFunction":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/emptyFunction.js","./merge":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/merge.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactUpdates.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -17669,7 +17669,7 @@ var ReactUpdates = {
 module.exports = ReactUpdates;
 
 }).call(this,require('_process'))
-},{"./CallbackQueue":"/vagrant/node_modules/react/lib/CallbackQueue.js","./PooledClass":"/vagrant/node_modules/react/lib/PooledClass.js","./ReactCurrentOwner":"/vagrant/node_modules/react/lib/ReactCurrentOwner.js","./ReactPerf":"/vagrant/node_modules/react/lib/ReactPerf.js","./Transaction":"/vagrant/node_modules/react/lib/Transaction.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","./mixInto":"/vagrant/node_modules/react/lib/mixInto.js","./warning":"/vagrant/node_modules/react/lib/warning.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ReactWithAddons.js":[function(require,module,exports){
+},{"./CallbackQueue":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/CallbackQueue.js","./PooledClass":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/PooledClass.js","./ReactCurrentOwner":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCurrentOwner.js","./ReactPerf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPerf.js","./Transaction":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/Transaction.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","./mixInto":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mixInto.js","./warning":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/warning.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactWithAddons.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -17729,7 +17729,7 @@ module.exports = React;
 
 
 }).call(this,require('_process'))
-},{"./LinkedStateMixin":"/vagrant/node_modules/react/lib/LinkedStateMixin.js","./React":"/vagrant/node_modules/react/lib/React.js","./ReactCSSTransitionGroup":"/vagrant/node_modules/react/lib/ReactCSSTransitionGroup.js","./ReactComponentWithPureRenderMixin":"/vagrant/node_modules/react/lib/ReactComponentWithPureRenderMixin.js","./ReactDefaultPerf":"/vagrant/node_modules/react/lib/ReactDefaultPerf.js","./ReactTestUtils":"/vagrant/node_modules/react/lib/ReactTestUtils.js","./ReactTransitionGroup":"/vagrant/node_modules/react/lib/ReactTransitionGroup.js","./cloneWithProps":"/vagrant/node_modules/react/lib/cloneWithProps.js","./cx":"/vagrant/node_modules/react/lib/cx.js","./update":"/vagrant/node_modules/react/lib/update.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/SVGDOMPropertyConfig.js":[function(require,module,exports){
+},{"./LinkedStateMixin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/LinkedStateMixin.js","./React":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/React.js","./ReactCSSTransitionGroup":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCSSTransitionGroup.js","./ReactComponentWithPureRenderMixin":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactComponentWithPureRenderMixin.js","./ReactDefaultPerf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDefaultPerf.js","./ReactTestUtils":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactTestUtils.js","./ReactTransitionGroup":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactTransitionGroup.js","./cloneWithProps":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/cloneWithProps.js","./cx":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/cx.js","./update":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/update.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SVGDOMPropertyConfig.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -17828,7 +17828,7 @@ var SVGDOMPropertyConfig = {
 
 module.exports = SVGDOMPropertyConfig;
 
-},{"./DOMProperty":"/vagrant/node_modules/react/lib/DOMProperty.js"}],"/vagrant/node_modules/react/lib/SelectEventPlugin.js":[function(require,module,exports){
+},{"./DOMProperty":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/DOMProperty.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SelectEventPlugin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -18030,7 +18030,7 @@ var SelectEventPlugin = {
 
 module.exports = SelectEventPlugin;
 
-},{"./EventConstants":"/vagrant/node_modules/react/lib/EventConstants.js","./EventPropagators":"/vagrant/node_modules/react/lib/EventPropagators.js","./ReactInputSelection":"/vagrant/node_modules/react/lib/ReactInputSelection.js","./SyntheticEvent":"/vagrant/node_modules/react/lib/SyntheticEvent.js","./getActiveElement":"/vagrant/node_modules/react/lib/getActiveElement.js","./isTextInputElement":"/vagrant/node_modules/react/lib/isTextInputElement.js","./keyOf":"/vagrant/node_modules/react/lib/keyOf.js","./shallowEqual":"/vagrant/node_modules/react/lib/shallowEqual.js"}],"/vagrant/node_modules/react/lib/ServerReactRootIndex.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventConstants.js","./EventPropagators":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPropagators.js","./ReactInputSelection":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactInputSelection.js","./SyntheticEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticEvent.js","./getActiveElement":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getActiveElement.js","./isTextInputElement":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/isTextInputElement.js","./keyOf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/keyOf.js","./shallowEqual":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/shallowEqual.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ServerReactRootIndex.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -18068,7 +18068,7 @@ var ServerReactRootIndex = {
 
 module.exports = ServerReactRootIndex;
 
-},{}],"/vagrant/node_modules/react/lib/SimpleEventPlugin.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SimpleEventPlugin.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -18491,7 +18491,7 @@ var SimpleEventPlugin = {
 module.exports = SimpleEventPlugin;
 
 }).call(this,require('_process'))
-},{"./EventConstants":"/vagrant/node_modules/react/lib/EventConstants.js","./EventPluginUtils":"/vagrant/node_modules/react/lib/EventPluginUtils.js","./EventPropagators":"/vagrant/node_modules/react/lib/EventPropagators.js","./SyntheticClipboardEvent":"/vagrant/node_modules/react/lib/SyntheticClipboardEvent.js","./SyntheticDragEvent":"/vagrant/node_modules/react/lib/SyntheticDragEvent.js","./SyntheticEvent":"/vagrant/node_modules/react/lib/SyntheticEvent.js","./SyntheticFocusEvent":"/vagrant/node_modules/react/lib/SyntheticFocusEvent.js","./SyntheticKeyboardEvent":"/vagrant/node_modules/react/lib/SyntheticKeyboardEvent.js","./SyntheticMouseEvent":"/vagrant/node_modules/react/lib/SyntheticMouseEvent.js","./SyntheticTouchEvent":"/vagrant/node_modules/react/lib/SyntheticTouchEvent.js","./SyntheticUIEvent":"/vagrant/node_modules/react/lib/SyntheticUIEvent.js","./SyntheticWheelEvent":"/vagrant/node_modules/react/lib/SyntheticWheelEvent.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","./keyOf":"/vagrant/node_modules/react/lib/keyOf.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/SyntheticClipboardEvent.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventConstants.js","./EventPluginUtils":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPluginUtils.js","./EventPropagators":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/EventPropagators.js","./SyntheticClipboardEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticClipboardEvent.js","./SyntheticDragEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticDragEvent.js","./SyntheticEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticEvent.js","./SyntheticFocusEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticFocusEvent.js","./SyntheticKeyboardEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticKeyboardEvent.js","./SyntheticMouseEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticMouseEvent.js","./SyntheticTouchEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticTouchEvent.js","./SyntheticUIEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticUIEvent.js","./SyntheticWheelEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticWheelEvent.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","./keyOf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/keyOf.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticClipboardEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -18544,7 +18544,7 @@ SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 module.exports = SyntheticClipboardEvent;
 
 
-},{"./SyntheticEvent":"/vagrant/node_modules/react/lib/SyntheticEvent.js"}],"/vagrant/node_modules/react/lib/SyntheticCompositionEvent.js":[function(require,module,exports){
+},{"./SyntheticEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticEvent.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticCompositionEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -18597,7 +18597,7 @@ SyntheticEvent.augmentClass(
 module.exports = SyntheticCompositionEvent;
 
 
-},{"./SyntheticEvent":"/vagrant/node_modules/react/lib/SyntheticEvent.js"}],"/vagrant/node_modules/react/lib/SyntheticDragEvent.js":[function(require,module,exports){
+},{"./SyntheticEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticEvent.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticDragEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -18643,7 +18643,7 @@ SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 
 module.exports = SyntheticDragEvent;
 
-},{"./SyntheticMouseEvent":"/vagrant/node_modules/react/lib/SyntheticMouseEvent.js"}],"/vagrant/node_modules/react/lib/SyntheticEvent.js":[function(require,module,exports){
+},{"./SyntheticMouseEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticMouseEvent.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -18809,7 +18809,7 @@ PooledClass.addPoolingTo(SyntheticEvent, PooledClass.threeArgumentPooler);
 
 module.exports = SyntheticEvent;
 
-},{"./PooledClass":"/vagrant/node_modules/react/lib/PooledClass.js","./emptyFunction":"/vagrant/node_modules/react/lib/emptyFunction.js","./getEventTarget":"/vagrant/node_modules/react/lib/getEventTarget.js","./merge":"/vagrant/node_modules/react/lib/merge.js","./mergeInto":"/vagrant/node_modules/react/lib/mergeInto.js"}],"/vagrant/node_modules/react/lib/SyntheticFocusEvent.js":[function(require,module,exports){
+},{"./PooledClass":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/PooledClass.js","./emptyFunction":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/emptyFunction.js","./getEventTarget":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getEventTarget.js","./merge":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/merge.js","./mergeInto":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mergeInto.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticFocusEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -18855,7 +18855,7 @@ SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 
 module.exports = SyntheticFocusEvent;
 
-},{"./SyntheticUIEvent":"/vagrant/node_modules/react/lib/SyntheticUIEvent.js"}],"/vagrant/node_modules/react/lib/SyntheticInputEvent.js":[function(require,module,exports){
+},{"./SyntheticUIEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticUIEvent.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticInputEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013 Facebook, Inc.
  *
@@ -18909,7 +18909,7 @@ SyntheticEvent.augmentClass(
 module.exports = SyntheticInputEvent;
 
 
-},{"./SyntheticEvent":"/vagrant/node_modules/react/lib/SyntheticEvent.js"}],"/vagrant/node_modules/react/lib/SyntheticKeyboardEvent.js":[function(require,module,exports){
+},{"./SyntheticEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticEvent.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticKeyboardEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -18998,7 +18998,7 @@ SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 
 module.exports = SyntheticKeyboardEvent;
 
-},{"./SyntheticUIEvent":"/vagrant/node_modules/react/lib/SyntheticUIEvent.js","./getEventKey":"/vagrant/node_modules/react/lib/getEventKey.js","./getEventModifierState":"/vagrant/node_modules/react/lib/getEventModifierState.js"}],"/vagrant/node_modules/react/lib/SyntheticMouseEvent.js":[function(require,module,exports){
+},{"./SyntheticUIEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticUIEvent.js","./getEventKey":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getEventKey.js","./getEventModifierState":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getEventModifierState.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticMouseEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -19088,7 +19088,7 @@ SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 
 module.exports = SyntheticMouseEvent;
 
-},{"./SyntheticUIEvent":"/vagrant/node_modules/react/lib/SyntheticUIEvent.js","./ViewportMetrics":"/vagrant/node_modules/react/lib/ViewportMetrics.js","./getEventModifierState":"/vagrant/node_modules/react/lib/getEventModifierState.js"}],"/vagrant/node_modules/react/lib/SyntheticTouchEvent.js":[function(require,module,exports){
+},{"./SyntheticUIEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticUIEvent.js","./ViewportMetrics":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ViewportMetrics.js","./getEventModifierState":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getEventModifierState.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticTouchEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -19143,7 +19143,7 @@ SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 
 module.exports = SyntheticTouchEvent;
 
-},{"./SyntheticUIEvent":"/vagrant/node_modules/react/lib/SyntheticUIEvent.js","./getEventModifierState":"/vagrant/node_modules/react/lib/getEventModifierState.js"}],"/vagrant/node_modules/react/lib/SyntheticUIEvent.js":[function(require,module,exports){
+},{"./SyntheticUIEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticUIEvent.js","./getEventModifierState":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getEventModifierState.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticUIEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -19212,7 +19212,7 @@ SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 
 module.exports = SyntheticUIEvent;
 
-},{"./SyntheticEvent":"/vagrant/node_modules/react/lib/SyntheticEvent.js","./getEventTarget":"/vagrant/node_modules/react/lib/getEventTarget.js"}],"/vagrant/node_modules/react/lib/SyntheticWheelEvent.js":[function(require,module,exports){
+},{"./SyntheticEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticEvent.js","./getEventTarget":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getEventTarget.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticWheelEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -19280,7 +19280,7 @@ SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 
 module.exports = SyntheticWheelEvent;
 
-},{"./SyntheticMouseEvent":"/vagrant/node_modules/react/lib/SyntheticMouseEvent.js"}],"/vagrant/node_modules/react/lib/Transaction.js":[function(require,module,exports){
+},{"./SyntheticMouseEvent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/SyntheticMouseEvent.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/Transaction.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -19528,7 +19528,7 @@ var Transaction = {
 module.exports = Transaction;
 
 }).call(this,require('_process'))
-},{"./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/ViewportMetrics.js":[function(require,module,exports){
+},{"./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ViewportMetrics.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -19567,7 +19567,7 @@ var ViewportMetrics = {
 
 module.exports = ViewportMetrics;
 
-},{"./getUnboundedScrollPosition":"/vagrant/node_modules/react/lib/getUnboundedScrollPosition.js"}],"/vagrant/node_modules/react/lib/accumulate.js":[function(require,module,exports){
+},{"./getUnboundedScrollPosition":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getUnboundedScrollPosition.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/accumulate.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -19625,7 +19625,7 @@ function accumulate(current, next) {
 module.exports = accumulate;
 
 }).call(this,require('_process'))
-},{"./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/adler32.js":[function(require,module,exports){
+},{"./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/adler32.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -19666,7 +19666,7 @@ function adler32(data) {
 
 module.exports = adler32;
 
-},{}],"/vagrant/node_modules/react/lib/cloneWithProps.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/cloneWithProps.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -19731,7 +19731,7 @@ function cloneWithProps(child, props) {
 module.exports = cloneWithProps;
 
 }).call(this,require('_process'))
-},{"./ReactPropTransferer":"/vagrant/node_modules/react/lib/ReactPropTransferer.js","./keyOf":"/vagrant/node_modules/react/lib/keyOf.js","./warning":"/vagrant/node_modules/react/lib/warning.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/containsNode.js":[function(require,module,exports){
+},{"./ReactPropTransferer":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactPropTransferer.js","./keyOf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/keyOf.js","./warning":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/warning.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/containsNode.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -19782,7 +19782,7 @@ function containsNode(outerNode, innerNode) {
 
 module.exports = containsNode;
 
-},{"./isTextNode":"/vagrant/node_modules/react/lib/isTextNode.js"}],"/vagrant/node_modules/react/lib/copyProperties.js":[function(require,module,exports){
+},{"./isTextNode":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/isTextNode.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/copyProperties.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -19840,7 +19840,7 @@ function copyProperties(obj, a, b, c, d, e, f) {
 module.exports = copyProperties;
 
 }).call(this,require('_process'))
-},{"_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/createArrayFrom.js":[function(require,module,exports){
+},{"_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/createArrayFrom.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -19933,7 +19933,7 @@ function createArrayFrom(obj) {
 
 module.exports = createArrayFrom;
 
-},{"./toArray":"/vagrant/node_modules/react/lib/toArray.js"}],"/vagrant/node_modules/react/lib/createFullPageComponent.js":[function(require,module,exports){
+},{"./toArray":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/toArray.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/createFullPageComponent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -20000,7 +20000,7 @@ function createFullPageComponent(componentClass) {
 module.exports = createFullPageComponent;
 
 }).call(this,require('_process'))
-},{"./ReactCompositeComponent":"/vagrant/node_modules/react/lib/ReactCompositeComponent.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/createNodesFromMarkup.js":[function(require,module,exports){
+},{"./ReactCompositeComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactCompositeComponent.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/createNodesFromMarkup.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -20097,7 +20097,7 @@ function createNodesFromMarkup(markup, handleScript) {
 module.exports = createNodesFromMarkup;
 
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":"/vagrant/node_modules/react/lib/ExecutionEnvironment.js","./createArrayFrom":"/vagrant/node_modules/react/lib/createArrayFrom.js","./getMarkupWrap":"/vagrant/node_modules/react/lib/getMarkupWrap.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/cx.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ExecutionEnvironment.js","./createArrayFrom":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/createArrayFrom.js","./getMarkupWrap":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getMarkupWrap.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/cx.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -20143,7 +20143,7 @@ function cx(classNames) {
 
 module.exports = cx;
 
-},{}],"/vagrant/node_modules/react/lib/dangerousStyleValue.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/dangerousStyleValue.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -20208,7 +20208,7 @@ function dangerousStyleValue(name, value) {
 
 module.exports = dangerousStyleValue;
 
-},{"./CSSProperty":"/vagrant/node_modules/react/lib/CSSProperty.js"}],"/vagrant/node_modules/react/lib/emptyFunction.js":[function(require,module,exports){
+},{"./CSSProperty":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/CSSProperty.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/emptyFunction.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -20253,7 +20253,7 @@ copyProperties(emptyFunction, {
 
 module.exports = emptyFunction;
 
-},{"./copyProperties":"/vagrant/node_modules/react/lib/copyProperties.js"}],"/vagrant/node_modules/react/lib/emptyObject.js":[function(require,module,exports){
+},{"./copyProperties":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/copyProperties.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/emptyObject.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -20284,7 +20284,7 @@ if ("production" !== process.env.NODE_ENV) {
 module.exports = emptyObject;
 
 }).call(this,require('_process'))
-},{"_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/escapeTextForBrowser.js":[function(require,module,exports){
+},{"_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/escapeTextForBrowser.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -20332,7 +20332,7 @@ function escapeTextForBrowser(text) {
 
 module.exports = escapeTextForBrowser;
 
-},{}],"/vagrant/node_modules/react/lib/flattenChildren.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/flattenChildren.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -20395,7 +20395,7 @@ function flattenChildren(children) {
 module.exports = flattenChildren;
 
 }).call(this,require('_process'))
-},{"./traverseAllChildren":"/vagrant/node_modules/react/lib/traverseAllChildren.js","./warning":"/vagrant/node_modules/react/lib/warning.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/focusNode.js":[function(require,module,exports){
+},{"./traverseAllChildren":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/traverseAllChildren.js","./warning":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/warning.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/focusNode.js":[function(require,module,exports){
 /**
  * Copyright 2014 Facebook, Inc.
  *
@@ -20430,7 +20430,7 @@ function focusNode(node) {
 
 module.exports = focusNode;
 
-},{}],"/vagrant/node_modules/react/lib/forEachAccumulated.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/forEachAccumulated.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -20468,7 +20468,7 @@ var forEachAccumulated = function(arr, cb, scope) {
 
 module.exports = forEachAccumulated;
 
-},{}],"/vagrant/node_modules/react/lib/getActiveElement.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getActiveElement.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -20504,7 +20504,7 @@ function getActiveElement() /*?DOMElement*/ {
 
 module.exports = getActiveElement;
 
-},{}],"/vagrant/node_modules/react/lib/getEventKey.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getEventKey.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -20623,7 +20623,7 @@ function getEventKey(nativeEvent) {
 module.exports = getEventKey;
 
 }).call(this,require('_process'))
-},{"./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/getEventModifierState.js":[function(require,module,exports){
+},{"./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getEventModifierState.js":[function(require,module,exports){
 /**
  * Copyright 2013 Facebook, Inc.
  *
@@ -20677,7 +20677,7 @@ function getEventModifierState(nativeEvent) {
 
 module.exports = getEventModifierState;
 
-},{}],"/vagrant/node_modules/react/lib/getEventTarget.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getEventTarget.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -20715,7 +20715,7 @@ function getEventTarget(nativeEvent) {
 
 module.exports = getEventTarget;
 
-},{}],"/vagrant/node_modules/react/lib/getMarkupWrap.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getMarkupWrap.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -20839,7 +20839,7 @@ function getMarkupWrap(nodeName) {
 module.exports = getMarkupWrap;
 
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":"/vagrant/node_modules/react/lib/ExecutionEnvironment.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/getNodeForCharacterOffset.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ExecutionEnvironment.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getNodeForCharacterOffset.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -20921,7 +20921,7 @@ function getNodeForCharacterOffset(root, offset) {
 
 module.exports = getNodeForCharacterOffset;
 
-},{}],"/vagrant/node_modules/react/lib/getReactRootElementInContainer.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getReactRootElementInContainer.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -20963,7 +20963,7 @@ function getReactRootElementInContainer(container) {
 
 module.exports = getReactRootElementInContainer;
 
-},{}],"/vagrant/node_modules/react/lib/getTextContentAccessor.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getTextContentAccessor.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -21007,7 +21007,7 @@ function getTextContentAccessor() {
 
 module.exports = getTextContentAccessor;
 
-},{"./ExecutionEnvironment":"/vagrant/node_modules/react/lib/ExecutionEnvironment.js"}],"/vagrant/node_modules/react/lib/getUnboundedScrollPosition.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ExecutionEnvironment.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/getUnboundedScrollPosition.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -21054,7 +21054,7 @@ function getUnboundedScrollPosition(scrollable) {
 
 module.exports = getUnboundedScrollPosition;
 
-},{}],"/vagrant/node_modules/react/lib/hyphenate.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/hyphenate.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -21094,7 +21094,7 @@ function hyphenate(string) {
 
 module.exports = hyphenate;
 
-},{}],"/vagrant/node_modules/react/lib/hyphenateStyleName.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/hyphenateStyleName.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -21142,7 +21142,7 @@ function hyphenateStyleName(string) {
 
 module.exports = hyphenateStyleName;
 
-},{"./hyphenate":"/vagrant/node_modules/react/lib/hyphenate.js"}],"/vagrant/node_modules/react/lib/instantiateReactComponent.js":[function(require,module,exports){
+},{"./hyphenate":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/hyphenate.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/instantiateReactComponent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -21208,7 +21208,7 @@ function instantiateReactComponent(descriptor) {
 module.exports = instantiateReactComponent;
 
 }).call(this,require('_process'))
-},{"./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/invariant.js":[function(require,module,exports){
+},{"./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -21272,7 +21272,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 }).call(this,require('_process'))
-},{"_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/isEventSupported.js":[function(require,module,exports){
+},{"_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/isEventSupported.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -21344,7 +21344,7 @@ function isEventSupported(eventNameSuffix, capture) {
 
 module.exports = isEventSupported;
 
-},{"./ExecutionEnvironment":"/vagrant/node_modules/react/lib/ExecutionEnvironment.js"}],"/vagrant/node_modules/react/lib/isNode.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ExecutionEnvironment.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/isNode.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -21379,7 +21379,7 @@ function isNode(object) {
 
 module.exports = isNode;
 
-},{}],"/vagrant/node_modules/react/lib/isTextInputElement.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/isTextInputElement.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -21430,7 +21430,7 @@ function isTextInputElement(elem) {
 
 module.exports = isTextInputElement;
 
-},{}],"/vagrant/node_modules/react/lib/isTextNode.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/isTextNode.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -21462,7 +21462,7 @@ function isTextNode(object) {
 
 module.exports = isTextNode;
 
-},{"./isNode":"/vagrant/node_modules/react/lib/isNode.js"}],"/vagrant/node_modules/react/lib/joinClasses.js":[function(require,module,exports){
+},{"./isNode":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/isNode.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/joinClasses.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -21508,7 +21508,7 @@ function joinClasses(className/*, ... */) {
 
 module.exports = joinClasses;
 
-},{}],"/vagrant/node_modules/react/lib/keyMirror.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/keyMirror.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -21570,7 +21570,7 @@ var keyMirror = function(obj) {
 module.exports = keyMirror;
 
 }).call(this,require('_process'))
-},{"./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/keyOf.js":[function(require,module,exports){
+},{"./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/keyOf.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -21613,7 +21613,7 @@ var keyOf = function(oneKeyObj) {
 
 module.exports = keyOf;
 
-},{}],"/vagrant/node_modules/react/lib/mapObject.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mapObject.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -21667,7 +21667,7 @@ function mapObject(obj, func, context) {
 
 module.exports = mapObject;
 
-},{}],"/vagrant/node_modules/react/lib/memoizeStringOnly.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/memoizeStringOnly.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -21708,7 +21708,7 @@ function memoizeStringOnly(callback) {
 
 module.exports = memoizeStringOnly;
 
-},{}],"/vagrant/node_modules/react/lib/merge.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/merge.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -21747,7 +21747,7 @@ var merge = function(one, two) {
 
 module.exports = merge;
 
-},{"./mergeInto":"/vagrant/node_modules/react/lib/mergeInto.js"}],"/vagrant/node_modules/react/lib/mergeHelpers.js":[function(require,module,exports){
+},{"./mergeInto":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mergeInto.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mergeHelpers.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -21898,7 +21898,7 @@ var mergeHelpers = {
 module.exports = mergeHelpers;
 
 }).call(this,require('_process'))
-},{"./invariant":"/vagrant/node_modules/react/lib/invariant.js","./keyMirror":"/vagrant/node_modules/react/lib/keyMirror.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/mergeInto.js":[function(require,module,exports){
+},{"./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","./keyMirror":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/keyMirror.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mergeInto.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -21946,7 +21946,7 @@ function mergeInto(one, two) {
 
 module.exports = mergeInto;
 
-},{"./mergeHelpers":"/vagrant/node_modules/react/lib/mergeHelpers.js"}],"/vagrant/node_modules/react/lib/mixInto.js":[function(require,module,exports){
+},{"./mergeHelpers":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mergeHelpers.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/mixInto.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -21982,7 +21982,7 @@ var mixInto = function(constructor, methodBag) {
 
 module.exports = mixInto;
 
-},{}],"/vagrant/node_modules/react/lib/monitorCodeUse.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/monitorCodeUse.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014 Facebook, Inc.
@@ -22023,7 +22023,7 @@ function monitorCodeUse(eventName, data) {
 module.exports = monitorCodeUse;
 
 }).call(this,require('_process'))
-},{"./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/onlyChild.js":[function(require,module,exports){
+},{"./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/onlyChild.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -22070,7 +22070,7 @@ function onlyChild(children) {
 module.exports = onlyChild;
 
 }).call(this,require('_process'))
-},{"./ReactDescriptor":"/vagrant/node_modules/react/lib/ReactDescriptor.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/performance.js":[function(require,module,exports){
+},{"./ReactDescriptor":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactDescriptor.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/performance.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -22105,7 +22105,7 @@ if (ExecutionEnvironment.canUseDOM) {
 
 module.exports = performance || {};
 
-},{"./ExecutionEnvironment":"/vagrant/node_modules/react/lib/ExecutionEnvironment.js"}],"/vagrant/node_modules/react/lib/performanceNow.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ExecutionEnvironment.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/performanceNow.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -22140,7 +22140,7 @@ var performanceNow = performance.now.bind(performance);
 
 module.exports = performanceNow;
 
-},{"./performance":"/vagrant/node_modules/react/lib/performance.js"}],"/vagrant/node_modules/react/lib/setInnerHTML.js":[function(require,module,exports){
+},{"./performance":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/performance.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/setInnerHTML.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -22227,7 +22227,7 @@ if (ExecutionEnvironment.canUseDOM) {
 
 module.exports = setInnerHTML;
 
-},{"./ExecutionEnvironment":"/vagrant/node_modules/react/lib/ExecutionEnvironment.js"}],"/vagrant/node_modules/react/lib/shallowEqual.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ExecutionEnvironment.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/shallowEqual.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -22278,7 +22278,7 @@ function shallowEqual(objA, objB) {
 
 module.exports = shallowEqual;
 
-},{}],"/vagrant/node_modules/react/lib/shouldUpdateReactComponent.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/shouldUpdateReactComponent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -22324,7 +22324,7 @@ function shouldUpdateReactComponent(prevDescriptor, nextDescriptor) {
 
 module.exports = shouldUpdateReactComponent;
 
-},{}],"/vagrant/node_modules/react/lib/toArray.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/toArray.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014 Facebook, Inc.
@@ -22403,7 +22403,7 @@ function toArray(obj) {
 module.exports = toArray;
 
 }).call(this,require('_process'))
-},{"./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/traverseAllChildren.js":[function(require,module,exports){
+},{"./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/traverseAllChildren.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -22600,7 +22600,7 @@ function traverseAllChildren(children, callback, traverseContext) {
 module.exports = traverseAllChildren;
 
 }).call(this,require('_process'))
-},{"./ReactInstanceHandles":"/vagrant/node_modules/react/lib/ReactInstanceHandles.js","./ReactTextComponent":"/vagrant/node_modules/react/lib/ReactTextComponent.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/update.js":[function(require,module,exports){
+},{"./ReactInstanceHandles":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactInstanceHandles.js","./ReactTextComponent":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/ReactTextComponent.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/update.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2014 Facebook, Inc.
@@ -22775,7 +22775,7 @@ function update(value, spec) {
 module.exports = update;
 
 }).call(this,require('_process'))
-},{"./copyProperties":"/vagrant/node_modules/react/lib/copyProperties.js","./invariant":"/vagrant/node_modules/react/lib/invariant.js","./keyOf":"/vagrant/node_modules/react/lib/keyOf.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/react/lib/warning.js":[function(require,module,exports){
+},{"./copyProperties":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/copyProperties.js","./invariant":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/invariant.js","./keyOf":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/keyOf.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/warning.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014 Facebook, Inc.
@@ -22827,7 +22827,7 @@ if ("production" !== process.env.NODE_ENV) {
 module.exports = warning;
 
 }).call(this,require('_process'))
-},{"./emptyFunction":"/vagrant/node_modules/react/lib/emptyFunction.js","_process":"/vagrant/node_modules/browserify/node_modules/process/browser.js"}],"/vagrant/node_modules/superagent/lib/client.js":[function(require,module,exports){
+},{"./emptyFunction":"/Users/wwwsevolod/Work/react-store/node_modules/react/lib/emptyFunction.js","_process":"/Users/wwwsevolod/Work/react-store/node_modules/browserify/node_modules/process/browser.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/superagent/lib/client.js":[function(require,module,exports){
 /**
  * Module dependencies.
  */
@@ -23878,7 +23878,7 @@ request.put = function(url, data, fn){
 
 module.exports = request;
 
-},{"emitter":"/vagrant/node_modules/superagent/node_modules/component-emitter/index.js","reduce":"/vagrant/node_modules/superagent/node_modules/reduce-component/index.js"}],"/vagrant/node_modules/superagent/node_modules/component-emitter/index.js":[function(require,module,exports){
+},{"emitter":"/Users/wwwsevolod/Work/react-store/node_modules/superagent/node_modules/component-emitter/index.js","reduce":"/Users/wwwsevolod/Work/react-store/node_modules/superagent/node_modules/reduce-component/index.js"}],"/Users/wwwsevolod/Work/react-store/node_modules/superagent/node_modules/component-emitter/index.js":[function(require,module,exports){
 
 /**
  * Expose `Emitter`.
@@ -24044,7 +24044,7 @@ Emitter.prototype.hasListeners = function(event){
   return !! this.listeners(event).length;
 };
 
-},{}],"/vagrant/node_modules/superagent/node_modules/reduce-component/index.js":[function(require,module,exports){
+},{}],"/Users/wwwsevolod/Work/react-store/node_modules/superagent/node_modules/reduce-component/index.js":[function(require,module,exports){
 
 /**
  * Reduce `arr` with `fn`.

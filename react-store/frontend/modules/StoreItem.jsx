@@ -2,19 +2,11 @@
 let React = require('react/addons');
 
 export default React.createClass({
-    prepareURL() {
-        try {
-            let id = this.props.data.get('id');
-            return '/product/' + id;
-        } catch (e) {
-            console.log('fuck');
-        }
-    },
     render() {
         return(
             <div className="StoreItem">
                 <div className="StoreItem__image-and-details">
-                    <a href={this.prepareURL()} >
+                    <a href={`/product/${this.props.data.get('_id')}`} >
                         <img className="StoreItem__image" src="/i/Prod.jpg" />
                     </a>
                     <div className="StoreItem__details">

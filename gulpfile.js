@@ -92,38 +92,13 @@ gulp.task('build-js', function() {
         .pipe(gulp.dest('dist/app'))
 });
 
-gulp.task('server', ['vendor', 'build-js'], (function() {
-    var child = null;
-    var id = 0;
-    return function reload(next) {
-        if (child) {
-            child.kill();
-        }
-        child = childProcess.fork('./worker.js');
-        child.___id = ++id;
-        child.on('exit', function(code) {
-            plugins.util.log('Stopping server with id "' + this.___id + '"');
-            this.removeAllListeners();
-        }.bind(child));
-
-        child.on('message', function(data) {
-            if (data === 'server started') {
-                if (next) {
-                    next();
-                }
-            }
-        })
-    }
-})());
-
-
 
 /**
  * Run default task
  */
-gulp.task('default', ['build-css', 'server'], function () {
+gulp.task('default', ['build-css', 'build-js'], function () {
     compileScripts(true);
     compileFrontend(true);
     gulp.watch([stylSelector], ['build-css']);
-    gulp.watch([jsSelector], ['server']);
+    gulp.watch([jsSelector], ['build-js']);
 });
