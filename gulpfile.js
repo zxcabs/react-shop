@@ -41,6 +41,48 @@ function compileScripts(watch) {
     return rebundle();
 }
 
+function compileScripts(watch) {
+    plugins.util.log('Starting browserify');
+    var entryFile = './dist/app/admin/AdminFrontend.jsx';
+
+    var bundler = watchify(browserify(entryFile, watchify.args))
+
+    var rebundle = function () {
+        var stream = bundler.bundle();
+
+        stream.on('error', function (err) {
+            (console.error || console.log)(err);
+        });
+        stream = stream.pipe(source(entryFile));
+        stream.pipe(plugins.rename('app.js'));
+        stream.pipe(gulp.dest('dist/bundle'));
+    }
+
+    bundler.on('update', rebundle);
+    return rebundle();
+}
+
+function compileFrontend(watch) {
+    plugins.util.log('Starting browserify');
+    var entryFile = './dist/app/admin/AdminFrontend.jsx';
+
+    var bundler = watchify(browserify(entryFile, watchify.args))
+
+    var rebundle = function () {
+        var stream = bundler.bundle();
+
+        stream.on('error', function (err) {
+            (console.error || console.log)(err);
+        });
+        stream = stream.pipe(source(entryFile));
+        stream.pipe(plugins.rename('app.js'));
+        stream.pipe(gulp.dest('dist/bundle'));
+    }
+
+    bundler.on('update', rebundle);
+    return rebundle();
+}
+
 var stylSelector = 'styles/**/*.styl';
 gulp.task('build-css', function() {
     return gulp.src(stylSelector)
