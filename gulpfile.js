@@ -24,7 +24,9 @@ function compileScripts(watch) {
     plugins.util.log('Starting browserify');
     var entryFile = './dist/app/admin/AdminFrontend.jsx';
 
-    var bundler = watchify(browserify(entryFile, watchify.args))
+    var bundler = watchify(browserify(entryFile, {
+        cache: {}, packageCache: {}, fullPaths: true, debug: true
+    }))
 
     var rebundle = function () {
         var stream = bundler.bundle();
@@ -44,7 +46,9 @@ function compileScripts(watch) {
 function compileFrontend(watch) {
     plugins.util.log('Starting browserify frontend');
     var entryFile = './dist/app/frontend/SupplyClubTheme.jsx';
-    var bundler = watchify(browserify(entryFile, watchify.args))
+    var bundler = watchify(browserify(entryFile, {
+        cache: {}, packageCache: {}, fullPaths: true, debug: true
+    }))
     var rebundle = function () {
         var stream = bundler.bundle();
 
