@@ -58,9 +58,6 @@
 .tabs {
   padding: 20px;
 }
-.fields {
-  padding: 0 20px;
-}
 
 html,
 body {
@@ -78,7 +75,7 @@ body {
   margin-left: 200px;
   overflow: hidden;
   float: left;
-  width: 540px;
+  width: 541px;
   min-height: 100%;
   border-left: 1px solid #e5e5e5;
 }
@@ -86,6 +83,7 @@ body {
   overflow: hidden;
   float: left;
   width: 500px;
+  border-right: 1px solid #e5e5e5;
 }
 
 .CreateCategory {
@@ -154,8 +152,11 @@ body {
   display: block;
   text-decoration: none;
 }
+.DashboardItem:hover {
+  background-color: #eef3ff;
+}
 .DashboardItem--current {
-  background-color: #aaa;
+  background-color: #eef3ff;
 }
 .DashboardItem__image:not(:empty) {
   position: absolute;
@@ -231,6 +232,23 @@ body {
   background-color: #eee;
   border-radius: 0 0 5px 5px;
   min-height: 500px;
+}
+
+.DashboardListHeading {
+  display: block;
+  background: #fafafa;
+  height: 66px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.DashboardListHeading__container {
+  padding: 20px;
+}
+.DashboardListHeading__search-input {
+  width: 150px;
+}
+.DashboardListHeading__actions {
+  display: inline-block;
+  margin-left: 40px;
 }
 
 .EditCategoryForm__form {
@@ -409,6 +427,7 @@ body {
 }
 .menu__nav {
   display: block;
+  margin-top: 40px;
 }
 .menu__nav__list {
   list-style: none;
@@ -422,6 +441,7 @@ body {
   color: #999;
   text-decoration: none;
   padding: 10px 10px 10px 20px;
+  font-size: 16px;
 }
 .menu__nav__list__item__link:hover {
   color: #fff;
@@ -619,7 +639,7 @@ ul {
 .ProductForm__label {
   display: block;
   overflow: hidden;
-  margin-bottom: 10px;
+  padding: 0 20px;
 }
 .ProductForm__label__description {
   display: block;
@@ -643,6 +663,8 @@ ul {
 .ProductForm__footer {
   background: #fafafa;
   padding: 20px;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .Tab label {
