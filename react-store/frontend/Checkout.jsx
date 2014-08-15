@@ -1,28 +1,18 @@
 /** @jsx React.DOM */
 let React = require('react/addons');
-import Header from './modules/Header.jsx'
-import Categories from './modules/Categories.jsx'
-import CheckoutBody from './modules/CheckoutBody.jsx'
+import CheckoutShipping from './CheckoutShipping.jsx'
+import CheckoutInfo from './CheckoutInfo.jsx'
 
 export default React.createClass({
     render() {
         return(
-            <html>
-                <head>
-                    <meta charSet="utf-8" />
-                    <meta name="viewport" content="width=device-width" />
-                    <title>
-                        Manager System Proto
-                    </title>
-                    <script src="/vendor/traceur-runtime.js"></script>
-                    <link href="http://fonts.googleapis.com/css?family=PT+Sans|Roboto+Condensed&amp;subset=latin,cyrillic,latin-ext" rel="stylesheet" type="text/css" />
-                    <link href="/css/app.css" rel="stylesheet" />
-                </head>
-                <body>
-                    <Header />
-                    <CheckoutBody />
-                </body>
-            </html>
+            <div className="CheckoutBody">
+                <span className="CheckoutBody__heading">
+                    Оформление заказа
+                </span>
+                <CheckoutInfo />
+                <CheckoutShipping />
+            </div>
         );
     },
 });
