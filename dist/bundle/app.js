@@ -2039,6 +2039,14 @@ var $__default = React.createClass({
       name: 'Заказы',
       url: '/admin/Order',
       id: '3'
+    }, {
+      name: 'Страницы',
+      url: '/admin/Page',
+      id: '4'
+    }, {
+      name: 'Корзина',
+      url: '/admin/Bin',
+      id: '5'
     }];
     return menuPoints.map((function(item) {
       return (React.DOM.li({
