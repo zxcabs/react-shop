@@ -167,7 +167,7 @@ var BaseController = function BaseController() {
         }
       }
     }
-    document.body.addEventListener('click', function(event) {
+    document.body.addEventListener('click', (function(event) {
       if (!event.target.href) {
         return;
       }
@@ -176,9 +176,9 @@ var BaseController = function BaseController() {
       }
       event.preventDefault();
       event.stopPropagation();
-      this.routeChange(event.target.href);
+      $__1.routeChange(event.target.href);
       console.log('implement foreign url check');
-    }, false);
+    }), false);
     window.addEventListener('popstate', (function(event) {
       $__1.run();
     }), false);
