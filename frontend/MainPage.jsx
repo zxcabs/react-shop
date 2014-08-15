@@ -4,6 +4,9 @@ import Header from './modules/Header.jsx'
 import Categories from './modules/Categories.jsx'
 import Products from './modules/Products.jsx'
 import Panno from './modules/Panno.jsx'
+import Welcome from './modules/Welcome.jsx'
+import Footer from './modules/Footer.jsx'
+import Selections from './modules/Selections.jsx'
 
 export default React.createClass({
     render() {
@@ -23,7 +26,10 @@ export default React.createClass({
                     <Header />
                     <Categories data={this.props.models.CategoryCollection} />
                     <Panno />
+                    <Selections />
                     <Products data={this.props.models.ProductCollection} />
+                    <Welcome />
+                    <Footer />
                 </body>
             </html>
         );

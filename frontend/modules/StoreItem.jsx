@@ -15,7 +15,7 @@ export default React.createClass({
             <div className="StoreItem">
                 <div className="StoreItem__image-and-details">
                     <a href={this.prepareURL()} >
-                        <img className="StoreItem__image" src="#" />
+                        <img className="StoreItem__image" src="/i/Prod.jpg" />
                     </a>
                     <div className="StoreItem__details">
                         <a href="#" className="StoreItem__details__fast-look">
