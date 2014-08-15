@@ -1297,7 +1297,7 @@ var $__default = React.createClass({
       "AutocompleteList": true,
       "AutocompleteList--visible": this.state.visible
     });
-    return (React.DOM.label({className: "admin-label"}, React.DOM.span({className: "ProductForm__label__description"}, this.props.key), React.DOM.div({className: ""}, this.printValues()), React.DOM.input({
+    return (React.DOM.label({className: "ProductForm__label"}, React.DOM.span({className: "ProductForm__label__description"}, this.props.key), React.DOM.div({className: ""}, this.printValues()), React.DOM.input({
       onKeyUp: this.onKeyUp,
       onFocus: this.onFocus,
       onBlur: this.onBlur,
@@ -1307,7 +1307,7 @@ var $__default = React.createClass({
       placeholder: this.props.placeholder || this.props.key,
       valueLink: this.linkState('query')
     }), React.DOM.button({
-      className: "",
+      className: "btn btn__primary",
       onClick: this.add,
       type: "button"
     }, "Добавить"), React.DOM.div({className: autoCompleteClasses}, this.state.variants.map((function(model) {
@@ -1767,8 +1767,22 @@ var $__default = React.createClass({
       }));
     }));
   },
+  renderHeadingTools: function() {
+    return (React.DOM.form({className: "DashboardListHeading"}, React.DOM.div({className: "DashboardListHeading__container"}, React.DOM.input({
+      type: "text",
+      className: "DashboardListHeading__search-input",
+      name: "search",
+      value: "",
+      placeholder: "Поиск",
+      autoComplete: "off",
+      maxLength: "50"
+    }), React.DOM.div({className: "DashboardListHeading__actions"}, React.DOM.a({
+      className: "btn btn__primary",
+      href: "#"
+    }, "Все")))));
+  },
   render: function() {
-    return (React.DOM.div({className: "DashboardList"}, React.DOM.h1({className: "DashboardList__heading"}, "Список"), React.DOM.div({className: "DashboardList__list"}, this.renderItems())));
+    return (React.DOM.div({className: "DashboardList"}, this.renderHeadingTools(), React.DOM.div({className: "DashboardList__list"}, this.renderItems())));
   }
 });
 
@@ -1995,7 +2009,9 @@ var $__default = React.createClass({
       className: "ProductForm__label__textarea",
       name: this.props.key,
       placeholder: this.props.placeholder || this.props.key,
-      valueLink: Link
+      valueLink: Link,
+      cols: "35",
+      rows: "10"
     })));
   }
 });
@@ -2019,6 +2035,10 @@ var $__default = React.createClass({
       name: 'Категории',
       url: '/admin/Category',
       id: '2'
+    }, {
+      name: 'Заказы',
+      url: '/admin/Order',
+      id: '3'
     }];
     return menuPoints.map((function(item) {
       return (React.DOM.li({

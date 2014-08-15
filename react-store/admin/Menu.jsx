@@ -12,6 +12,11 @@ export default React.createClass({
             name : 'Категории',
             url : '/admin/Category',
             id : '2'
+        },
+        {
+            name : 'Заказы',
+            url : '/admin/Order',
+            id : '3'
         }];
 
         return menuPoints.map((item) => {

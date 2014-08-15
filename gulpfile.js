@@ -86,7 +86,6 @@ function compileFrontend(watch) {
 var stylSelector = 'styles/**/*.styl';
 gulp.task('build-css', function() {
     return gulp.src(stylSelector)
-        .pipe(plugins.cached('styles'))
         .pipe(plugins.stylus())
         .on('error', function(error) {
             (console.error || console.log)(error);
@@ -100,7 +99,6 @@ var jsSelector = 'react-store/**/*.jsx';
 plugins.traceur.RUNTIME_PATH = pathToTraceur;
 gulp.task('build-js', function() {
     return gulp.src(jsSelector)
-        .pipe(plugins.cached('scripts'))
         .pipe(plugins.react({
             sourceMaps: true
         }))

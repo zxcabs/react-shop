@@ -160,7 +160,7 @@ export default React.createClass({
             "AutocompleteList--visible": this.state.visible
         });
         return (
-        <label className="admin-label">
+        <label className="ProductForm__label">
             <span className="ProductForm__label__description">
                 {this.props.key}
             </span>
@@ -177,7 +177,9 @@ export default React.createClass({
                 placeholder={this.props.placeholder || this.props.key}
                 valueLink={this.linkState('query')}
             />
-            <button className="" onClick={this.add} type="button">Добавить</button>
+            <button className="btn btn__primary" onClick={this.add} type="button">
+                Добавить
+            </button>
             <div className={autoCompleteClasses}>
                 {this.state.variants.map((model) => {
                     return (<AutocompleteItem onSelect={this.setCurrent} model={model} />);
