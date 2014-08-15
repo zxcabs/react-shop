@@ -1,12 +1,12 @@
 /** @jsx React.DOM */
 let React = require('react/addons');
-import StoreItem from './StoreItem.jsx'
-import ProductGallery from './ProductGallery.jsx'
-import ProductBuyForm from './ProductBuyForm.jsx'
-import ProductTabs from './ProductTabs.jsx'
+import ProductGallery from './modules/ProductGallery.jsx'
+import ProductBuyForm from './modules/ProductBuyForm.jsx'
+import ProductTabs from './modules/ProductTabs.jsx'
 
 export default React.createClass({
     render() {
+        console.log(this.props._models);
         return(
             <div className="Product">
                 <div className="Product__top">
@@ -18,10 +18,10 @@ export default React.createClass({
                             Модель здесь!
                         </span>
                         <span className="Product__top__right__title">
-                            {this.props.model.get('name')}
+                            {this.props.models.Product.get('name')}
                         </span>
-                        <ProductBuyForm data={this.props.model} />
-                        <ProductTabs text={this.props.model.get('description')} attrs={this.props.model.get('attributes')} />
+                        <ProductBuyForm data={this.props.models.Product} />
+                        <ProductTabs text={this.props.models.Product.get('description')} attrs={this.props.models.Product.get('attributes')} />
                     </div>
                 </div>
             </div>

@@ -7,133 +7,20 @@ Object.defineProperties(exports, {
   __esModule: {value: true}
 });
 var $___46__46__47_Models_46_jsx__,
-    $__AdminPage_46_jsx__;
+    $__AdminPage_46_jsx__,
+    $___46__46__47_BaseController_46_jsx__;
 var React = require('react/addons');
 if (typeof window !== 'undefined') {
   window.React = React;
 }
 var Models = ($___46__46__47_Models_46_jsx__ = require("../Models.jsx"), $___46__46__47_Models_46_jsx__ && $___46__46__47_Models_46_jsx__.__esModule && $___46__46__47_Models_46_jsx__ || {default: $___46__46__47_Models_46_jsx__}).default;
 var AdminPage = ($__AdminPage_46_jsx__ = require("./AdminPage.jsx"), $__AdminPage_46_jsx__ && $__AdminPage_46_jsx__.__esModule && $__AdminPage_46_jsx__ || {default: $__AdminPage_46_jsx__}).default;
-var keys = [];
-var parser = require('path-to-regexp')('/:dashboard/:id?/:tab?', keys);
-var parse = (function(path) {
-  var res = parser.exec(path);
-  if (!res) {
-    return null;
-  }
-  return res.slice(1).reduce((function(accum, item, index) {
-    if (item !== null && item !== undefined) {
-      $traceurRuntime.setProperty(accum, keys[$traceurRuntime.toProperty(index)].name, item);
-    }
-    return accum;
-  }), {});
-});
+var BaseController = ($___46__46__47_BaseController_46_jsx__ = require("../BaseController.jsx"), $___46__46__47_BaseController_46_jsx__ && $___46__46__47_BaseController_46_jsx__.__esModule && $___46__46__47_BaseController_46_jsx__ || {default: $___46__46__47_BaseController_46_jsx__}).default;
 var AdminFrontend = function AdminFrontend() {
-  var req = arguments[0] !== (void 0) ? arguments[0] : null;
-  var res = arguments[1] !== (void 0) ? arguments[1] : null;
-  this._models = {};
-  if (req && res) {
-    this.serverRoute(req, res);
-  } else {
-    this.initClient();
-  }
+  $traceurRuntime.defaultSuperCall(this, $AdminFrontend.prototype, arguments);
 };
+var $AdminFrontend = AdminFrontend;
 ($traceurRuntime.createClass)(AdminFrontend, {
-  initClient: function() {
-    var $__2 = this;
-    var initialJSON = document.querySelector('#initialData').value;
-    this._models = JSON.parse(initialJSON);
-    for (var $key in this._models) {
-      try {
-        throw undefined;
-      } catch (modelName) {
-        try {
-          throw undefined;
-        } catch (key) {
-          {
-            key = $key;
-            if (!this._models.hasOwnProperty(key)) {
-              continue;
-            }
-            modelName = key;
-            if (Array.isArray(this._models[$traceurRuntime.toProperty(key)])) {
-              modelName = key.slice(0, key.lastIndexOf('Collection'));
-              $traceurRuntime.setProperty(this._models, key, this._models[$traceurRuntime.toProperty(key)].map((function(obj) {
-                var model = new Models[$traceurRuntime.toProperty(modelName)](obj);
-                model.notNew();
-                return model;
-              })));
-            } else {
-              $traceurRuntime.setProperty(this._models, key, new Models[$traceurRuntime.toProperty(modelName)](this._models[$traceurRuntime.toProperty(key)]));
-              this._models[$traceurRuntime.toProperty(key)].notNew();
-            }
-          }
-        }
-      }
-    }
-    window.addEventListener('popstate', (function(event) {
-      $__2.run();
-    }), false);
-  },
-  serverRoute: function(req, res) {
-    this.request = req;
-    this.response = res;
-  },
-  loadModel: function(modelName) {
-    var id = arguments[1] !== (void 0) ? arguments[1] : null;
-    var params = arguments[2] !== (void 0) ? arguments[2] : {};
-    var $__2 = this;
-    if (id) {
-      if (this._models[$traceurRuntime.toProperty(modelName)] && this._models[$traceurRuntime.toProperty(modelName)].get('_id') === id) {
-        return Promise.resolve(this._models);
-      }
-    } else {
-      if (this._models[$traceurRuntime.toProperty(modelName + 'Collection')]) {
-        return Promise.resolve(this._models);
-      }
-    }
-    return new Promise((function(resolve, reject) {
-      var Model = Models[$traceurRuntime.toProperty(modelName)];
-      if (!id) {
-        return Model.find(params).then((function(Models) {
-          $traceurRuntime.setProperty($__2._models, modelName + 'Collection', Models);
-          resolve($__2._models);
-        })).catch((function(error) {
-          return reject(error);
-        }));
-      }
-      if (id === 'new') {
-        $traceurRuntime.setProperty($__2._models, modelName, new Model());
-        return resolve($__2._models);
-      }
-      return Model.findById(id, params).then((function(Model) {
-        $traceurRuntime.setProperty($__2._models, modelName, Model);
-        resolve($__2._models);
-      })).catch((function(error) {
-        return reject(error);
-      }));
-    }));
-  },
-  get user() {
-    return this._req ? this._req.user : this._models.User;
-  },
-  toString: function() {
-    return this.renderToString();
-  },
-  routeChange: function(route) {
-    window.history.pushState('', '', route);
-    this.run();
-  },
-  getView: function() {
-    return AdminPage({
-      models: this._models,
-      routeChange: this.routeChange.bind(this),
-      params: this.params
-    });
-  },
-  renderToString: function() {
-    return '<!DOCTYPE html>' + React.renderComponentToString(this.getView());
-  },
   cleanCache: function() {
     if (this._prevParams !== this.params) {
       this._prevParams = this.params;
@@ -141,14 +28,22 @@ var AdminFrontend = function AdminFrontend() {
       delete this._models[$traceurRuntime.toProperty(this.params.dashboard + 'Collection')];
     }
   },
+  mountRoutes: function() {
+    var $__3 = this;
+    this.route('/:dashboard/:id?/:tab?', (function() {
+      $__3.init().then((function() {
+        $__3.render(AdminPage);
+      })).catch($__3.catchError.bind($__3));
+    }));
+  },
   init: function() {
-    var $__2 = this;
+    var $__3 = this;
     this.cleanCache();
     return new Promise((function(resolve, reject) {
       var promises = [];
-      promises.push($__2.loadModel($__2.params.dashboard, null, $__2.query));
-      if ($__2.params.id) {
-        promises.push($__2.loadModel($__2.params.dashboard, $__2.params.id, $__2.query));
+      promises.push($__3.loadModel($__3.params.dashboard, null, $__3.query));
+      if ($__3.params.id) {
+        promises.push($__3.loadModel($__3.params.dashboard, $__3.params.id, $__3.query));
       }
       Promise.all(promises).then((function() {
         if (promises.length > 1) {
@@ -162,9 +57,9 @@ var AdminFrontend = function AdminFrontend() {
                 throw undefined;
               } catch (Model) {
                 {
-                  Model = $__2._models[$traceurRuntime.toProperty($__2.params.dashboard)];
+                  Model = $__3._models[$traceurRuntime.toProperty($__3.params.dashboard)];
                   id = Model.get('_id') || '';
-                  Models = $__2._models[$traceurRuntime.toProperty($__2.params.dashboard + 'Collection')];
+                  Models = $__3._models[$traceurRuntime.toProperty($__3.params.dashboard + 'Collection')];
                   {
                     try {
                       throw undefined;
@@ -199,10 +94,228 @@ var AdminFrontend = function AdminFrontend() {
         }
         resolve(200);
       })).catch((function(error) {
-        $__2._models = {};
+        $__3._models = {};
         reject(error);
       }));
     }));
+  }
+}, {}, BaseController);
+if (typeof window !== 'undefined') {
+  new AdminFrontend().run();
+}
+var $__default = AdminFrontend;
+
+},{"../BaseController.jsx":"/vagrant/dist/app/BaseController.jsx","../Models.jsx":"/vagrant/dist/app/Models.jsx","./AdminPage.jsx":"/vagrant/dist/app/admin/AdminPage.jsx","react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/BaseController.jsx":[function(require,module,exports){
+"use strict";
+Object.defineProperties(exports, {
+  default: {get: function() {
+      return $__default;
+    }},
+  __esModule: {value: true}
+});
+var $__Models_46_jsx__;
+var Models = ($__Models_46_jsx__ = require("./Models.jsx"), $__Models_46_jsx__ && $__Models_46_jsx__.__esModule && $__Models_46_jsx__ || {default: $__Models_46_jsx__}).default;
+var React = require('react/addons');
+if (typeof window !== 'undefined') {
+  window.React = React;
+}
+var parserFunc = require('path-to-regexp');
+var BaseController = function BaseController() {
+  var req = arguments[0] !== (void 0) ? arguments[0] : null;
+  var res = arguments[1] !== (void 0) ? arguments[1] : null;
+  this._models = {};
+  this.mountRoutes();
+  if (req && res) {
+    this.serverRoute(req, res);
+  } else {
+    this.initClient();
+  }
+};
+($traceurRuntime.createClass)(BaseController, {
+  mountRoutes: function() {
+    return this;
+  },
+  initClient: function() {
+    var $__1 = this;
+    var initialJSON = document.querySelector('#initialData').value;
+    this._models = JSON.parse(initialJSON) || {};
+    for (var $key in this._models) {
+      try {
+        throw undefined;
+      } catch (modelName) {
+        try {
+          throw undefined;
+        } catch (key) {
+          {
+            key = $key;
+            if (!this._models.hasOwnProperty(key)) {
+              continue;
+            }
+            modelName = key;
+            if (Array.isArray(this._models[$traceurRuntime.toProperty(key)])) {
+              modelName = key.slice(0, key.lastIndexOf('Collection'));
+              $traceurRuntime.setProperty(this._models, key, this._models[$traceurRuntime.toProperty(key)].map((function(obj) {
+                var model = new Models[$traceurRuntime.toProperty(modelName)](obj);
+                model.notNew();
+                return model;
+              })));
+            } else {
+              $traceurRuntime.setProperty(this._models, key, new Models[$traceurRuntime.toProperty(modelName)](this._models[$traceurRuntime.toProperty(key)]));
+              this._models[$traceurRuntime.toProperty(key)].notNew();
+            }
+          }
+        }
+      }
+    }
+    document.body.addEventListener('click', function(event) {
+      if (!event.target.href) {
+        return;
+      }
+      if (event.altKey || event.ctrlKey || event.metaKey) {
+        return;
+      }
+      event.preventDefault();
+      event.stopPropagation();
+      this.routeChange(event.target.href);
+      console.log('implement foreign url check');
+    }, false);
+    window.addEventListener('popstate', (function(event) {
+      $__1.run();
+    }), false);
+  },
+  serverRoute: function(req, res) {
+    this.request = req;
+    this.response = res;
+  },
+  catchError: function(error) {
+    console.log(error, error.stack);
+    if (this.response) {
+      this.response.status(500).send();
+    }
+  },
+  route: function(route, callback) {
+    if (!this._routes) {
+      this._routes = [];
+    }
+    var keys = [];
+    var parser = parserFunc(route, keys);
+    var parse = (function(path) {
+      var res = parser.exec(path);
+      if (!res) {
+        return null;
+      }
+      return res.slice(1).reduce((function(accum, item, index) {
+        if (item !== null && item !== undefined) {
+          $traceurRuntime.setProperty(accum, keys[$traceurRuntime.toProperty(index)].name, item);
+        }
+        return accum;
+      }), {});
+    });
+    this._routes.push({
+      parse: parse,
+      callback: callback
+    });
+  },
+  getLayoutModels: function() {
+    return Promise.resolve();
+  },
+  checkRoute: function(route) {
+    for (var $__3 = this._routes[$traceurRuntime.toProperty(Symbol.iterator)](),
+        $__4; !($__4 = $__3.next()).done; ) {
+      try {
+        throw undefined;
+      } catch (routeChecker) {
+        {
+          routeChecker = $__4.value;
+          {
+            try {
+              throw undefined;
+            } catch (params) {
+              {
+                params = routeChecker.parse(route);
+                if (!params) {
+                  continue;
+                }
+                this.params = params;
+                if (!this._prevParams) {
+                  this._prevParams = this.params;
+                }
+                return routeChecker.callback.call(this);
+              }
+            }
+          }
+        }
+      }
+    }
+    console.log('implement 404 page');
+  },
+  loadModel: function(modelName) {
+    var id = arguments[1] !== (void 0) ? arguments[1] : null;
+    var params = arguments[2] !== (void 0) ? arguments[2] : {};
+    var $__1 = this;
+    if (id) {
+      if (this._models[$traceurRuntime.toProperty(modelName)] && this._models[$traceurRuntime.toProperty(modelName)].get('_id') === id) {
+        return Promise.resolve(this._models);
+      }
+    } else {
+      if (this._models[$traceurRuntime.toProperty(modelName + 'Collection')]) {
+        return Promise.resolve(this._models);
+      }
+    }
+    return new Promise((function(resolve, reject) {
+      var Model = Models[$traceurRuntime.toProperty(modelName)];
+      if (!id) {
+        return Model.find(params).then((function(Models) {
+          $traceurRuntime.setProperty($__1._models, modelName + 'Collection', Models);
+          resolve($__1._models);
+        })).catch((function(error) {
+          return reject(error);
+        }));
+      }
+      if (id === 'new') {
+        $traceurRuntime.setProperty($__1._models, modelName, new Model());
+        return resolve($__1._models);
+      }
+      return Model.findById(id, params).then((function(Model) {
+        $traceurRuntime.setProperty($__1._models, modelName, Model);
+        resolve($__1._models);
+      })).catch((function(error) {
+        return reject(error);
+      }));
+    }));
+  },
+  get user() {
+    return this.request ? this.request.user : this._models.User;
+  },
+  routeChange: function(route) {
+    window.history.pushState('', '', route);
+    this.run();
+  },
+  getLayout: function(Page) {
+    return Page({
+      models: this._models,
+      params: this.params,
+      query: this.query
+    });
+  },
+  renderToString: function(Page) {
+    return '<!DOCTYPE html>' + React.renderComponentToString(this.getLayout(Page));
+  },
+  renderToDOM: function(Page) {
+    return React.renderComponent(this.getLayout(Page), document);
+  },
+  render: function(Page) {
+    if (typeof window === 'undefined') {
+      try {
+        throw undefined;
+      } catch (res) {
+        {
+          res = this.renderToString(Page);
+          return this.response.status(200).send(res);
+        }
+      }
+    }
+    return this.renderToDOM(Page);
   },
   getCurrentPath: function() {
     if (this.request) {
@@ -213,60 +326,26 @@ var AdminFrontend = function AdminFrontend() {
         throw undefined;
       } catch (index) {
         {
-          index = window.location.pathname.indexOf('/', 1);
+          index = 0;
+          console.log('implement url prefix');
+          if (window.location.pathname.indexOf('/admin') !== -1) {
+            index = window.location.pathname.indexOf('/', 1);
+          }
           return window.location.pathname.slice(index);
         }
       }
     }
-    return new Error("WTF");
+    throw new Error("WTF");
   },
   run: function() {
-    var $__2 = this;
-    var path = this.getCurrentPath();
-    this.params = parse(path);
-    if (!this._prevParams) {
-      this._prevParams = this.params;
-    }
-    if (!this.params) {
-      try {
-        throw undefined;
-      } catch (error) {
-        {
-          error = new Error(404);
-          if (this.response) {
-            return res.status(404).send(error);
-          }
-          return this.renderToErrorDOM(error);
-        }
-      }
-    }
-    this.query = this.request ? this.request.query : window.location.search;
-    this.init().then((function(code) {
-      if ($__2.response) {
-        return $__2.response.status(code).send($__2.toString());
-      }
-      $__2.renderToDOM();
-    })).catch((function(error) {
-      if ($__2.response) {
-        return res.status(500).send(error);
-      }
-      $__2.renderToErrorDOM(error);
-    }));
-  },
-  renderToDOM: function() {
-    React.renderComponent(this.getView(), document);
-  },
-  renderToErrorDOM: function(error) {
-    console.log('implement error page');
-    console.error(error.stack);
+    this.query = {};
+    console.log('implement query parse');
+    this.checkRoute(this.getCurrentPath());
   }
 }, {});
-if (typeof window !== 'undefined') {
-  new AdminFrontend().run();
-}
-var $__default = AdminFrontend;
+var $__default = BaseController;
 
-},{"../Models.jsx":"/vagrant/dist/app/Models.jsx","./AdminPage.jsx":"/vagrant/dist/app/admin/AdminPage.jsx","path-to-regexp":"/vagrant/node_modules/path-to-regexp/index.js","react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/Model/Attribute.jsx":[function(require,module,exports){
+},{"./Models.jsx":"/vagrant/dist/app/Models.jsx","path-to-regexp":"/vagrant/node_modules/path-to-regexp/index.js","react/addons":"/vagrant/node_modules/react/addons.js"}],"/vagrant/dist/app/Model/Attribute.jsx":[function(require,module,exports){
 "use strict";
 Object.defineProperties(exports, {
   default: {get: function() {
@@ -1072,12 +1151,6 @@ var dashboards = {
   }
 };
 var $__default = React.createClass({
-  handleRoutes: function(event) {
-    if (event.target.href) {
-      event.preventDefault();
-      this.props.routeChange(event.target.href);
-    }
-  },
   requestParentUpdate: function() {
     var item = arguments[0] !== (void 0) ? arguments[0] : null;
     if (item) {
@@ -1130,7 +1203,7 @@ var $__default = React.createClass({
     }), React.DOM.link({
       href: "/css/app.css",
       rel: "stylesheet"
-    })), React.DOM.body({onClick: this.handleRoutes}, React.DOM.div({className: "menu"}, Menu(null)), React.DOM.div({className: "content"}, this.renderTabs()), React.DOM.input({
+    })), React.DOM.body(null, React.DOM.div({className: "menu"}, Menu(null)), React.DOM.div({className: "content"}, this.renderTabs()), React.DOM.input({
       readOnly: "true",
       value: JSON.stringify(this.props.models),
       style: {display: 'none'},

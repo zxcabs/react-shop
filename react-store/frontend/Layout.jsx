@@ -5,7 +5,15 @@ import Categories from './modules/Categories.jsx'
 import Footer from './modules/Footer.jsx'
 
 export default React.createClass({
+    handleRoutes(event) {
+        if (event.target.href) {
+            event.preventDefault();
+            this.props.routeChange(event.target.href);
+        }
+    },
+
     render() {
+        let Page = this.props.page;
         return(
             <html>
                 <head>
@@ -21,8 +29,11 @@ export default React.createClass({
                 <body>
                     <Header />
                     <Categories data={this.props.models.CategoryCollection} />
-                    {this.props.page}
+                    {<Page params={this.props.params} models={this.props.models} query={this.props.query} />}
                     <Footer />
+                    <input readOnly="true" type="hidden" value={JSON.stringify(this.props.models)} style={{display: 'none'}} id="initialData"/>
+                    <script src="/vendor/traceur-runtime.js"></script>
+                    <script src="/bundle/frontend.js"></script>
                 </body>
             </html>
         );
