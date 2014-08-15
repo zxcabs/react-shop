@@ -1,56 +1,67 @@
+import Layout from './Layout.jsx';
 import MainPage from './MainPage.jsx';
-import Models from '../Models.jsx';
-let React = require('react/addons');
+import ThemeProductPage from './ThemeProductPage.jsx';
+import BaseController from '../BaseController.jsx';
 
-export default class AdminFrontend {
-    constructor(opt) {
-        this._models = {};
-        this.user = opt.user;
-        this.query = opt.query || {};
+class SupplyClubTheme extends BaseController {
+    getLayoutModels() {
+        if (!this._layoutPromise) {
+            this._layoutPromise = new Promise((resolve, reject) => {
+                let promises = [];
+                promises.push(this.loadModel('Category', null, this.query));
+                Promise.all(promises).then(() => {
+                    resolve(200);
+                }).catch((error) => {
+                    reject(error);
+                });
+            });
+        }
+        return this._layoutPromise;
     }
 
-    loadModel(modelName, id = null, params = {}) {
-        return new Promise((resolve, reject) => {
-            let Model = Models[modelName];
-            params.refs = 'parent';
-            if (!id) {
-                return Model.find(params).then((Models) => {
-                    this._models[modelName + 'Collection'] = Models;
-                    resolve(this._models);
-                }).catch((error) => reject(error))
-            }
-            if (id === 'new') {
-                this._models[modelName] = new Model();
-                return resolve(this._models);
-            }
-            return Model.findById(id, params).then((Model) => {
-                this._models[modelName] = Model;
-                resolve(this._models);
-            }).catch((error) => reject(error));
+    mountRoutes() {
+        this.route('/product/:id', () => {
+            new Promise((resolve, reject) => {
+                let promises = [];
+                promises.push(this.getLayoutModels());
+                promises.push(this.loadModel('Product', this.params.id, this.query));
+                Promise.all(promises).then(() => {
+                    resolve(200);
+                }).catch((error) => {
+                    reject(error);
+                });
+            }).then(() => {
+                this.render(ThemeProductPage);
+            }).catch((error) => this.catchError(error));
+        });
+
+        this.route('/', () => {
+            new Promise((resolve, reject) => {
+                let promises = [];
+                promises.push(this.getLayoutModels());
+                promises.push(this.loadModel('Product', null, this.query));
+                Promise.all(promises).then(() => {
+                    resolve(200);
+                }).catch((error) => {
+                    reject(error);
+                });
+            }).then(() => {
+                this.render(MainPage);
+            }).catch((error) => this.catchError(error));
         });
     }
 
-    toString() {
-        return this.renderToString();
-    }
-
-    renderToString() {
-        return '<!DOCTYPE html>' + React.renderComponentToString(MainPage({
+    getLayout(Page) {
+        return Layout({
             models: this._models,
-            query: this.query
-        }));
-    }
-
-    init() {
-        return new Promise((resolve, reject) => {
-            let promises = [];
-            promises.push(this.loadModel('Category', null, this.query));
-            promises.push(this.loadModel('Product', null, this.query));
-            Promise.all(promises).then(() => {
-                resolve(200);
-            }).catch((error) => {
-                reject(error);
-            });
+            query: this.query,
+            page: Page
         });
     }
 }
+
+if (typeof window !== 'undefined') {
+    new SupplyClubTheme().run();
+}
+
+export default SupplyClubTheme;

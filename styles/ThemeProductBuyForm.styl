@@ -1,0 +1,78 @@
+.ProductBuyForm
+    display block
+    margin 20px 0
+    &__table
+        background #fafafa
+        width 100%
+        & td
+            padding 10px 10px
+        &__td
+            &__availability
+                width 120px
+                display none
+            &__price-only
+                width 150px
+                display none
+            &__price-and-availability
+                width 80px
+            &__quantity-select
+                width 60px
+            &__buy-button
+                width 120px
+                &__container
+                    width 140px
+        &__availability
+            display block
+            color #15a589
+            font-family 'Roboto Condensed'
+            margin-top -5px
+            &--not-available
+                color #c8432d
+        &__price
+            display block
+            font-size 30px
+        &__quantity-select
+            width initial
+            -webkit-appearance none
+            border 1px solid #000
+            padding 8px 30px 8px 12px
+            border-radius 0
+            background-color #fff
+            background-image url("/i/arrow_down.svg")
+            background-size 12px
+            background-position 80%
+            outline none
+            background-repeat no-repeat
+            line-height 1
+            height 40px
+            font-size 16px
+            margin 0
+        &__buy-button
+            border 1px solid #000
+            border-radius 0
+            padding 10px 20px
+            display inline-block
+            background #fff
+            height initial
+            width 140px
+            font-size 18px
+            font-family 'Roboto Condensed'
+            text-transform uppercase
+            margin 0
+            &__loader
+                width 32px
+                height 32px
+                margin 0 auto
+                background-image url("/i/loader_small_black.png")
+                background-size 26px
+                background-position center
+                background-repeat no-repeat
+                padding-top 5px
+                animation preloader 1s infinite linear
+                display none
+                &--active
+                    display block
+
+@keyframes preloader {
+    to { transform: rotate(360deg); }
+}

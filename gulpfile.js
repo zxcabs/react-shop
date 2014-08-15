@@ -41,33 +41,10 @@ function compileScripts(watch) {
     return rebundle();
 }
 
-function compileScripts(watch) {
-    plugins.util.log('Starting browserify');
-    var entryFile = './dist/app/admin/AdminFrontend.jsx';
-
-    var bundler = watchify(browserify(entryFile, watchify.args))
-
-    var rebundle = function () {
-        var stream = bundler.bundle();
-
-        stream.on('error', function (err) {
-            (console.error || console.log)(err);
-        });
-        stream = stream.pipe(source(entryFile));
-        stream.pipe(plugins.rename('app.js'));
-        stream.pipe(gulp.dest('dist/bundle'));
-    }
-
-    bundler.on('update', rebundle);
-    return rebundle();
-}
-
 function compileFrontend(watch) {
-    plugins.util.log('Starting browserify');
-    var entryFile = './dist/app/admin/AdminFrontend.jsx';
-
+    plugins.util.log('Starting browserify frontend');
+    var entryFile = './dist/app/frontend/SupplyClubTheme.jsx';
     var bundler = watchify(browserify(entryFile, watchify.args))
-
     var rebundle = function () {
         var stream = bundler.bundle();
 
@@ -75,7 +52,7 @@ function compileFrontend(watch) {
             (console.error || console.log)(err);
         });
         stream = stream.pipe(source(entryFile));
-        stream.pipe(plugins.rename('app.js'));
+        stream.pipe(plugins.rename('frontend.js'));
         stream.pipe(gulp.dest('dist/bundle'));
     }
 
@@ -86,7 +63,6 @@ function compileFrontend(watch) {
 var stylSelector = 'styles/**/*.styl';
 gulp.task('build-css', function() {
     return gulp.src(stylSelector)
-        .pipe(plugins.cached('styles'))
         .pipe(plugins.stylus())
         .on('error', function(error) {
             (console.error || console.log)(error);
@@ -100,7 +76,6 @@ var jsSelector = 'react-store/**/*.jsx';
 plugins.traceur.RUNTIME_PATH = pathToTraceur;
 gulp.task('build-js', function() {
     return gulp.src(jsSelector)
-        .pipe(plugins.cached('scripts'))
         .pipe(plugins.react({
             sourceMaps: true
         }))
@@ -148,6 +123,7 @@ gulp.task('server', ['vendor', 'build-js'], (function() {
  */
 gulp.task('default', ['build-css', 'server'], function () {
     compileScripts(true);
+    compileFrontend(true);
     gulp.watch([stylSelector], ['build-css']);
     gulp.watch([jsSelector], ['server']);
 });

@@ -9,7 +9,7 @@ export default React.createClass({
                     <a href="/" className="Header__wrap__logo">
                         Supply Club
                     </a>
-                    <span className="Header__wrap__cart"></span>
+                    <a href="/cart" className="Header__wrap__cart"></a>
                     <span className="Header__wrap__search"></span>
                 </div>
             </div>

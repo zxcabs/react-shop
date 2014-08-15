@@ -1,0 +1,28 @@
+.ProductTabs
+    &__tab
+        display inline-block
+        padding 8px 20px
+        font-family 'Roboto Condensed','Arial Narrow'
+        text-transform uppercase
+        cursor pointer
+        &:hover
+            color #9d005c
+        &--active
+            border 1px solid #ebebeb
+            border-bottom 1px solid #fff
+            &:hover
+                cursor default
+                color #000
+    &__info
+        display none
+        &--active
+            display block
+            padding 20px 10px
+            border-top 1px solid #ebebeb
+            margin-top -1px
+            width 400px
+            font-size 14px
+        & ul
+            list-style inside square
+        &__options-item
+            display block
