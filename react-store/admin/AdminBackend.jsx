@@ -10,6 +10,6 @@ export default class AdminBackend extends EndPoint {
     }
 
     _getRequest(req, res) {
-        new AdminFrontend(req, res).run();
+        AdminFrontend.handleRequest(req, res);
     }
 }

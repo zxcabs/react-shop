@@ -6,6 +6,10 @@ if (typeof window !== 'undefined') {
 import Models from '../Models.jsx';
 import AdminPage from './AdminPage.jsx';
 import BaseController from '../BaseController.jsx';
+import IsomorphicRouter from '../IsomorphicRouter.jsx';
+
+let AdminFrontend = new IsomorphicRouter();
+AdminFrontend
 
 class AdminFrontend extends BaseController {
     cleanCache() {

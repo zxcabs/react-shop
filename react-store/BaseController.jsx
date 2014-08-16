@@ -110,7 +110,11 @@ class BaseController {
             }
             return routeChecker.callback.call(this);
         }
-        console.log('implement 404 page');
+        if (this.response) {
+            this.response.status(404).send();
+        } else {
+            throw new Error(404);
+        }
     }
 
     loadModel(modelName, id = null, params = {}) {

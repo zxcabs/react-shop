@@ -23,8 +23,8 @@ export default React.createClass({
                 <div className="DashboardListHeading__container">
                     <input type="text" className="DashboardListHeading__search-input" name="search" value="" placeholder="Поиск" autoComplete="off" maxLength="50" />
                     <div className="DashboardListHeading__actions">
-                        <a className="btn btn__primary" href="#">
-                            Все
+                        <a className="btn btn__primary" href={`/admin/${this.props.dashboardName}/new`}>
+                            Создать
                         </a>
                     </div>
                 </div>
