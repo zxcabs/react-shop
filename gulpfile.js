@@ -26,7 +26,7 @@ function compileScripts(watch) {
 
     var bundler = watchify(browserify(entryFile, {
         cache: {}, packageCache: {}, fullPaths: true, debug: true
-    }))
+    }));
 
     var rebundle = function () {
         var stream = bundler.bundle();
@@ -48,7 +48,7 @@ function compileFrontend(watch) {
     var entryFile = './dist/app/frontend/SupplyClubTheme.jsx';
     var bundler = watchify(browserify(entryFile, {
         cache: {}, packageCache: {}, fullPaths: true, debug: true
-    }))
+    }));
     var rebundle = function () {
         var stream = bundler.bundle();
 
@@ -64,14 +64,25 @@ function compileFrontend(watch) {
     return rebundle();
 }
 
-var stylSelector = 'styles/**/*.styl';
+var stylSelector = [
+    'bower_components/font-awesome/css/font-awesome.css',
+    'bower_components/normalize-css/normalize.css',
+    'styles/**/*.styl'
+];
+
+gulp.task('build-fonts', function() {
+    return gulp.src('bower_components/font-awesome/fonts/*')
+        .pipe(gulp.dest('dist/fonts'))
+});
 gulp.task('build-css', function() {
     return gulp.src(stylSelector)
+        .pipe(plugins.cached('styles'))
         .pipe(plugins.stylus())
         .on('error', function(error) {
             (console.error || console.log)(error);
         })
         .pipe(plugins.autoprefixer())
+        .pipe(plugins.remember('styles'))
         .pipe(plugins.concat('app.css'))
         .pipe(gulp.dest('dist/css'))
 });
@@ -80,6 +91,7 @@ var jsSelector = 'react-store/**/*.jsx';
 plugins.traceur.RUNTIME_PATH = pathToTraceur;
 gulp.task('build-js', function() {
     return gulp.src(jsSelector)
+        .pipe(plugins.cached('js'))
         .pipe(plugins.react({
             sourceMaps: true
         }))
@@ -100,7 +112,7 @@ gulp.task('build-js', function() {
 /**
  * Run default task
  */
-gulp.task('default', ['build-css', 'build-js'], function () {
+gulp.task('default', ['build-css', 'build-fonts', 'build-js'], function () {
     compileScripts(true);
     compileFrontend(true);
     gulp.watch([stylSelector], ['build-css']);
