@@ -8,9 +8,23 @@ class IsomorphicRequest {
         this._router = router;
         this.done = false;
         this.ended = false;
-        this.params = {};
 
         this.initPath();
+    }
+
+    get params() {
+        return this._params || {
+            toString() {
+                return JSON.stringify(this);
+            }
+        };
+    }
+
+    set params(value) {
+        value.toString = function() {
+            return JSON.stringify(this);
+        }
+        this._params = value;
     }
 
     initPath() {
@@ -18,6 +32,10 @@ class IsomorphicRequest {
             this._path = this.request.path;
             this.query = this.request.query;
         } else {
+            if (!this.prefix) {
+                this.prefix = '/admin';
+                console.log('implement!111');
+            }
             this._path = window.location.pathname.slice(this.prefix.length);
             this.query = window.location.search;
         }
@@ -85,12 +103,12 @@ class IsomorphicRequest {
             query = this.parseQuery(query);
         }
 
-        thiq._query = {};//query;
+        this._query = {};//query;
     }
 
-    error(code = 500, {message = '', data = {}}, realError) {
-        let error = new Error(`${code} ${message}`);
-        error.data = data;
+    error(code = 500, dataObj, realError) {
+        let error = new Error(`${code} ${dataObj.message || ''}`);
+        error.data = dataObj.data || {};
         error.code = code;
 
         console.log('implement error pages');

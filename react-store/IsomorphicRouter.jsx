@@ -4,9 +4,23 @@ let parserFunc = require('path-to-regexp');
 class IsomorphicRouter {
     constructor(defaultUrl = '/') {
         this._errorViews = {};
+        this._clientInitCallbacks = [];
         if (this.isOnClient()) {
             this.initOnClient();
         }
+    }
+
+    clientCache(name, value) {
+        if (!this.isOnClient()) {return;}
+        if (!this._cache) {
+            this._cache = {};
+        }
+
+        if (value !== undefined) {
+            this._cache[name] = value;
+        }
+
+        return this._cache[name] || null;
     }
 
     isOnClient() {
@@ -26,24 +40,36 @@ class IsomorphicRouter {
         this._request = request;
     }
 
+    onClientInit(callback) {
+        this._clientInitCallbacks.push(callback);
+    }
+
     initOnClient() {
+        let inited = false;
         window.addEventListener('popstate', (event) => {
-            this.run();
-        }, false);
-        document.body.addEventListener('click', (event) => {
-            if (!event.target.href) {
-                return;
+            if (inited) {
+                this.handleRequest();
             }
-            if (event.altKey || event.ctrlKey || event.metaKey) {
-                return;
-            }
-            event.preventDefault();
-            event.stopPropagation();
-            this.routeChange(event.target.href);
-            console.log('implement foreign url check');
         }, false);
+
         document.addEventListener('DOMContentLoaded', () => {
+            inited = true;
+
+            this._clientInitCallbacks.forEach((callback) => callback());
             this.handleRequest();
+
+            document.body.addEventListener('click', (event) => {
+                if (!event.target.href) {
+                    return;
+                }
+                if (event.altKey || event.ctrlKey || event.metaKey) {
+                    return;
+                }
+                event.preventDefault();
+                event.stopPropagation();
+                this.routeChange(event.target.href);
+                console.log('implement foreign url check');
+            }, false);
         });
     }
 
@@ -104,7 +130,7 @@ class IsomorphicRouter {
             if (!params) {continue;}
             if (previousRequest) {
                 if (!previousRequest.done) {
-                    if (previousRequest.is(request) {
+                    if (previousRequest.is(request)) {
                         return;
                     } else {
                         previousRequest.end();

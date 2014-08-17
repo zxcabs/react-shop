@@ -5,61 +5,91 @@ if (typeof window !== 'undefined') {
 
 import Models from '../Models.jsx';
 import AdminPage from './AdminPage.jsx';
-import BaseController from '../BaseController.jsx';
 import IsomorphicRouter from '../IsomorphicRouter.jsx';
 
 let AdminFrontend = new IsomorphicRouter();
-AdminFrontend
-
-class AdminFrontend extends BaseController {
-    cleanCache() {
-        if (this._prevParams !== this.params) {
-            this._prevParams = this.params;
-            delete this._models[this.params.dashboard];
-            delete this._models[this.params.dashboard + 'Collection'];
+AdminFrontend.onClientInit(() => {
+    let initialJSON = document.querySelector('#initialData').value;
+    let models = JSON.parse(initialJSON) || {};
+    for (let key in models) {
+        if (!models.hasOwnProperty(key)) {continue;}
+        let modelName = key;
+        if (Array.isArray(models[key])) {
+            modelName = key.slice(0, key.lastIndexOf('Collection'));
+            models[key] = models[key].map((obj) => {
+                let model = new Models[modelName](obj);
+                model.notNew();
+                return model;
+            });
+        } else {
+            models[key] = new Models[modelName](models[key]);
+            if (models[key].get('_id')) {
+                models[key].notNew();
+            }
         }
     }
+    AdminFrontend.clientCache('models', models);
+});
 
-    mountRoutes() {
-        this.route('/:dashboard/:id?/:tab?', () => {
-            this.init().then(() => {
-                this.render(AdminPage);
-            }).catch(this.catchError.bind(this));
-        });
+function loadModels(req) {
+    let promises = [];
+    let models = AdminFrontend.clientCache('models') || {};
+    let prevParams = AdminFrontend.clientCache('prevParams') || {};
+    let dashboardName = req.params.dashboard;
+    let isSameDashboard = prevParams.dashboard === dashboardName;
+    let isSameId = prevParams.id === req.params.id;
+    let Model = Models[req.params.dashboard];
+
+    if (models[dashboardName + 'Collection'] && isSameDashboard) {
+        promises.push(Promise.resolve(models[dashboardName + 'Collection']));
+    } else {
+        promises.push(Model.find(req.query));
     }
 
-    init() {
-        this.cleanCache();
-        return new Promise((resolve, reject) => {
-            let promises = [];
-            promises.push(this.loadModel(this.params.dashboard, null, this.query));
-            if (this.params.id) {
-                promises.push(this.loadModel(this.params.dashboard, this.params.id, this.query));
+    if (req.params.id) {
+        if (models[dashboardName] && isSameDashboard && isSameId && req.params.id !== 'new') {
+            promises.push(Promise.resolve(models[req.params.dashboard]));
+        } else {
+            if (req.params.id === 'new') {
+                promises.push(Promise.resolve(new Model()))
+            } else {
+                promises.push(Model.findById(req.params.id, req.query));
             }
-            Promise.all(promises).then(() => {
-                if (promises.length > 1) {
-                    let Model = this._models[this.params.dashboard];
-                    let id = Model.get('_id') || '';
-                    let Models = this._models[this.params.dashboard + 'Collection'];
-                    for (let index = 0; index < Models.length; index++) {
-                        if (Models[index].get('_id').toString() !== id.toString()) {
-                            continue;
-                        }
-                        Models.splice(index, 1, Model);
-                        break;
-                    }
-                }
-                resolve(200);
-            }).catch((error) => {
-                this._models = {};
-                reject(error);
-            });
-        });
+        }
     }
+    AdminFrontend.clientCache('prevParams', req.params);
+
+    return Promise.all(promises);
 }
 
-if (typeof window !== 'undefined') {
-    new AdminFrontend().run();
-}
+AdminFrontend.route('/:dashboard/:id?/:tab?', (req) => {
+    loadModels(req).then((result) => {
+        let models = {};
+        models[req.params.dashboard + 'Collection'] = result[0];
+        if (result.length > 1) {
+            models[req.params.dashboard] = result[1];
+            let ModelInstance = models[req.params.dashboard];
+            let id = ModelInstance.get('_id') || '';
+            let Collection = models[req.params.dashboard + 'Collection'];
+            for (let index = 0; index < Collection.length; index++) {
+                if (Collection[index].get('_id').toString() !== id.toString()) {
+                    continue;
+                }
+                Collection.splice(index, 1, ModelInstance);
+                break;
+            }
+        }
+        AdminFrontend.clientCache('models', models);
+        req.render(AdminPage({
+            params: req.params,
+            prefix: req.prefix,
+            models: models,
+            query: req.query
+        }));
+    }).catch((error) => {
+        req._models = {};
+        req.error(error);
+    });
+});
 
 export default AdminFrontend;
