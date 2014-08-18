@@ -1,5 +1,6 @@
 import Layout from './Layout.jsx';
 import MainPage from './MainPage.jsx';
+import Category from './Category.jsx';
 import Models from '../Models.jsx';
 import ThemeProductPage from './ThemeProductPage.jsx';
 import IsomorphicRouter from '../IsomorphicRouter.jsx';
@@ -90,6 +91,12 @@ SupplyClubTheme.route('/product/:id', (req) => {
     let models = initLayoutModelsPromises(req);
     models.Product = loadModel('Product', req.params.id);
     handleModelPromises(req, models).then(() => req.render(withLayout(req, ThemeProductPage)));
+});
+
+SupplyClubTheme.route('/category/:id?', (req) => {
+    let models = initLayoutModelsPromises(req);
+    models.ProductCollection = loadModel('Product', null, {}, 'ProductCollection');
+    handleModelPromises(req, models).then(() => req.render(withLayout(req, Category)));
 });
 
 SupplyClubTheme.route('/', (req) => {
