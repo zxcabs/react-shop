@@ -81,14 +81,15 @@ AdminFrontend.route('/:dashboard/:id?/:tab?', (req) => {
             }
         }
         AdminFrontend.clientCache('models', models);
+        req.models = models;
         req.render(AdminPage({
             params: req.params,
             prefix: req.prefix,
-            models: models,
+            models: req.models,
             query: req.query
         }));
     }).catch((error) => {
-        req._models = {};
+        req.models = {};
         req.error(error);
     });
 });

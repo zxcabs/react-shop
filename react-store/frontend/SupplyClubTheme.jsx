@@ -59,7 +59,11 @@ function loadModel(ModelName, id = null, params = {}, nameToSave = '') {
 
 function initLayoutModelsPromises(req) {
     let modelsPromises = {};
-    modelsPromises.CategoryCollection = loadModel('Category', null, {}, 'CategoryCollection');
+    modelsPromises.CategoryCollection = loadModel('Category', null, {
+        is: {
+            root: true
+        }
+    }, 'CategoryCollection');
     return modelsPromises;
 }
 
