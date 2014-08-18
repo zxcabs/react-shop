@@ -59,17 +59,27 @@ class IsomorphicRouter {
             this.handleRequest();
 
             document.body.addEventListener('click', (event) => {
-                console.log('click!', event.target)
-                if (!event.target.href) {
+                let target = event.target;
+                if (target.nodeName !== 'A') {
+                    while(target.parentNode && target.parentNode !== target) {
+                        target = target.parentNode;
+                        if (target.nodeName === 'A') {
+                            break;
+                        }
+                    }
+                }
+                if (!target) {
                     return;
                 }
-                console.log('link click!')
+                if (!target.href) {
+                    return;
+                }
                 if (event.altKey || event.ctrlKey || event.metaKey) {
                     return;
                 }
                 event.preventDefault();
                 event.stopPropagation();
-                this.routeChange(event.target.href);
+                this.routeChange(target.href);
                 console.log('implement foreign url check');
             }, false);
         });
