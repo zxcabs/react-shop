@@ -59,9 +59,11 @@ class IsomorphicRouter {
             this.handleRequest();
 
             document.body.addEventListener('click', (event) => {
+                console.log('click!', event.target)
                 if (!event.target.href) {
                     return;
                 }
+                console.log('link click!')
                 if (event.altKey || event.ctrlKey || event.metaKey) {
                     return;
                 }

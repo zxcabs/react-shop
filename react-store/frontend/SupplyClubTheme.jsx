@@ -1,7 +1,12 @@
 import Layout from './Layout.jsx';
 import MainPage from './MainPage.jsx';
+import Models from '../Models.jsx';
 import ThemeProductPage from './ThemeProductPage.jsx';
 import IsomorphicRouter from '../IsomorphicRouter.jsx';
+
+if (typeof window !== 'undefined') {
+    window.React = require('react/addons');
+}
 
 let SupplyClubTheme = new IsomorphicRouter();
 SupplyClubTheme.onClientInit(() => {
@@ -25,20 +30,45 @@ SupplyClubTheme.onClientInit(() => {
     SupplyClubTheme.clientCache('models', models);
 });
 
-function initLayoutModelsPromises(req) {
-    let models = req.modelsPromises || {};
-    models.CategoryCollection = Models.Category.find({});
-    SupplyClubTheme.clientCache('modelsPromises', models);
+function loadModel(ModelName, id = null, params = {}, nameToSave = '') {
+    if (!nameToSave) {nameToSave = ModelName;}
+    let models = SupplyClubTheme.clientCache('models') || {};
+    let cacheKey = modelName+nameToSave+id;
+    if (!SupplyClubTheme.clientCache(cacheKey)) {
+        SupplyClubTheme.clientCache(cacheKey, params);
+    }
+    let prevParams = SupplyClubTheme.clientCache(cacheKey);
+    let isSameParams = JSON.stringify(prevParams) === JSON.stringify(params);
+    let currentModel = models[nameToSave];
+    if (currentModel && isSameParams) {
+        if (!id && Array.isArray(currentModel)) {
+            return Promise.resolve(currentModel);
+        }
+        if (id && currentModel.get && currentModel.get('_id') == id) {
+            return Promise.resolve(currentModel);
+        }
+    }
+    SupplyClubTheme.clientCache(cacheKey, params);
+    if (!id) {
+        return Models[ModelName].find(params);
+    }
+    return Models[ModelName].findById(id, params);
 }
 
-function handleModelPromises(req) {
-    let models = req.modelsPromises || {};
+function initLayoutModelsPromises(req) {
+    let modelsPromises = {};
+    modelsPromises.CategoryCollection = loadModel('Category', null, {}, 'CategoryCollection');
+    return modelsPromises;
+}
+
+function handleModelPromises(req, models) {
     let results = {};
     return Promise.all(Object.keys(models).map((key) => {
         return models[key].then((result) => {
             results[key] = result;
         });
     })).then(() => {
+        SupplyClubTheme.clientCache('models', results);
         req.models = results;
     });
 }
@@ -46,57 +76,20 @@ function handleModelPromises(req) {
 function withLayout(req, Page) {
     return Layout({
         models: req.models,
-        query: req.query,
         page: Page
     });
 }
 
 SupplyClubTheme.route('/product/:id', (req) => {
-    initLayoutModelsPromises(req);
-    let models = req.modelsPromises;
-    models.Product = Models.Product.findById(req.params.id);
-    handleModelPromises(req).then(() => req.render(withLayout(req, ThemeProductPage)));
+    let models = initLayoutModelsPromises(req);
+    models.Product = loadModel('Product', req.params.id);
+    handleModelPromises(req, models).then(() => req.render(withLayout(req, ThemeProductPage)));
 });
 
 SupplyClubTheme.route('/', (req) => {
-    initLayoutModelsPromises(req);
-    let models = req.modelsPromises;
-    models.ProductCollection = Models.Products.find();
-    handleModelPromises().then(() => req.render(withLayout(req, MainPage)));
+    let models = initLayoutModelsPromises(req);
+    models.ProductCollection = loadModel('Product');
+    handleModelPromises(req, models).then(() => req.render(withLayout(req, MainPage)));
 });
-
-// class asdSupplyClubTheme extends BaseController {
-//     mountRoutes() {
-//         this.route('/product/:id', () => {
-//             new Promise((resolve, reject) => {
-//                 let promises = [];
-//                 promises.push(this.getLayoutModels());
-//                 promises.push(this.loadModel('Product', this.params.id, this.query));
-//                 Promise.all(promises).then(() => {
-//                     resolve(200);
-//                 }).catch((error) => {
-//                     reject(error);
-//                 });
-//             }).then(() => {
-//                 this.render(ThemeProductPage);
-//             }).catch((error) => this.catchError(error));
-//         });
-
-//         this.route('/', () => {
-//             new Promise((resolve, reject) => {
-//                 let promises = [];
-//                 promises.push(this.getLayoutModels());
-//                 promises.push(this.loadModel('Product', null, this.query));
-//                 Promise.all(promises).then(() => {
-//                     resolve(200);
-//                 }).catch((error) => {
-//                     reject(error);
-//                 });
-//             }).then(() => {
-//                 this.render(MainPage);
-//             }).catch((error) => this.catchError(error));
-//         });
-//     }
-// }
 
 export default SupplyClubTheme;

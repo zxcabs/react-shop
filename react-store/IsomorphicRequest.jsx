@@ -1,4 +1,5 @@
 let React = require('react/addons');
+let querystring = require('querystring');
 
 class IsomorphicRequest {
     constructor(req = null, res = null, router) {
@@ -36,8 +37,14 @@ class IsomorphicRequest {
                 this.prefix = '/admin';
                 console.log('implement!111');
             }
-            this._path = window.location.pathname.slice(this.prefix.length);
-            this.query = window.location.search;
+            let index = window.location.pathname.indexOf(this.prefix);
+            let path = window.location.pathname;
+            if (index === 0) {
+                path = path.slice(this.prefix.length);
+            }
+            this._path = path
+            console.log(this._path);
+            this.query = window.location.search.slice(1);
         }
     }
 
@@ -91,11 +98,11 @@ class IsomorphicRequest {
     }
 
     parseQuery(string) {
-        return {};
+        return querystring.parse(string);
     }
 
     get query() {
-        this._query;
+        return this._query || {};
     }
 
     set query(query) {
@@ -103,15 +110,15 @@ class IsomorphicRequest {
             query = this.parseQuery(query);
         }
 
-        this._query = {};//query;
+        this._query = query;
     }
 
-    error(code = 500, dataObj, realError) {
+    error(code = 500, dataObj = {}, realError) {
         let error = new Error(`${code} ${dataObj.message || ''}`);
         error.data = dataObj.data || {};
         error.code = code;
 
-        console.log('implement error pages');
+        console.log('implement error pages', error);
         this.timeEnd = Date.now();
         this.done = true;
         if (this.response) {

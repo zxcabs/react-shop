@@ -10,6 +10,6 @@ export default class SupplyClubFrontend extends EndPoint {
     }
 
     _getRequest(req, res) {
-        new SupplyClubTheme(req, res).run();
+        SupplyClubTheme.handleRequest(req, res);
     }
 }

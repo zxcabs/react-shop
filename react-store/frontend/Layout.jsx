@@ -14,6 +14,7 @@ export default React.createClass({
 
     render() {
         let Page = this.props.page;
+        console.log(JSON.stringify(this.props.models));
         return(
             <html>
                 <head>
