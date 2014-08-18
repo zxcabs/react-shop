@@ -73,7 +73,7 @@ class IsomorphicRequest {
 
     renderToString(View) {
         let html = React.renderComponentToString(View);
-        this.response.status(200).send(html);
+        this.response.status(200).send('<!DOCTYPE html>' + html);
     }
 
     renderToDOM(View) {
