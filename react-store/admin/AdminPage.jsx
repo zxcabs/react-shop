@@ -34,13 +34,14 @@ let dashboards = {
         fields: {
             name: JustInput,
             price: JustInput,
+            description: MarkdownTextarea,
             mainCategory: AutocompleteInput,
             categories: AutocompleteInput,
             status: JustSelect
         },
         layout: [{
             name: 'main',
-            fields: ['name', 'price', 'mainCategory', 'status']
+            fields: ['name', 'price', 'description', 'mainCategory', 'status']
         }, {
             name: 'images',
             fields: []
@@ -55,13 +56,6 @@ let dashboards = {
 };
 
 export default React.createClass({
-    handleRoutes(event) {
-        if (event.target.href) {
-            event.preventDefault();
-            this.props.routeChange(event.target.href);
-        }
-    },
-
     requestParentUpdate(item = null) {
         if (item) {
             this.props.models[this.props.params.dashboard + 'Collection'].unshift(item);
@@ -110,19 +104,16 @@ export default React.createClass({
                     <title>
                         Manager System Proto
                     </title>
-                    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
                     <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic&subset=latin,cyrillic,latin-ext,cyrillic-ext' rel='stylesheet' type='text/css' />
-                    <link href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" rel="stylesheet" />
                     <link href="/css/app.css" rel="stylesheet" />
                 </head>
-                <body onClick={this.handleRoutes}>
+                <body>
                     <div className="menu">
                         <Menu />
                     </div>
                     <div className="content">
                         {this.renderTabs()}
                     </div>
-                    <input readOnly="true" value={JSON.stringify(this.props.models)} style={{display: 'none'}} id="initialData"/>
                     <script src="/vendor/traceur-runtime.js"></script>
                     <script src="/bundle/app.js"></script>
                 </body>

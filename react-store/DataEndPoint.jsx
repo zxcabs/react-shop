@@ -54,8 +54,7 @@ export default class DataEndPoint extends EndPoint {
             let User = req.user;
             this.server.loadModels(req.method, req.params.relModel, req.params.relModelId, req.models, req.query, User)
             .then(() => next()).catch((error) => {
-                console.log(error);
-                res.status(404 || 403 || 500).end(error);
+                res.status(error.code || error.message || 404 || 403 || 500).end(error);
             });
         });
 

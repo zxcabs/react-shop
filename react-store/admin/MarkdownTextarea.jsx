@@ -21,6 +21,8 @@ export default React.createClass({
                 name={this.props.key}
                 placeholder={this.props.placeholder || this.props.key}
                 valueLink={Link}
+                cols="35"
+                rows="10"
             ></textarea>
         </label>
         );

@@ -83,13 +83,21 @@ class BaseModel {
             request.get(`/api/data/${name}`).query(serializeURI(params)).end((res) => {
                 name = `${name}Collection`;
                 if (!res.body) {
-                    return reject();
+                    let error = new Error(500);
+                    error.code = 500;
+                    return reject(error);
                 } else if (!res.body.result) {
-                    return reject();
+                    let error = new Error(403);
+                    error.code = 403;
+                    return reject(error);
                 } else if (!res.body.result.models) {
-                    return reject();
+                    let error = new Error(404);
+                    error.code = 404;
+                    return reject(error);
                 } else if (!res.body.result.models[name]) {
-                    return reject();
+                    let error = new Error(404);
+                    error.code = 404;
+                    return reject(error);
                 }
 
                 let models = res.body.result.models[name].map((model) => new this(model));
@@ -104,13 +112,21 @@ class BaseModel {
         return new Promise((resolve, reject) => {
             request.get(`/api/data/${name}/${id}`).query(serializeURI(params)).end((res) => {
                 if (!res.body) {
-                    return reject();
+                    let error = new Error(500);
+                    error.code = 500;
+                    return reject(error);
                 } else if (!res.body.result) {
-                    return reject();
+                    let error = new Error(403);
+                    error.code = 403;
+                    return reject(error);
                 } else if (!res.body.result.models) {
-                    return reject();
+                    let error = new Error(404);
+                    error.code = 404;
+                    return reject(error);
                 } else if (!res.body.result.models[name]) {
-                    return reject();
+                    let error = new Error(404);
+                    error.code = 404;
+                    return reject(error);
                 }
 
                 let model = new this(res.body.result.models[name]);
@@ -226,13 +242,21 @@ class BaseModel {
             let url = `/api/data/${name}/${this.get('_id')||''}`;
             request[req](url).type('form').send(serializeURI(this._fields)).end((res) => {
                 if (!res.body) {
-                    return reject();
+                    let error = new Error(500);
+                    error.code = 500;
+                    return reject(error);
                 } else if (!res.body.result) {
-                    return reject();
+                    let error = new Error(403);
+                    error.code = 403;
+                    return reject(error);
                 } else if (!res.body.result.models) {
-                    return reject();
+                    let error = new Error(404);
+                    error.code = 404;
+                    return reject(error);
                 } else if (!res.body.result.models[name]) {
-                    return reject();
+                    let error = new Error(404);
+                    error.code = 404;
+                    return reject(error);
                 }
 
                 this.setFields(res.body.result.models[name]);

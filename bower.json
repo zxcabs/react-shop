@@ -1,0 +1,20 @@
+{
+  "name": "react-store",
+  "version": "0.0.0",
+  "homepage": "https://github.com/tattooist/react-shop",
+  "authors": [
+    "Vsevolod Ivanov <www@sevolod.ru>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "~4.1.0",
+    "normalize-css": "~3.0.1"
+  }
+}

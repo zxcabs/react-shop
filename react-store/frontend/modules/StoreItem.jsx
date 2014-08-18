@@ -6,10 +6,10 @@ export default React.createClass({
         return(
             <div className="StoreItem">
                 <div className="StoreItem__image-and-details">
-                    <a href="#">
-                        <img className="StoreItem__image" src="#" />
+                    <a href={`/product/${this.props.data.get('_id')}`} >
+                        <img className="StoreItem__image" src="/i/Prod.jpg" />
                     </a>
-                    <div className="StoreItem__details StoreItem__details--active">
+                    <div className="StoreItem__details">
                         <a href="#" className="StoreItem__details__fast-look">
                             Быстрый просмотр
                         </a>

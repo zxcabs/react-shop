@@ -1,0 +1,59 @@
+.Selections
+    width 1160px
+    padding 20px
+    margin 0 auto
+    &:after
+        display block
+        content ''
+        clear both
+.Selection
+    width 375px
+    display block
+    margin-bottom 16px
+    float left
+    margin-right 17px
+    height 240px
+    overflow hidden
+    background #000
+    position relative
+    &:nth-child(3n+3)
+        margin-right 0
+    &__image
+        display block
+        width 375px
+        height 240px
+        padding-bottom 10px
+        transition opacity .2s
+        position absolute
+        z-index 1
+        &:hover
+            opacity .3
+    &__text
+        text-align center
+        position absolute
+        top 70px
+        left 0
+        z-index 3
+    &__sale-time
+        display block
+        color#fff
+        text-shadow 1px 1px 10px #000
+    &__name
+        display block
+        font-family 'Roboto Condensed', 'Arial'
+        padding 0 10px
+        margin-top -2px
+        font-size 30px
+        color #fff
+        line-height 26px
+        text-shadow 1px 1px 10px #000
+        width 355px
+    &__shop-now
+        color #fff
+        border 1px solid #fff
+        display inline-block
+        padding 5px 8px
+        margin-bottom 40px
+        &:hover
+            background #fff
+            color #000

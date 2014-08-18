@@ -24,28 +24,9 @@ function compileScripts(watch) {
     plugins.util.log('Starting browserify');
     var entryFile = './dist/app/admin/AdminFrontend.jsx';
 
-    var bundler = watchify(browserify(entryFile, watchify.args))
-
-    var rebundle = function () {
-        var stream = bundler.bundle();
-
-        stream.on('error', function (err) {
-            (console.error || console.log)(err);
-        });
-        stream = stream.pipe(source(entryFile));
-        stream.pipe(plugins.rename('app.js'));
-        stream.pipe(gulp.dest('dist/bundle'));
-    }
-
-    bundler.on('update', rebundle);
-    return rebundle();
-}
-
-function compileScripts(watch) {
-    plugins.util.log('Starting browserify');
-    var entryFile = './dist/app/admin/AdminFrontend.jsx';
-
-    var bundler = watchify(browserify(entryFile, watchify.args))
+    var bundler = watchify(browserify(entryFile, {
+        cache: {}, packageCache: {}, fullPaths: true, debug: true
+    }));
 
     var rebundle = function () {
         var stream = bundler.bundle();
@@ -63,11 +44,11 @@ function compileScripts(watch) {
 }
 
 function compileFrontend(watch) {
-    plugins.util.log('Starting browserify');
-    var entryFile = './dist/app/admin/AdminFrontend.jsx';
-
-    var bundler = watchify(browserify(entryFile, watchify.args))
-
+    plugins.util.log('Starting browserify frontend');
+    var entryFile = './dist/app/frontend/SupplyClubTheme.jsx';
+    var bundler = watchify(browserify(entryFile, {
+        cache: {}, packageCache: {}, fullPaths: true, debug: true
+    }));
     var rebundle = function () {
         var stream = bundler.bundle();
 
@@ -75,7 +56,7 @@ function compileFrontend(watch) {
             (console.error || console.log)(err);
         });
         stream = stream.pipe(source(entryFile));
-        stream.pipe(plugins.rename('app.js'));
+        stream.pipe(plugins.rename('frontend.js'));
         stream.pipe(gulp.dest('dist/bundle'));
     }
 
@@ -83,7 +64,16 @@ function compileFrontend(watch) {
     return rebundle();
 }
 
-var stylSelector = 'styles/**/*.styl';
+var stylSelector = [
+    'bower_components/font-awesome/css/font-awesome.css',
+    'bower_components/normalize-css/normalize.css',
+    'styles/**/*.styl'
+];
+
+gulp.task('build-fonts', function() {
+    return gulp.src('bower_components/font-awesome/fonts/*')
+        .pipe(gulp.dest('dist/fonts'))
+});
 gulp.task('build-css', function() {
     return gulp.src(stylSelector)
         .pipe(plugins.cached('styles'))
@@ -92,6 +82,7 @@ gulp.task('build-css', function() {
             (console.error || console.log)(error);
         })
         .pipe(plugins.autoprefixer())
+        .pipe(plugins.remember('styles'))
         .pipe(plugins.concat('app.css'))
         .pipe(gulp.dest('dist/css'))
 });
@@ -100,7 +91,7 @@ var jsSelector = 'react-store/**/*.jsx';
 plugins.traceur.RUNTIME_PATH = pathToTraceur;
 gulp.task('build-js', function() {
     return gulp.src(jsSelector)
-        .pipe(plugins.cached('scripts'))
+        .pipe(plugins.cached('js'))
         .pipe(plugins.react({
             sourceMaps: true
         }))
@@ -117,37 +108,13 @@ gulp.task('build-js', function() {
         .pipe(gulp.dest('dist/app'))
 });
 
-gulp.task('server', ['vendor', 'build-js'], (function() {
-    var child = null;
-    var id = 0;
-    return function reload(next) {
-        if (child) {
-            child.kill();
-        }
-        child = childProcess.fork('./worker.js');
-        child.___id = ++id;
-        child.on('exit', function(code) {
-            plugins.util.log('Stopping server with id "' + this.___id + '"');
-            this.removeAllListeners();
-        }.bind(child));
-
-        child.on('message', function(data) {
-            if (data === 'server started') {
-                if (next) {
-                    next();
-                }
-            }
-        })
-    }
-})());
-
-
 
 /**
  * Run default task
  */
-gulp.task('default', ['build-css', 'server'], function () {
+gulp.task('default', ['build-css', 'build-fonts', 'build-js'], function () {
     compileScripts(true);
+    compileFrontend(true);
     gulp.watch([stylSelector], ['build-css']);
-    gulp.watch([jsSelector], ['server']);
+    gulp.watch([jsSelector], ['build-js']);
 });
