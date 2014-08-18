@@ -32,7 +32,6 @@ export default React.createClass({
                     <Categories data={this.props.models.CategoryCollection} />
                     <Page params={this.props.params} models={this.props.models} query={this.props.query} />
                     <Footer />
-                    <input readOnly="true" type="hidden" value={JSON.stringify(this.props.models)} style={{display: 'none'}} id="initialData"/>
                     <script src="/vendor/traceur-runtime.js"></script>
                     <script src="/bundle/frontend.js"></script>
                 </body>

@@ -9,8 +9,10 @@ import IsomorphicRouter from '../IsomorphicRouter.jsx';
 
 let AdminFrontend = new IsomorphicRouter();
 AdminFrontend.onClientInit(() => {
-    let initialJSON = document.querySelector('#initialData').value;
-    let models = JSON.parse(initialJSON) || {};
+    let initialJSON = document.documentElement.getAttribute('models-json') || '';
+    initialJSON = initialJSON.replace('\\"', '"');
+    document.documentElement.removeAttribute('models-json');
+    let models = JSON.parse(initialJSON || '') || {};
     for (let key in models) {
         if (!models.hasOwnProperty(key)) {continue;}
         let modelName = key;

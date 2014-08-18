@@ -114,7 +114,6 @@ export default React.createClass({
                     <div className="content">
                         {this.renderTabs()}
                     </div>
-                    <input readOnly="true" value={JSON.stringify(this.props.models)} style={{display: 'none'}} id="initialData"/>
                     <script src="/vendor/traceur-runtime.js"></script>
                     <script src="/bundle/app.js"></script>
                 </body>

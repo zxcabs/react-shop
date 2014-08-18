@@ -11,8 +11,10 @@ if (typeof window !== 'undefined') {
 
 let SupplyClubTheme = new IsomorphicRouter();
 SupplyClubTheme.onClientInit(() => {
-    let initialJSON = document.querySelector('#initialData').value;
-    let models = JSON.parse(initialJSON) || {};
+    let initialJSON = document.documentElement.getAttribute('models-json') || '';
+    initialJSON = initialJSON.replace('\\"', '"');
+    document.documentElement.removeAttribute('models-json');
+    let models = JSON.parse(initialJSON || '') || {};
     for (let key in models) {
         if (!models.hasOwnProperty(key)) {continue;}
         let modelName = key;
@@ -34,7 +36,7 @@ SupplyClubTheme.onClientInit(() => {
 function loadModel(ModelName, id = null, params = {}, nameToSave = '') {
     if (!nameToSave) {nameToSave = ModelName;}
     let models = SupplyClubTheme.clientCache('models') || {};
-    let cacheKey = modelName+nameToSave+id;
+    let cacheKey = ModelName+nameToSave+id;
     if (!SupplyClubTheme.clientCache(cacheKey)) {
         SupplyClubTheme.clientCache(cacheKey, params);
     }
@@ -89,7 +91,7 @@ SupplyClubTheme.route('/product/:id', (req) => {
 
 SupplyClubTheme.route('/', (req) => {
     let models = initLayoutModelsPromises(req);
-    models.ProductCollection = loadModel('Product');
+    models.ProductCollection = loadModel('Product', null, {}, 'ProductCollection');
     handleModelPromises(req, models).then(() => req.render(withLayout(req, MainPage)));
 });
 
