@@ -37,10 +37,10 @@ export default React.createClass({
                     <p className="Footer__bottom__left">
                         © Supply Club. Все права защищены. 2014
                     </p>
-                    <a href="/about" className="Footer__bottom__link">
+                    <a href="/page/about" className="Footer__bottom__link">
                         О магазине
                     </a>
-                    <a href="/warranty" className="Footer__bottom__link">
+                    <a href="/page/warranty" className="Footer__bottom__link">
                         Гарантия
                     </a>
                     <a href="/mobile" className="Footer__bottom__link">
