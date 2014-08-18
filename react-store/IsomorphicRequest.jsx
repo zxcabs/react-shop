@@ -74,7 +74,7 @@ class IsomorphicRequest {
     renderToString(View) {
         let html = React.renderComponentToString(View);
         console.log('clean this hack out');
-        let json = ` models-json="${JSON.stringify(this.models).replace('"', '\\"')}"`;
+        let json = ` models-json="${escape(JSON.stringify(this.models))}"`;
         html = html.slice(0, 5) + json + html.slice(5);
         this.response.status(200).send('<!DOCTYPE html>' + html);
     }

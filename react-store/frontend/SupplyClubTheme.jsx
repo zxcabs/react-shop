@@ -11,8 +11,7 @@ if (typeof window !== 'undefined') {
 
 let SupplyClubTheme = new IsomorphicRouter();
 SupplyClubTheme.onClientInit(() => {
-    let initialJSON = document.documentElement.getAttribute('models-json') || '';
-    initialJSON = initialJSON.replace('\\"', '"');
+    let initialJSON = unescape(document.documentElement.getAttribute('models-json') || '');
     document.documentElement.removeAttribute('models-json');
     let models = JSON.parse(initialJSON || '') || {};
     for (let key in models) {
