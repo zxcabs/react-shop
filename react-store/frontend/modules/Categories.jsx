@@ -6,11 +6,6 @@ export default React.createClass({
         return this.props.data.map((category) => {
             let url = '/category/' + category.get('_id');
             let child = category.get('childs').map((category) => {
-                return (
-                    <a className="Categories__wrap__list__item__hidden__link" href={category.get('_id')}>{category.get('name')}
-                    </a>
-                );
-            });
             return(
                 <li key={category.get('_id')} className="Categories__wrap__list__item">
                     <a href={url} className="Categories__wrap__list__item__link">
