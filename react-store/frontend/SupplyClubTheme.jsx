@@ -3,6 +3,7 @@ import MainPage from './MainPage.jsx';
 import Models from '../Models.jsx';
 import ThemeProductPage from './ThemeProductPage.jsx';
 import IsomorphicRouter from '../IsomorphicRouter.jsx';
+let _ = require('lodash');
 
 if (typeof window !== 'undefined') {
     window.React = require('react/addons');
@@ -38,7 +39,7 @@ function loadModel(ModelName, id = null, params = {}, nameToSave = '') {
         SupplyClubTheme.clientCache(cacheKey, params);
     }
     let prevParams = SupplyClubTheme.clientCache(cacheKey);
-    let isSameParams = JSON.stringify(prevParams) === JSON.stringify(params);
+    let isSameParams = _.isEqual(prevParams, params);
     let currentModel = models[nameToSave];
     if (currentModel && isSameParams) {
         if (!id && Array.isArray(currentModel)) {
